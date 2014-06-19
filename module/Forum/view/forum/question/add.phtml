@@ -1,0 +1,19 @@
+<tr>
+    <td class='tabDataCenter'><?php echo $this->questionData['itemNum']; ?>.</td>
+    <td class='tabDataJustify'><?php echo $this->questionData['title']; ?></td>
+    <td class='tabDataCenter'>Сітник Андрій</td>
+    <td class='tabDataCenter'><?php if (empty($this->questionData['count_user_vote']))
+    echo '0';
+else
+    echo $this->questionData['count_user_vote'];
+?>/38</td>
+    <td class='tabDataCenter'>+4.8 (+5)</td>
+    <td class='tabDataCenter'>прийнято</td>
+    <td class='tabDataCenter'>
+        <span style="float:right">
+            <img src="/cms/assets/image/edit.jpg" class="forum_img_event edit">
+            &nbsp
+            <img src="/cms/assets/image/delete.jpg" class="forum_img_event delete">
+        </span>
+    </td>
+</tr>

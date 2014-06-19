@@ -1,0 +1,99 @@
+<div class="clearfix pad">
+    <button onclick="location.href = '<?php echo $this->easyUrl(array('module' => 'profile', 'controller' => 'adverts', 'action' => 'add')); ?>';return false;" type="button" class="btn btn-default">Добавить</button>
+</div>
+
+<?php if (!empty($advertsList [$type] ['data'])): ?>
+    <?php foreach ($advertsList [$type] ['data'] as $item): ?>
+        <div class="clearfix pad mar-bot post">
+            <div class="col-sm-12">
+                <div class="row">
+
+                    <div class="col-sm-10 row">
+                        <div class="col-sm-12 row">
+
+                            <div class="col-sm-2 pull-left">
+                                <div class="col-sm-12 pad">
+                                    <div class="row">
+                                        <div class="col-sm-12 align-left">
+                                            Добавлено
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12 align-left">
+                                            <span><?php echo date('d.m.Y', ($item['created'])); /*TODO: временный вывод даты */ ?></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-1 pull-left pad">
+                                <?php if (!empty($item['img_id'])) { ?>
+                                    <img class="img-rounded" src="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'image', 'action' => 'adverts-gallery', 'id' => $item['img_id'], 'w' => 72, 'h' => 72, 'crop' => 'y'))) ?>" alt="" />
+                                <?php } else { ?>
+                                    <img src="/img/ava.png" class="img-rounded">
+                                <?php } ?>
+                            </div>
+
+                            <div class="col-sm-8">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4><a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'adverts', 'action' => 'view', 'type' => $item['type_id'], 'id' => $item['id']))); ?>"><?php echo($item['name']); ?></a></h4>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <ul class="breadcrumb">
+                                            <?php if ( !empty($item['breadcrumbs']) ): ?>
+                                                <?php $last = sizeof($item ['breadcrumbs']) - 1; foreach ( $item['breadcrumbs'] as $key => $row ): ?>
+                                                    <li<?php echo ($key == $last ? ' class="active"' : '');?>><?php echo $row ['name']; ?></li>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p><?php echo($item['description_short']); ?></p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <?php if (!empty($item ['city'])): ?>
+                                        <ul class="breadcrumb">
+                                            <li><?php echo $item ['region']; ?></li>
+                                            <li><?php echo $item ['area']; ?></li>
+                                            <li class="active"><?php echo $item ['city']; ?></li>
+                                        </ul>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1">
+                        <div class="row pad text-center">
+                            <?php if ($item['price'] > 0): ?>
+                                <span><?php echo($item['price']); ?> грн</span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1">
+                        <div class="row pad">
+                            <a href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'adverts', 'action' => 'edit', 'id' => $item['id']))) ?>"><span class="glyphicon glyphicon-pencil pull-right"></span></a>
+                        </div>
+                        <div class="row pad">
+                            <a class="confirm-remove" href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'adverts', 'action' => 'remove', 'id' => $item['id']))) ?>"><span class="glyphicon glyphicon-remove pull-right"></span></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php endif; ?>

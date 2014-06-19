@@ -1,0 +1,87 @@
+<form class="form-validator edit" action="<?php echo($this->easyUrl(array('action' => 'edit', 'id' => $getEdit['id']))); ?>" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Редактирование опции</legend>
+        <div class="cont">
+            <div class="control-group">
+                <div class="controls">
+                    <label class="control-label">Название</label>
+                    <input type="text" class="span3" name="name" value="<?php echo $getEdit['name']; ?>">
+                </div>
+            </div>
+            <label class="control-label">Категория</label>
+
+            <div class="controls">
+                <select class="selectpicker span3" name="category_id">
+                    <?php echo($this->partial('admin/catalog/category/edit-category-select.phtml', array('categoryList' => $getCategory, 'tab' => '', 'disabled' => false, 'parent_id' => $getEdit['category_id'] ))); ?>
+                </select>
+            </div>
+            <label class="control-label">Тип</label>
+
+            <div class="controls">
+                <select class="type-option selectpicker span3" name="type">
+                    <option <?php echo ($getEdit['type'] == 'text' ? 'selected' : ''); ?> value="text">Text</option>
+                    <option <?php echo ($getEdit['type'] == 'select' ? 'selected' : ''); ?> value="select">Select</option>
+                    <option <?php echo ($getEdit['type'] == 'radio' ? 'selected' : ''); ?> value="radio">Radio button</option>
+                    <option <?php echo ($getEdit['type'] == 'checkbox' ? 'selected' : ''); ?> value="checkbox">Checkbox</option>
+                    <option <?php echo ($getEdit['type'] == 'multi' ? 'selected' : ''); ?> value="multi">Multi checkbox</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <div class="controls change">
+                    <?php if ($getEdit['type'] == 'text') { ?>
+                    <div class="row-fluid change">
+                        <div class="col span3">
+                            <div class="controls-row">
+                                <label class="control-label">По умолчанию</label>
+                                <input type="text" class="span12" name="default" value="<?php echo($getEdit['value']); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <?php } elseif ($getEdit['type'] == 'select' || $getEdit['type'] == 'radio' || $getEdit['type'] == 'multi') {?>
+                        <?php if (!empty($getEdit['value'])) { ?>
+                            <?php foreach ($getEdit['value'] as $key => $item) { ?>
+                                <div class="row-fluid change">
+                                    <div class="col span3">
+                                        <div class="controls-row">
+                                            <label class="control-label">Название</label>
+                                            <input type="text" class="option_name span12" name="option[<?php echo($key); ?>][name]" value="<?php echo($item['name']); ?>">
+                                            </div>
+                                        </div>
+                                    <div class="col span1 select">
+                                        <div class="controls-row">
+                                            <label class="control-label">&nbsp;</label>
+                                            <input type="checkbox" value="1" class="option_selected" name="option[<?php echo($key); ?>][selected]" <?php echo ($item['selected'] == 'y' ? 'checked="checked"' : ''); ?>>
+                                            </div>
+                                        </div>
+                                    <div class="col span1">
+                                        <div class="controls-row">
+                                            <label class="control-label">&nbsp;</label>
+                                            <a class="icon-remove options" title="удалить"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php } elseif ($getEdit['type'] == 'checkbox') {?>
+                        <div class="row-fluid change">
+                            <div class="col span3">
+                                <div class="controls-row">
+                                    <input type="checkbox" <?php echo ($getEdit['value'] == 'y' ? 'checked="checked"' : ''); ?> name="default" value="y">&nbsp;По умолчанию
+                                    </div>
+                                </div>
+                            </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="controls-add">
+                <a class="add-select btn btn-info" style="<?php echo ($getEdit['type'] == 'text' || $getEdit['type'] == 'checkbox' ? 'display: none;' : ''); ?>">Добавить</a>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Отменить</a>
+            </div>
+        </div>
+    </fieldset>
+    <input type="hidden" name="edit-form" value="0">
+    <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+</form>

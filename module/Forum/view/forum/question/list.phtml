@@ -1,0 +1,149 @@
+<?php $this->headLink()->appendStylesheet('/cms/assets/css/catalog.css');
+      $this->headLink()->appendStylesheet('/cms/assets/plugin/jquery-ui/css/jquery-ui-1.9.0.custom.css');
+      
+      $this->headScript()->appendFile('/cms/assets/plugin/jquery-ui/js/jquery-ui-1.9.0.js');
+      $this->headScript()->appendFile('/cms/assets/js/question.js'); ?>
+<center>
+    <h1>Голосування</h1>
+    <div style='text-align:left; color:#fff; padding:5px; background:#5cb85c;'>
+        <a href='javascript:;' style='text-decoration:none; color:#fff;'><?php echo $this->groupData['title']; ?></a>
+        =>  <?php echo $this->themeData['title']; ?>
+    </div>
+
+    <div style='padding:10px; background-color: rgba(207,207,207,0.2);'>
+        <fieldset style='border:1px solid #5cb85c; border-radius:5px;'>
+            <legend style='font-size:14pt; font-weight:bold; color:#5cb85c; text-shadow: 1px -1px 1px #000000;'>Питання для обговорення</legend>
+            <table width='100%' style='background:#ffffff; padding:5px;' class="questions">
+                <tr>
+                    <td class='tabHeader'>№</td>
+                    <td class='tabHeader'>Назва</td>
+                    <td class='tabHeader'>Власник</td>
+                    <td class='tabHeader'>Проголосувало</td>
+                    <td class='tabHeader'>Оцінка / бал</td>
+                    <td class='tabHeader'>Статус</td>
+                    <td class='tabHeader'>&nbsp;</td>
+                </tr>
+                <?php if(is_array($this->questionDataList)):?>
+                <?php $i =0; foreach($this->questionDataList as $key => $value): $i++ ;?>
+                
+                <tr attr-id="<?php echo $value["id"];?>">
+                    <td class='tabDataCenter'><?php echo $i;?>.</td>
+                    <td class='tabDataJustify'><?php if(isset($value['title'])) echo $value['title'];?></td>
+                    <td class='tabDataCenter'><?php if(isset($value['lastname']) && isset($value['firstname'])){ echo $value['lastname'].' '.$value['firstname'];}?></td>
+                    <td class='tabDataCenter'><?php if(empty($value['count_user_vote'])) echo '0'; else echo $value['count_user_vote'];?>/38</td>
+                    <td class='tabDataCenter'>+4.8 (+5)</td>
+                    <td class='tabDataCenter'>прийнято</td>
+                    <td class='tabDataCenter'>
+                        <span style="float:right">
+                            <?php //<img src="/cms/assets/image/edit.jpg" class="forum_img_event edit"> ?>
+                                        &nbsp
+                            <img src="/cms/assets/image/delete.jpg" class="forum_img_event delete">
+                        </span>
+                    </td>
+                </tr>
+                <?php endforeach;?>
+                <?php endif; ?>
+            </table>
+
+            <form action='' style='margin-top:20px;' method="post" name="question">
+                <input type="hidden" name="id_group" value="<?php echo $this->groupData['id'];?>">
+                <input type="hidden" name="id_theme" value="<?php echo $this->themeData['id'];?>">
+                <table width='100%'>
+                    <tr valign='top'>
+                        <td>
+                            <input type='text' name='title' placeholder='Додати питання для обговорення...' required='required' style='width:100%;'>
+                            <textarea name='description' placeholder='Стислий опис питання або пропозиції...' style='width:100%;'></textarea>
+                        </td>
+                        <td width='100px'>
+                            <input type='submit' value='Додати' style='width:100px; height:80px;'>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+        <fieldset style='border:1px solid #5cb85c; border-radius:5px;'>
+            <legend style='font-size:14pt; font-weight:bold; color:#5cb85c; text-shadow: 1px -1px 1px #000000;'>Обговорення питань</legend>
+            <div id='accordion' style='text-align:justify;'>
+            <?php if(is_array($this->questionDataList)):?>
+            <?php foreach($this->questionDataList as $key => $value):?>
+                <h3 class="qwHead<?php echo $value['id'];?>" style='font-size:12pt; border:1px solid #5cb85c; border-radius: 6px 0px 0px 0px; background: #5cb85c; text-shadow: 1px -1px 1px #ffffff;'><?php echo $value['title']; ?></h3>
+                <div class="qwBody<?php echo $value['id'];?>" style='height:600px; border:1px solid #5cb85c; border-radius: 0px 0px 6px 0px; vertical-align:top;'>
+                    <fieldset style='padding:5px; border-radius:5px;'>
+                        <legend style='font-size:12pt; font-weight:bold; padding:10px;'>Опис</legend>
+                        <div style='font-size:10pt; padding: 0px 0px 15px 15px;'><?php echo $value['description']; ?></div>
+                    </fieldset>
+
+                    <fieldset style='padding:5px; border-radius:5px;' class ="comment-question_<?php echo $value['id']?>">
+                        <legend style='font-size:12pt; font-weight:bold; padding:10px;'>Обговорення</legend>
+                        <div id='myDiv1' class="comment-box" style='font-size:10pt; height:320px; overflow-y:auto; padding:5px;'>
+                            <?php if(is_array($value['comments'])):?>
+                            <?php foreach($value['comments'] as $keyComment => $valComment):?>
+                            <table width='100%'>
+                                <tr valign='top'>
+                                    <td width='150px' style='font-size:8pt;text-align:center; border:1px dotted;'>
+                                        <div style='font-size:7pt; text-align:right;'>+3.5 </div>
+                                        <img src='http://wenet.pu.if.ua/tmp/project/vote/data/img/user.png' style='width:100px;'>
+                                        <div style='font-size:8pt; padding:5px 0px 5px 5px;'>
+                                            <b><?php echo $valComment['lastname'].' '.$valComment['firstname'];?></b>
+                                            <!-- <div style='font-size:7pt; padding-top:3px;'> створено</div> -->
+                                        </div>
+                                    </td>
+                                    <td style='border:1px dotted; padding:0px;'>
+                                        <div style='min-height:120px; padding:5px;'><?php echo $valComment['comment'];?></div>
+                                        <div style='text-align:right; background:#f5f5f5; padding: 3px 25px 3px 25px; font-size:8pt; color:#333333; border-top:1px dotted;'>
+                                            <b>Дата:</b> <?php echo $valComment['creation'];?> | 
+                                            <b>Оцінка:</b> +3.5 
+                                            <!-- <a href='' style='color:#333333;'><b>Прокоментувати</b></a>  -->
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <?php endforeach;?>
+                            <?php endif;?>
+                        </div>
+                        <form action='' style='padding:0px; margin:0px;' method="POST" name="comment">
+                            <input type='hidden' name='id_question' value="<?php echo $value['id']?>">
+                            <table width='100%' cellpadding='5' cellspacing='2'>
+                                <tr valign='top'>
+                                    <td><textarea name='comment' placeholder='Ваш коментар...' style='width:100%;'></textarea></td>
+                                    <td width='120px'><input type='submit' value='Відправити' style='width:120px; height:67px; margin:0px; padding:0px;'></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </fieldset>
+                    <form action="" method="POST" name="vote">
+                        <input type='hidden' name='id_question_vote' value="<?php echo $value['id']?>">
+                    <table cellpadding='5' cellspacing='2' style='margin-top:10px;'>
+                        <tr>
+                            <td style='background-color:#cfcfcf;'>
+                                <table style='font-size:8pt;'>
+                                    <tr>
+                                        <?php for($i = -5; $i<=5; $i++):?>
+                                            <?php if($i != 0):?>
+                                                <td width='30px' style='text-align:center;'><input type='radio' name='rank_q<?php echo $value['id']?>'></td>
+                                            <?php else:?>
+                                                <td width='30px' style='text-align:center;'><input type='radio' name='rank_q<?php echo $value['id']?>' checked></td>
+                                            <?php endif; ?>
+                                        <?php endfor; ?>
+                                    </tr>
+                                    <tr>
+                                        <?php for($i = -5; $i<=5; $i++):?>
+                                            <td style='text-align:center;'><?php echo $i; ?></td>
+                                        <?php endfor;?>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style='background-color:#cfcfcf;'>
+                                <input type='submit' value='ОЦІНИТИ ПРОГОЛОСУВАТИ ЗА ПРИЙНЯТТЯ ПИТАННЯ' style='width:100%; padding:5px 20px 5px 20px;'>
+                            </td>
+                        </tr>
+                    </table>
+                    </form>
+                </div>
+                
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </div>
+        </fieldset>
+    </div>
+</center>

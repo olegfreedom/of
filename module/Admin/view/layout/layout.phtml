@@ -1,0 +1,59 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle('Админ-панель')->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+        <!-- Le styles -->
+        <?php
+
+            $this->headLink(/*array(
+                         'rel' => 'shortcut icon',
+                         'type' => 'image/png',
+                         'href' => $this->basePath() . '/img/favicon.png'
+                  )*/)
+                  ->appendStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                  ->appendStylesheet($this->basePath() . '/css/bootstrap.admin.min.css')
+                  ->appendStylesheet($this->basePath() . '/css/style.css')
+                  ->appendStylesheet($this->basePath() . '/css/bootstrap-responsive.min.css')
+                  ->appendStylesheet($this->basePath() . '/css/bootstrap-select.min.css')
+                  ->appendStylesheet($this->basePath() . '/css/bootstrap-formhelpers.css')
+                  ->appendStylesheet($this->basePath() . '/css/lightbox.css');
+
+            $this->headScript()
+                 ->appendFile($this->basePath() . '/js/libs/jquery/jquery-1.8.1.min.js')
+                 ->appendFile($this->basePath() . '/js/libs/modernizr-2.6.2.min.js')
+                 ->appendFile($this->basePath() . '/js/libs/lightbox-2.6.min.js')
+                 ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap.min.js')
+                 ->appendFile($this->basePath() . '/js/html/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                 ->appendFile($this->basePath() . '/js/tinymce/jquery.tinymce.min.js')
+                 ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap-select.min.js')
+                 ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap-formhelpers-phone.js')
+                 ->appendFile($this->basePath() . '/js/default.js');
+
+            $this->mediaLoader();
+            
+            echo($this->headLink()."\n");
+            echo($this->headScript()."\n");
+        ?>
+    </head>
+    <body>
+        <?php echo($this->partial('admin/layout/header')); ?>
+        <div class="container-fluid">
+            <?php if(isset($_SESSION['admin']->auth['id'])){ ?>
+                <div class="row-fluid">
+                    <div class="span2">
+                      <?php echo($this->partial('admin-partials/sidebar-nav.phtml')); ?>
+                    </div>
+                    <div class="span10">
+                      <?php echo($this->content); ?>
+                    </div>
+                </div>
+            <?php }else{ ?>
+                <?php echo($this->content); ?>
+            <?php } ?>
+        </div> <!-- /container -->
+        <?php echo($this->inlineScript()); ?>
+    </body>
+</html>

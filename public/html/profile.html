@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 1</title>
+
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-12 clearfix">
+                        <div class="pull-right">
+                            <a href="catalog.html">Каталог</a> <a href="profile.html">Кабинет</a>
+                        </div>
+                        <div class="pull-left pad5">
+                            <a class="btn btn-default btn-success" href="#">Добавить объявление</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix center-block centered">
+                    <h1 class="page-header">
+                        Личный кабинет
+                    </h1>
+                </div>
+                <!-- Nav tabs -->
+                <ul id="tabs" class="nav nav-tabs">
+                    <li class="active"><a href="#controlls" data-toggle="tab">Управление объявлениями</a></li>
+                    <li><a href="#profile" data-toggle="tab">Профиль</a></li>
+                    <li><a href="#comments" data-toggle="tab">Мои комментарии</a></li>
+                    <li><a href="#rates" data-toggle="tab">Мои оценки</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content pad">
+                    <div class="tab-pane fade active in" id="controlls">
+                        <ul id="tabs2" class="nav nav-tabs">
+                            <li class="active"><a href="#products" data-toggle="tab">Товары</a></li>
+                            <li><a href="#services" data-toggle="tab">Услуги</a></li>
+                            <li><a href="#technologies" data-toggle="tab">Технологии</a></li>
+                            <li><a href="#investments" data-toggle="tab">Инвестиции</a></li>
+                        </ul>
+                        <div class="tab-content pad">
+                            <div class="tab-pane fade active in" id="products">
+                                <ul id="tabs3" class="nav nav-tabs">
+                                    <li class="active"><a href="#buy" data-toggle="tab">Спрос</a></li>
+                                    <li><a href="#sell" data-toggle="tab">Предложение</a></li>
+                                </ul>
+                                <div class="tab-content pad">
+                                    <div class="tab-pane fade active in" id="buy">
+                                        <div class="clearfix pad">
+                                            <button class="btn btn-default" type="button">Добавить</button>
+                                        </div>
+                                        <div class="clearfix pad mar-bot post">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-9 row">
+                                                        <div class="col-sm-12 row">
+                                                            <div class="col-sm-2 pull-left">
+                                                                <div class="col-sm-12 pad">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            Доступность
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            <span>322</span><span> дня</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            Добавлено
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            <span>01.03.2014</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-1 pull-left pad">
+                                                                <img src="images/ava.png" class="img-rounded img-responsive">
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <h4><a href="#">Название товара/услуги</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <ul class="breadcrumb">
+                                                                            <li><a href="#">Раздел</a></li>
+                                                                            <li><a href="#">Подраздел</a></li>
+                                                                            <li class="active"><a href="#">Категория</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <p>Здесь будет размещено полное описание товара/услугии обрезано на 5-й строке. При клике на краткое описание разворачивается карточка товара/услуги, где видны все атрибуты</p>
+                                                                    </div>
+                                                                </div>
+                                                                <!--<div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <a href="#"><span>Винница</span></a>
+                                                                    </div>
+                                                                </div>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-2">
+                                                        <div class="row text-center">
+                                                            <div class="col-sm-12">
+                                                                <a href="#" class="skin-color"><span>Винницька обл</span></a>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <a href="#" class="skin-color"><span>Винницький район</span></a>
+                                                            </div>
+                                                            <div class="col-sm-12">
+                                                                <a href="#" class="skin-color"><span>Винница</span></a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="row pad text-center">
+                                                            <span>3 000 000 грн</span>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="col-sm-1">
+                                                        <div class="row pad">
+                                                            <a href="#">
+                                                                <span class="glyphicon glyphicon-pencil pull-right"></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="row pad">
+                                                            <a href="#">
+                                                                <span class="glyphicon glyphicon-remove pull-right"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="sell">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="services">
+                                <ul id="tabs3-2" class="nav nav-tabs">
+                                    <li class="active"><a href="#buy2" data-toggle="tab">Спрос</a></li>
+                                    <li><a href="#sell2" data-toggle="tab">Предложение</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="buy2">
+
+                                    </div>
+                                    <div class="tab-pane fade pad" id="sell2">
+                                        <div class="clearfix pad mar-bot post">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-10 row">
+                                                        <div class="col-sm-12 row">
+                                                            <div class="col-sm-2 pull-left">
+                                                                <div class="col-sm-12 pad">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            Доступность
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            <span>322</span><span> дня</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            Добавлено
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            <span>01.03.2014</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-1 pull-left pad">
+                                                                <img src="images/ava.png" class="img-rounded">
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <h4><a href="#">Название товара/услуги</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <ul class="breadcrumb">
+                                                                            <li><a href="#">Раздел</a></li>
+                                                                            <li><a href="#">Подраздел</a></li>
+                                                                            <li class="active">Категория</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <p>Здесь будет размещено полное описание товара/услугии обрезано на 5-й строке. При клике на краткое описание разворачивается карточка товара/услуги, где видны все атрибуты</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <a href="#"><span>Винница</span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="row pad text-center">
+                                                            <span>3 000 000 грн</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="row pad">
+                                                            <a href="#">
+                                                                <span class="glyphicon glyphicon-pencil pull-right"></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="row pad">
+                                                            <a href="#">
+                                                                <span class="glyphicon glyphicon-remove pull-right"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="technologies">
+                                <ul id="tabs3-3" class="nav nav-tabs">
+                                    <li class="active"><a href="#buy2" data-toggle="tab">Спрос</a></li>
+                                    <li><a href="#sell2" data-toggle="tab">Предложение</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="buy3">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="sell3">
+
+                                        <div class="clearfix pad mar-bot post">
+                                            <div class="col-sm-12 row">
+
+                                                <div class="col-sm-8 row">
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-3 row">
+                                                            <img src="images/ava.png" class="img-rounded">
+                                                        </div>
+                                                        <div class="col-sm-7 row">
+                                                            <div class="row">
+                                                                <h4><a href="#">Название товара/услуги</a></h4>
+                                                            </div>
+                                                            <div class="row">
+                                                                <a href="#"><span>Винница</span></a>
+                                                            </div>
+                                                            <div class="row">
+                                                                <span>01.03.2014</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2 row text-center">
+                                                            <span>300 грн</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2 row">
+                                                    <div class="row text-center pad">
+                                                        <a href="#"><img src="images/pencil.png" alt="#"/></a>
+                                                    </div>
+                                                    <div class="row text-center pad">
+                                                        <a href=""><img src="images/cancel.png" alt="#"/></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix pad mar-bot post">
+                                            <div class="col-sm-12 row">
+                                                <div class="col-sm-2 row">
+                                                    <div class="row text-center">
+                                                        <span>8</span>
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        <span>дня осталось</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-8 row">
+                                                    <div class="col-sm-12">
+                                                        <div class="col-sm-3 row">
+                                                            <img src="images/ava.png" class="img-rounded">
+                                                        </div>
+                                                        <div class="col-sm-7 row">
+                                                            <div class="row">
+                                                                <h4><a href="#">Название товара/услуги</a></h4>
+                                                            </div>
+                                                            <div class="row">
+                                                                <a href="#"><span>Винница</span></a>
+                                                            </div>
+                                                            <div class="row">
+                                                                <span>01.03.2014</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-2 row text-center">
+                                                            <span>300 грн</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2 row">
+                                                    <div class="row text-center pad">
+                                                        <a href="#"><img src="images/pencil.png" alt="#"/></a>
+                                                    </div>
+                                                    <div class="row text-center pad">
+                                                        <a href=""><img src="images/cancel.png" alt="#"/></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="investments">
+                                <ul id="tabs3-4" class="nav nav-tabs">
+                                    <li class="active"><a href="#buy4" data-toggle="tab">Вложения</a></li>
+                                    <li><a href="#sell4" data-toggle="tab">Запросы</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="buy4">
+
+                                    </div>
+                                    <div class="tab-pane fade pad" id="sell4">
+                                        <div class="clearfix pad mar-bot post">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-10 row">
+                                                        <div class="col-sm-12 row">
+                                                            <div class="col-sm-2 pull-left">
+                                                                <div class="col-sm-12 pad">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            Доступность
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            <span>322</span><span> дня</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            Добавлено
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-12 align-left">
+                                                                            <span>01.03.2014</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-1 pull-left pad">
+                                                                <img src="images/ava.png" class="img-rounded">
+                                                            </div>
+                                                            <div class="col-sm-8">
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <h4><a href="#">Заголовок инвестиции</a></h4>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <ul class="breadcrumb">
+                                                                            <li><a href="#">Раздел</a></li>
+                                                                            <li><a href="#">Подраздел</a></li>
+                                                                            <li class="active">Категория</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <p>Здесь будет размещено полное описание инвестиции обрезано на 5-й строке. При клике на краткое описание разворачивается карточка товара/услуги, где видны все атрибуты</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <a href="#"><span>Винница</span></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="row pad text-center">
+                                                            <span>3 000 000 грн</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="row pad">
+                                                            <a href="#">
+                                                                <span class="glyphicon glyphicon-pencil pull-right"></span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="row pad">
+                                                            <a href="#">
+                                                                <span class="glyphicon glyphicon-remove pull-right"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <form action="#" class="form-horizontal" role="form">
+                            <div class="row clearfix center-block">
+                                <h4>
+                                    Основная информация
+                                </h4>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="form-group col-sm-12">
+                                    <div class="col-sm-10">
+                                        <div class="form-group">
+                                            <label for="last-name" class="col-sm-2 control-label">Фамилия</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="last-name" type="text" class="form-control" placeholder="Буцко">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="first-name" class="col-sm-2 control-label">Имя</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="first-name" type="text" class="form-control" placeholder="Василий">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="father-name" class="col-sm-2 control-label">Отчество</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="father-name" type="text" class="form-control" placeholder="Васильевич">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="date" class="col-sm-2 control-label">Дата рождения</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="date" type="text" class="form-control" placeholder="13.02.1985">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="passp" class="col-sm-2 control-label">Паспорт</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="passp" type="text" class="form-control" placeholder="МК 896523">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="given1" class="col-sm-2 control-label">Выдан</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="given1" type="text" class="form-control" placeholder="Винницким РГВУМС">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="given2" class="col-sm-2 control-label">Дата выдачи</label>
+                                            <div class="input-holder col-sm-8 ">
+                                               <input id="given2" type="text" class="form-control" placeholder="12 апреля 2001 года">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="inn" class="col-sm-2 control-label">ИНН</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="inn" type="text" class="form-control" placeholder="1234567891234">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <img src="images/ava.png" class="img-rounded">
+                                    </div>
+                                    <div class="row clearfix center-block col-sm-10">
+                                        <h4>
+                                            Контактная информация
+                                        </h4>
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <div class="form-group">
+                                            <label for="adr" class="col-sm-2 control-label">Адрес</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="adr" type="text" class="form-control" placeholder="5300, г. Винница, Мира, 43">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="el-adr" class="col-sm-2 control-label">Эл. адрес</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="el-adr" type="text" class="form-control" placeholder="123@123.com">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tel1" class="col-sm-2 control-label">Телефон 1</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="tel1" type="text" class="form-control" placeholder="+38 (068) 456 45 45">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="tel2" class="col-sm-2 control-label">Телефон 2</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="tel2" type="text" class="form-control" placeholder="+38 (068) 456 78 78">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="fax" class="col-sm-2 control-label">Факс</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="fax" type="text" class="form-control" placeholder="+38 (068) 456 78 78">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="web-site" class="col-sm-2 control-label">web-сайт</label>
+                                            <div class="input-holder col-sm-8 ">
+                                                <input id="web-site" type="text" class="form-control" placeholder="oursite.com">
+                                            </div>
+                                        </div>
+                                        <div class="row clearfix center-block col-sm-10">
+                                            <h4>
+                                                <a href="#">Сменить пароль</a>
+                                            </h4>
+                                        </div>
+                                        <div class="col-sm-12 text-center">
+                                            <a class="btn btn-default btn-success" href="#">Сохранить</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="comments">
+                        <div class="row clearfix center-block">
+                            <h4>42 комментария</h4>
+                        </div>
+                        <div class="row comment mar-bot">
+                            <div class="col-sm-12">
+                                <div class="margined">
+                                    <img src="images/ava.png" class="img-rounded">
+                                    <span>Имя Фамилия</span>
+                                    <p>2014-03-01 16:01</p>
+                                    <ol class="breadcrumb">
+                                        <li><a href="#">Раздел</a></li>
+                                        <li><a href="#">Подраздел</a></li>
+                                        <li><a href="#">Категория</a></li>
+                                        <li class="active">Название товара/услуги</li>
+                                    </ol>
+                                    <p>Плохая услуга. Мне не понравилось</p>
+                                    <a class="btn btn-default" href="#">Редактировать</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row comment mar-bot">
+                            <div class="col-sm-12">
+                                <div class="margined">
+                                    <img src="images/ava.png" class="img-rounded">
+                                    <span>Имя Фамилия</span>
+                                    <p>2014-03-01 16:01</p>
+                                    <ol class="breadcrumb">
+                                        <li><a href="#">Раздел</a></li>
+                                        <li><a href="#">Подраздел</a></li>
+                                        <li><a href="#">Категория</a></li>
+                                        <li class="active">Название товара/услуги</li>
+                                    </ol>
+                                    <p>Плохая услуга. Мне не понравилось</p>
+                                    <a class="btn btn-default" href="#">Редактировать</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row comment mar-bot">
+                            <div class="col-sm-12">
+                                <div class="margined">
+                                    <img src="images/ava.png" class="img-rounded">
+                                    <span>Имя Фамилия</span>
+                                    <p>2014-03-01 16:01</p>
+                                    <ol class="breadcrumb">
+                                        <li><a href="#">Раздел</a></li>
+                                        <li><a href="#">Подраздел</a></li>
+                                        <li><a href="#">Категория</a></li>
+                                        <li class="active">Название товара/услуги</li>
+                                    </ol>
+                                    <p>Плохая услуга. Мне не понравилось</p>
+                                    <a class="btn btn-default" href="#">Редактировать</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="rates">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="clearfix pad mar-bot post">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-10 row">
+                                                <div class="col-sm-12 row">
+                                                    <div class="col-sm-2 pull-left">
+                                                        <div class="row pad">
+                                                            <div class="col-sm-12  align-left">
+                                                                <span>01.03.2014</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-12  align-left">
+                                                                <span>16:01</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1 pull-left pad">
+                                                        <img src="images/ava.png" class="img-rounded">
+                                                    </div>
+                                                    <div class="col-sm-8">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <h4><a href="#">Название товара/услуги</a></h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <ul class="breadcrumb">
+                                                                    <li><a href="#">Раздел</a></li>
+                                                                    <li><a href="#">Подраздел</a></li>
+                                                                    <li class="active">Категория</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <p>Здесь будет размещено краткое описание товара или услуги...</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <div class="row pad text-center">
+                                                    <div class="row">
+                                                        Моя оценка
+                                                    </div>
+                                                    <div class="row">
+                                                        +5
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <div class="row pad">
+                                                    <a href="#">
+                                                        <span class="glyphicon glyphicon-pencil pull-right"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+    </div>
+
+
+
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.9.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

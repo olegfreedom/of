@@ -1,0 +1,17 @@
+<form class="location-form-validator add" action="<?php echo($this->easyUrl(array('action' => 'location-add'))); ?>" method="post">
+  <fieldset>
+    <legend>Добавление местонахождение</legend>
+    <div class="control-group">        
+        <label class="control-label">Название</label>
+        <div class="controls">
+            <input type="text" name="name" placeholder="Введите текст…" maxlength="50" value="">
+        </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Сохранить</button>
+      <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'location'))); ?>">Отменить</a>
+    </div>
+  </fieldset>
+  <input type="hidden" name="add-form" value="0">
+  <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'location-validator'))); ?>">
+</form>

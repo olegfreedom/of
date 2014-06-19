@@ -1,0 +1,85 @@
+<?php /*
+<div class="header-cover">
+    <header class="header container">
+        <nav>
+            <ul>
+                <li<?php echo(($this->routeNames('module') == 'application' && $this->routeNames('controller') == 'about-us') ? ' class="active"' : ''); ?>>
+                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'about-us'))); ?>">O нас</a>
+                </li>
+                <li<?php echo(($this->routeNames('module') == 'application' && $this->routeNames('controller') == 'contact-us') ? ' class="active"' : ''); ?>>
+                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'contact-us'))); ?>">Обратная связь</a>
+                </li>                
+                
+                <li<?php echo(($this->routeNames('module') == 'application' && $this->routeNames('controller') == 'faq') ? ' class="active"' : ''); ?>>
+                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'faq'))); ?>">FAQ</a>
+                </li>
+            </ul>
+        </nav>
+        <h1 class="logo2"><a href="<?php echo($this->basePath('/')); ?>"><?php echo($this->siteName()); ?></a></h1>
+
+        <?php echo($this->partial('profile-partials/login-holder.phtml')); ?>
+        <?php echo($this->partial('partials/testimonial-popup.phtml')); ?>
+        <a class="opinion" href="#call-form">Оставить отзыв о сайте</a>
+    </header>
+</div>
+
+<div class="popup-holder">
+	<div id="call-form">
+		<form class="testimonial-main-form" action="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'testimonials', 'action' => 'add'))); ?>" method="post">
+			<h2>
+				отзывы о сайте
+			</h2>
+			<div class="popup-rating">
+				<section class="form-searching">
+					<span><b>Оцените, пожалуйста, удобство пользования сайтом</b></span>
+					<div class="row">
+						<div class="testi-star">
+							<div class="rating-testimonial-box">
+								<div class="rating-testimonial">
+									<input name="val" value="0" type="hidden">
+								</div>
+								<input type="hidden" name="rate" class="rating-vote-score" value="0"/>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="wrp">
+				<p>Выберите Тип Отзыва</p>
+
+				<ul class="req_type">
+					<li>
+						<label for="grate"><a class="grate"></a><span>Благодарность</span></label>
+						<input type="checkbox" name="type" value="grate" id="grate" >
+					</li>
+					<li class="active">
+						<label for="advice"> <a class="advice"></a> <span>Предложение</span></label>
+						<input type="checkbox" checked="checked" name="type" value="advice" id="advice">
+					</li>
+					<li class="diff">
+						<label for="complaint"> <a class="complaint"></a> <span>Жалоба</span></label>
+						<input type="checkbox" name="type" value="complaint" id="complaint">
+					</li>
+				</ul>
+				<div class="form-holder">
+					<div class="row">
+						<label for="pers_name">Представьтесь</label>
+						<input id="pers_name" type="text" name="name" maxlength="150" value="" placeholder="Имя и фамилия">
+					</div>
+					<div class="row">
+						<label for="email">Эл. почта</label>
+						<input id="email" type="text" name="email" maxlength="200" value="" placeholder="Введите эл. почту">
+					</div>
+					<div class="row">
+						<label for="message">Сообщение</label>
+						<textarea id="message" cols="30" rows="10" name="message" maxlength="1000" placeholder="Введите текст сообщения"></textarea>
+					</div>
+				</div>
+				<input class="sbmt-gr" type="submit" value="Отправить">
+			</div>
+			<input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'testimonials', 'action' => 'validator'))); ?>">
+		</form>
+	</div>
+</div>
+
+ */ ?>

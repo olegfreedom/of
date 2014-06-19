@@ -1,0 +1,96 @@
+<?php   $this->headLink()->appendStylesheet('/cms/assets/css/catalog.css');
+        $this->headScript()->appendFile('/cms/assets/js/question.js'); ?>
+
+<fieldset style='border:1px dotted #5CB85C; border-radius:6px;'>
+    <legend style='color:#5CB85C; font-size:14pt; font-weight:bold; padding:5px;'>
+        <?php echo $this->groupData['type_organization_title'].': '.$this->groupData['title'];?> 
+    </legend>
+    <table width='100%' cellpadding='3' cellspacing='3'>
+        <tr valign='top'>
+            <td style='background-color:f5f5f7;'>
+                <fieldset style='border:1px dotted #5CB85C; border-radius:6px;'>
+                    <legend style='color:#5CB85C; font-size:12pt; font-weight:bold; padding:5px;'>
+                        ОБГОВОРЕННЯ: <?php echo $this->themeData['title'];?>
+                    </legend>
+                    <form action="" method="post" name="question">
+                        <div>
+                            <input type="hidden" name="id_group" value="<?php echo $this->groupData['id'];?>">
+                            <input type="hidden" name="id_theme" value="<?php echo $this->themeData['id'];?>">
+                            <input type='text' placeholder='Додати питання для обговорення...' style='width:85%;' name="title">
+                            <input type='submit' value=' Додати '>
+                        </div>
+                        <div><textarea name="description" style="width:85%" placeholder="Деталі поставленого питання..."></textarea></div>
+                    </form>
+                    <fieldset style='border:1px dotted #5CB85C; border-radius:6px;'>
+                        <legend style='color:#5CB85C; font-size:12pt; font-weight:bold; padding:5px;'>Питання для обговорення</legend>
+                        <table style='width:100%; font-size:8pt; color:fff;text-align:center; padding:0px;'>
+                            <tr style='background-color:#5cb85c;'>
+                                <td>№</td>
+                                <td>Питання / пропозиція</td>
+                                <td>Проголосувало</td>
+                                <td>Моя / середня<br>оцінка</td>
+                            </tr>
+                            <?php $i =0; foreach($this->questionDataList as $key => $value): $i++ ;?>
+                            <tr style='color:#333;' attr-id ="<?php echo $value['id'];?>" >
+                                <td><?php echo $i;?>.</td>
+                                <td style='text-align:left;'><?php echo $value['title'];?></td>
+                                <td><?php if(empty($value['count_user_vote'])) echo '0'; else echo $value['count_user_vote'];?>/20</td>
+                                <td>голосувати<span style="float:right">
+                                    <img src="/cms/assets/image/edit.jpg" class="forum_img_event edit">
+                                        &nbsp
+                                    <img src="/cms/assets/image/delete.jpg" class="forum_img_event delete"></span>
+                                </td>
+                            </tr>
+                            <?php endforeach;?>
+                        </table>
+                    </fieldset>
+                    
+                    <?php foreach($this->questionDataList as $key => $value): ?>
+                    <fieldset style='border:1px dotted #5CB85C; border-radius:6px; font-size:8pt;'>
+                        <legend style='color:#5CB85C; font-size:12pt; font-weight:bold; padding:5px;'>Обговорення <?php echo $value['title'];?></legend>
+                        <div><?php echo $value['description']; ?></div>
+                        <table width='100%' style='font-size:8pt;'>
+                          
+
+                        </table>
+                        <div style='margin-top:10px; border-top:1px dotted; border-bottom:1px dotted; margin:10px;'>
+                            <div style='margin:10px;'>
+                                <input type='text' placeholder='Додати свій коментар...' style='width:80%;'>
+                                <input type='submit' value=' Додати '>
+                            </div>
+                        </div>
+                        <table width='100%'>
+                            <tr>
+                                <td>
+                                    <table style='font-size:7pt;'>
+                                        <tr>
+                                            <?php for($i =-5; $i<=5; $i++):?>
+                                                <td><input type='radio'></td>
+                                            <?php endfor;?>
+                                        </tr>
+                                        <tr>
+                                            <?php for($i =-5; $i<=5; $i++):?>
+                                                <td style='text-align:center;'><?php echo $i;?></td>
+                                            <?php endfor;?>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td>
+                                    <input type='submit' value='ОЦІНИТИ' style='padding:20px 20px 20px 20px;'>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <?php endforeach; ?>
+            </td>
+            <td width='200px' style='background-color:f5f5f7;'>
+                <div style='color:5cb85c; border-bottom:1px solid #5cb85c;font-weight:bold; padding:3px; margin-bottom:5px;'>Меню організації</div>
+                <a href='javascript:;' class='leftMenu'>Новини</a>
+                <a href='javascript:;' class='leftMenu'>Члени кооперативу</a>
+                <a href='javascript:;' class='leftMenu'><b>Обговорення</b></a>
+                <a href='javascript:;' class='leftMenu'>Документи</a>
+                <a href='javascript:;' class='leftMenu'> . . . </a>
+            </td>
+        </tr>
+    </table>
+</fieldset>

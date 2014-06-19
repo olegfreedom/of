@@ -1,0 +1,69 @@
+/**
+ * Use to URL:
+ *  /adverts/view
+ *  /adverts/view/*
+ */
+
+
+#popup-comment-add .comment-form textarea {
+    height: 100px !important;
+    margin: 0 0 10px;
+    width: 330px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content .description{
+    margin: 15px 0;
+}
+.content > article{
+    margin-bottom: 10px;
+}
+
+#testimonialsForm.content{
+    width: auto;
+}
+
+#testimonialsForm.content #popup1 {
+    padding: 20px 17px;
+    width: 720px;
+}
+
+.testi-star.rating-static .vote-wrap div.vote-hover{
+    cursor: default;
+}
+
+.form-searching .send-sms{
+    cursor: pointer;
+}
+.post-info .related-header {
+    font: 15px/15px 'pf_agora_sans_prothin';
+    color: #515151;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.post-info a {
+    text-decoration: none;
+}
+.gallery-bottom-holder .galleryka-holder .gmask ul li .post-info img {
+    height: 70px;
+    width: 70px;
+}
+
+.post-info-place .city {
+    text-align: left;
+}
+
+.prce {
+    margin: 18px 0;
+}

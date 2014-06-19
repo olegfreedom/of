@@ -1,0 +1,107 @@
+<div class="wrapper faq-page">
+	<div class="wrapper-center">
+		<section class="faq">
+			<h1>
+				<span>Faq</span>
+			</h1>
+			<h3>Часто задаваемые вопросы
+				<span>У нас вы найдете ответы:</span>
+			</h3>
+            
+            <?php foreach($faqList as $item) { ?>
+            <article class="typical">
+				<div class="typical<?php echo($item['typical']); ?>-holder">
+					<div class="typical-content">
+                        <?php if ($item['number'] == 5) { ?>
+                            <div id="anchor-howto"></div>
+                        <?php } ?>
+						<div class="visual fl-<?php echo($item['position']); ?>">
+							<img src="<?php echo($this->basePath().'/img/img-'.$item['number'].'-typical.png'); ?>" alt=""/>
+						</div>
+						<div class="text toggle-block fade">
+							<span class="number"><?php echo($item['number']); ?></span>
+							<h4><?php echo($item['title']); ?></h4>
+                            <p class="short-text">
+								<?php echo ($this->truncate($item['content'],1000)); ?>
+                            </p>
+							<div class="slide">
+                                <p>            
+                                    <?php echo ($item['content']); ?>
+                                </p>
+								<div class="wrap">
+									<a class="new_adverticement" href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => (isset($_SESSION['profile']->auth['id']) ? 'index' : 'guest'), 'action' => 'add'))); ?>">
+										<span></span>
+										подать объявление
+									</a>
+								</div>
+							</div>
+							<a href="#" class="opener"></a>
+						</div>
+					</div>
+				</div>
+			</article>
+            <?php } ?>
+            
+		</section>
+		<div class="top-raising">
+			<h2>Сколько стоит разместить ТОП-объявление</h2>
+			<div class="top-raising-holder">
+				<ul>
+					<li>
+						<a class="price1" href="#">
+							<span>7 дней</span>
+							<em>150тг</em>
+						</a>
+					</li>
+					<li>
+						<a class="price2" href="#">
+							<span>15 дней</span>
+							<em>190тг</em>
+						</a>
+					</li>
+					<li>
+						<a class="price3" href="#">
+							<span>30 дней</span>
+							<em>200тг</em>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="wrap">
+			<a class="new_adverticement fq-btn" href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => (isset($_SESSION['profile']->auth['id']) ? 'index' : 'guest'), 'action' => 'add'))); ?>">
+				<span></span>
+				подать объявление
+			</a>
+		</div>
+		<!-- /container -->
+		<div class="popup-holder">
+			<div id="popup1">
+				<section class="popup-opinion">
+					<h1>Обратная связь</h1>
+					<form>
+						<div class="col">
+							<div class="row">
+								<label for="name1">Представьтесь</label>
+								<input id="name1" type="text" placeholder="Имя и фамилия"/>
+							</div>
+							<div class="row">
+								<label for="mail">Эл.почта</label>
+								<input id="mail" type="text" placeholder="Введите эл. почту"/>
+							</div>
+							<div class="row">
+								<label for="tel">Номер телефона</label>
+								<input id="tel" type="text" placeholder="Введите номер телефона"/>
+							</div>
+						</div>
+						<div class="col">
+							<label for="comment">Сообщение</label>
+								<textarea name="comment" id="comment" cols="30" rows="10" placeholder="Ваш комментарий"></textarea>
+						</div>
+						<button class="sbmt-gr" value="подобрать" type="submit">отправить</button>
+					</form>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>

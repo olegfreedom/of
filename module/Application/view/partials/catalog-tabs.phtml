@@ -1,0 +1,73 @@
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="controlls">
+        <ul id="tabs2" class="nav nav-tabs">
+            <li class="active"><a href="#products" data-toggle="tab">Товары</a></li>
+            <li><a href="#services" data-toggle="tab">Услуги</a></li>
+            <li><a href="#technologies" data-toggle="tab">Технологии</a></li>
+            <li><a href="#investments" data-toggle="tab">Инвестиции</a></li>
+        </ul>
+        <div class="tab-content pad">
+            <div class="tab-pane fade active in" id="products">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#products-sell" data-toggle="tab">Продам</a></li>
+                    <li><a href="#products-buy" data-toggle="tab">Куплю</a></li>
+                </ul>
+                <div class="tab-content pad">
+                    <div class="tab-pane fade active in" id="products-sell">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_PRODUCT_SELL)); ?>
+                    </div>
+                    <div class="tab-pane fade" id="products-buy">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_PRODUCT_BUY)); ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="services">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#services-sell" data-toggle="tab">Продам</a></li>
+                    <li><a href="#services-buy" data-toggle="tab">Куплю</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="services-sell">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_SERVICE_SELL)); ?>
+                    </div>
+                    <div class="tab-pane fade" id="services-buy">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_SERVICE_BUY)); ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="technologies">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#technologies-buy" data-toggle="tab">Вложения</a></li>
+                    <li><a href="#technologies-sell" data-toggle="tab">Запросы</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="technologies-buy">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_TECHNOLOGIES_BUY)); ?>
+                    </div>
+                    <div class="tab-pane fade active in" id="technologies-sell">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_TECHNOLOGIES_SELL)); ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="investments">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#investments-buy" data-toggle="tab">Вложения</a></li>
+                    <li><a href="#investments-sell" data-toggle="tab">Запросы</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="investments-buy">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_INVESTMENTS_BUY)); ?>
+                    </div>
+                    <div class="tab-pane fade active in" id="investments-sell">
+                        <?php echo $this->partial($advertListPartial, array('advertsList' => $advertsList, 'type' => $Model::TYPE_INVESTMENTS_SELL)); ?>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

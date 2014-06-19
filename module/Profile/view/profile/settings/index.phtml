@@ -1,0 +1,205 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Личный кабинет
+                </h1>
+            </div>
+            <!-- Nav tabs -->
+            <?php echo($this->partial('profile-partials/tabs-menu.phtml')); ?>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div id="profile"> <!--  class="tab-pane fade" -->
+                    <form action="<?php echo($this->easyUrl(array('action' => 'edit'))); ?>" enctype="multipart/form-data" class="profile form-validator form-horizontal" method="post" role="form">
+                        <div class="row clearfix center-block">
+                            <h4>
+                                Основная информация
+                            </h4>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="form-group col-sm-12">
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label for="lastname" class="col-sm-2 control-label">Фамилия *</label>
+                                        <div class="input-holder col-sm-8 lastname">
+                                            <input name="lastname" id="lastname" type="text" class="form-control" placeholder="Буцко" value="<?php echo(isset($getEdit['lastname']) ? $getEdit['lastname'] : ''); ?>" />
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="firstname" class="col-sm-2 control-label">Имя *</label>
+                                        <div class="input-holder col-sm-8 firstname">
+                                            <input name="firstname" id="firstname" type="text" class="form-control" placeholder="Василий" value="<?php echo(isset($getEdit['firstname']) ? $getEdit['firstname'] : ''); ?>" />
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="secondname" class="col-sm-2 control-label">Отчество *</label>
+                                        <div class="input-holder col-sm-8 secondname">
+                                            <input name="secondname" id="secondname" type="text" class="form-control" placeholder="Васильевич" value="<?php echo(isset($getEdit['secondname']) ? $getEdit['secondname'] : ''); ?>" />
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="date" class="col-sm-2 control-label">Дата рождения</label>
+                                        <div class="input-holder col-sm-8 ">
+                                            <input name="birthday" id="date" type="text" class="span2 datepicker form-control" placeholder="12.04.2001" value="<?php echo(isset($getEdit['birthday']) ? $getEdit['birthday'] : ''); ?>" />
+                                            <span class="add-on"><i class="icon-th"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passp" class="col-sm-2 control-label">Паспорт</label>
+                                        <div class="input-holder col-sm-8 ">
+                                            <input name="passport_series" id="passp" type="text" class="form-control" placeholder="МК 896523" value="<?php echo(isset($getEdit['passport_series']) ? $getEdit['passport_series'] : ''); ?>" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="given1" class="col-sm-2 control-label">Кем выдан</label>
+                                        <div class="input-holder col-sm-8 ">
+                                            <input name="passport_data" id="given1" type="text" class="form-control" placeholder="Винницким РГВУМС" value="<?php echo(isset($getEdit['passport_data']) ? $getEdit['passport_data'] : ''); ?>" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="given2" class="col-sm-2 control-label">Дата выдачи</label>
+                                        <div class="input-holder date col-sm-8">
+                                            <input name="passport_receive_date" id="given2" type="text" class="span2 datepicker form-control" placeholder="12.04.2001" value="<?php echo(isset($getEdit['passport_receive_date']) ? $getEdit['passport_receive_date'] : ''); ?>" />
+                                            <span class="add-on"><i class="icon-th"></i></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inn" class="col-sm-2 control-label">ИНН</label>
+                                        <div class="input-holder col-sm-8 ">
+                                            <input name="inn" id="inn" type="text" class="form-control" placeholder="1234567891234" value="<?php echo(isset($getEdit['inn']) ? $getEdit['inn'] : ''); ?>" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2">
+                                    <?php if ( !empty($getEdit ['avatar']) ): ?>
+                                        <img class="img-rounded" border="0" width="72" height="72" src="<?php echo $getEdit ['avatar_img']; ?>" />
+                                    <?php else: ?>
+                                        <img class="img-rounded" border="0" width="72" height="72" src="/img/ava.png" />
+                                    <?php endif; ?>
+                                </div>
+                                <div class="row clearfix center-block col-sm-10">
+                                    <h4>
+                                        Контактная информация
+                                    </h4>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label for="adr" class="col-sm-2 control-label">Адрес *</label>
+                                        <div class="input-holder col-sm-8 address">
+                                            <input name="address" id="adr" type="text" class="form-control" placeholder="ул. Мира, 43" value="<?php echo(isset($getEdit['address']) ? $getEdit['address'] : ''); ?>" />
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+
+                                    <?php echo($this->partial('profile-partials/location-box.phtml', array('getEdit' => $getEdit, 'regionList' => $regionList, 'label_class' => 'col-sm-2', 'input_class' => 'col-sm-8'))); ?>
+
+                                    <div class="form-group">
+                                        <label for="el-adr" class="col-sm-2 control-label">Эл. адрес</label>
+                                        <div class="input-holder col-sm-8 username">
+                                            <input name="username" id="el-adr" type="text" class="form-control" placeholder="Введите эл. почту" value="<?php echo(isset($getEdit['username']) ? $getEdit['username'] : ''); ?>" />
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tel1" class="col-sm-2 control-label">Телефон 1</label>
+                                        <div class="input-holder col-sm-8 phone1">
+                                            <input name="phone1" id="tel1" type="text" class="form-control" placeholder="+38 (068) 456 45 45" value="<?php echo(isset($getEdit['phone1']) ? $getEdit['phone1'] : ''); ?>" />
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tel2" class="col-sm-2 control-label">Телефон 2</label>
+                                        <div class="input-holder col-sm-8 ">
+                                            <input name="phone2" id="tel2" type="text" class="form-control" placeholder="+38 (068) 456 78 78" value="<?php echo(isset($getEdit['phone2']) ? $getEdit['phone2'] : ''); ?>" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="fax" class="col-sm-2 control-label">Факс</label>
+                                        <div class="input-holder col-sm-8 ">
+                                            <input name="fax" id="fax" type="text" class="form-control" placeholder="+38 (068) 456 45 45" value="<?php echo(isset($getEdit['fax']) ? $getEdit['fax'] : ''); ?>" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="web-site" class="col-sm-2 control-label">web-сайт</label>
+                                        <div class="input-holder col-sm-8 ">
+                                            <input name="website" id="web-site" type="text" class="form-control" placeholder="oursite.com" value="<?php echo(isset($getEdit['website']) ? $getEdit['website'] : ''); ?>" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="about" class="col-sm-2 control-label">О себе</label>
+                                        <div class="input-holder col-sm-8">
+                                            <textarea id="about" class="form-control" name="about" cols="30" rows="10"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="img" class="col-sm-2 control-label">Аватар</label>
+                                        <div class="input-holder col-sm-8">
+                                            <div class="wrap img">
+                                                <div class="row clearfix">
+                                                    <ul class="files-upload">
+                                                        <li><input title="Загрузить" name="avatar" type="file" /><span class="file-input-name"><?php echo $getEdit ['avatar_name']; ?></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="row clearfix center-block col-sm-10">
+                                    <h4>
+                                        Смена пароля
+                                    </h4>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <label for="pasw" class="col-sm-2 control-label">Старый пароль *</label>
+                                        <div class="input-holder col-sm-8 old_password">
+                                            <input id="pasw" type="password" placeholder="Введите старый пароль" name="old_password" class="form-control">
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pasw" class="col-sm-2 control-label">Новый пароль *</label>
+                                        <div class="input-holder col-sm-8 password">
+                                            <input id="pasw" type="password" placeholder="Введите пароль" name="password" class="form-control">
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pasw_repeat" class="col-sm-2 control-label">Подтверждение пароля *</label>
+                                        <div class="input-holder col-sm-8 retry_password">
+                                            <input id="pasw_repeat" type="password" placeholder="Введите повторно пароль" name="retry_password" class="form-control">
+                                            <span class="errors">* Заполните обязательное поле</span>
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>" />
+                                    <input type="hidden" name="settings-form" value="0" />
+                                    <a onclick="$(this).closest('form').submit()" class="btn btn-default send-btn btn-success">Сохранить</a>
+                                </div>
+
+                                <div class="col-sm-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</div>

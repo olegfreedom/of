@@ -1,0 +1,96 @@
+</div>
+</div>
+
+
+<?php if ( !isset($_SESSION['profile']->auth['id']) ): ?>
+    <?php echo $this->partial('popups/register-request.phtml', array('url' => $currentUrl)); ?>
+<?php endif; ?>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-xs-2 clearfix">
+                <strong class="logo"><a href="/">Future</a></strong>
+            </div>
+            <div class="col-sm-10 col-xs-10 footer-holder">
+                <div class="row">
+                    <div class="col-sm-10 col-xs-10 clearfix">
+                        <div class="sub-nav">
+                            <div class="col-sm-3 col-xs-3">
+                                <div class="holder">
+                                    <h5>Информация</h5>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'about'))); ?>">O нас</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'how'))); ?>">Как это работает</a>
+                                </div>
+                                <div class="holder">
+                                    <h5>Фильтры поиска</h5>
+                                    <a href="#">по категории</a>
+                                    <a href="#">по территории</a>
+                                    <a href="#">по времени</a>
+                                    <a href="#">по цене</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <div class="holder">
+                                    <h5>Площадки</h5>
+                                    <h6>Предлагаю</h6>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'sellprod'))); ?>">товары</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'sellservice'))); ?>#">услуги</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'sellinvestment'))); ?>#">инвестиции</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'selltechnology'))); ?>">технологии</a>
+                                    <h6>Заказываю</h6>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'buyprod'))); ?>#">товары</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'buyservice'))); ?>">услуги</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'buyinvestment'))); ?>">инвестиции</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'buytechnology'))); ?>#">технологии</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <div class="holder">
+                                    <h5>Дополнительная информация</h5>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'progr'))); ?>">Программы</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'concepts'))); ?>">Концепция</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'biz'))); ?>#">Бизплан</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'cooperate'))); ?>">Кооперация и партенеры</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'ask'))); ?>">Обращения</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'science'))); ?>#">Наука про кооперацию</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'coopworld'))); ?>">Кооперация в мире</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'blogs'))); ?>">Блоги</a>
+                                    <a href="http://91.222.136.22/vb5/">Форум</a>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3">
+                                <div class="holder">
+                                    <h5>Навигация</h5>
+                                    <a href="/">На главную</a>
+                                    <a href="<?php echo($this->easyUrl(array('module'=>'profile','controller'=>'login')));?>">Войти в аккаунт</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'tester'))); ?>">Карта сайта</a>
+                                    <h5>Контакты</h5>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'tester'))); ?>">Тел:</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'tester'))); ?>">E-mail:</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'tester'))); ?>">Skype:</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'tester'))); ?>">ICQ:</a>
+                                    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'system', 'action' => 'tester'))); ?>">Показать на карте</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 col-xs-2 clearfix">
+                        <h5 class="social-title">Мы в соц сетях:</h5>
+                        <ul class="socials">
+                            <li><a href="https://www.vk.com" class="vk" target="_blank">vk</a></li>
+                            <li><a href="https://www.facebook.com/" class="fb" target="_blank">fb</a></li>
+                            <li><a href="https://twitter.com/" class="tw" target="_blank">twitter</a></li>
+                            <li><a href="http://www.odnoklassniki.ru/" class="ok" target="_blank">ok</a></li>
+                            <li><a href="https://www.youtube.com/" class="yt" target="_blank">yt</a></li>
+                            <li><a href="http://www.livejournal.com/" class="hz" target="_blank">hz</a></li>
+                            <li><a href="https://www.google.com" class="ggl" target="_blank">google</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</footer>

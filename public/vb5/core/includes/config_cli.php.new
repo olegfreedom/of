@@ -1,0 +1,33 @@
+<?php
+/*======================================================================*\
+|| #################################################################### ||
+|| # vBulletin Core Configuration                                     # ||
+|| # ---------------------------------------------------------------- # ||
+|| # All PHP code in this file is ©2000-2012 vBulletin Solutions Inc. # ||
+|| # This file may not be redistributed in whole or significant part. # ||
+|| # ---------------- VBULLETIN IS NOT FREE SOFTWARE ---------------- # ||
+|| # http://www.vbulletin.com | http://www.vbulletin.com/license.html # ||
+|| #################################################################### ||
+\*======================================================================*/
+
+/*----------------------------------------------------------------------*\
+|        ****** NOTE REGARDING THE VARIABLES IN THIS FILE ******         |
++------------------------------------------------------------------------+
+|                                                                        |
+| When making changes to the file, the edit should always be to the      |
+| right of the = sign between the single quotes                          |
+| Default: $config['admincpdir'] = 'admincp';                            |
+| Example: $config['admincpdir'] = 'myadmin';  GOOD!                     |
+| Example: $config['myadmin'] = 'admincp'; BAD!                          |
+\*----------------------------------------------------------------------*/
+
+//CLI options
+$config_cli['cli']['forum_data']=array("bbtitle" =>"Forums", "bburl"=>"http://localhost","webmasteremail"=>"webmaster@localhost");
+$config_cli['cli']['cookie_data']=array("cookiepath_value" =>"","cookiedomain_value" =>"","cookiepath" => "/", "cookiedomain"  => "");
+$config_cli['cli']['user_data']=array("username" =>"", "password" =>"", "confirmpassword" => "", "email"  => "");
+/*======================================================================*\
+|| ####################################################################
+|| # Downloaded: 00:00, Thur Oct 15th 2015
+|| # CVS: $RCSfile$ - $Revision: 67851 $
+|| ####################################################################
+\*======================================================================*/

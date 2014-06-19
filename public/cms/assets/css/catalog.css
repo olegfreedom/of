@@ -1,0 +1,177 @@
+body {	
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: smaller;
+}
+div#tree {
+    position: absolute;
+    height: 95%;
+    width: 18%;
+    padding: 5px;
+    margin-right: 16px;
+}
+ul.fancytree-container {
+    height: 500%;
+    width: 100%;
+    background-color: transparent;
+}
+span.fancytree-title {
+    text-decoration: none;
+}
+span.fancytree-focused span.fancytree-title {
+    outline-color: white;
+}
+span.fancytree-node:hover span.fancytree-title,
+span.fancytree-active span.fancytree-title,
+span.fancytree-active.fancytree-focused span.fancytree-title,
+.fancytree-treefocus span.fancytree-title:hover,
+.fancytree-treefocus span.fancytree-active span.fancytree-title {
+    color: #39414A;
+}
+span.external span.fancytree-title:after {
+    content: "";
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAFVBMVEVmmcwzmcyZzP8AZswAZv////////9E6giVAAAAB3RSTlP///////8AGksDRgAAADhJREFUGFcly0ESAEAEA0Ei6/9P3sEcVB8kmrwFyni0bOeyyDpy9JTLEaOhQq7Ongf5FeMhHS/4AVnsAZubxDVmAAAAAElFTkSuQmCC") 100% 50% no-repeat;
+    padding-right: 13px;
+}
+/* Remove system outline for focused container */
+.ui-fancytree.fancytree-container:focus {
+    outline: none;
+}
+.ui-fancytree.fancytree-container {
+    border: none;
+}
+.forum_img_event{
+    width:15px;
+    padding:1px;
+}
+.forum_img_event:hover{
+    padding:0px;
+    border: 1px dashed green;
+    cursor: pointer;
+}
+/* ----------------------------- new style ------------------------------------ */
+.prevBlock,.textBlock {
+    font-family: Verbana,Tahoma;
+    font-size: 14px;
+    text-align: justify;
+    margin:0px 15px 0px 0px;
+    color: #000000;
+    background-color:#ffffff;
+    padding:0 10px 0 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    width:100%;
+}
+.textBlock{
+    display:none;
+    margin-bottom:20px;
+}
+.opCl58{
+    font-family: Verbana,Tahoma;
+    font-size: 12px;
+    margin:0 15px 0 0px;
+    width:100%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    text-align:center;
+    position: relative;
+    top: -20px;
+    padding-top:15px;
+    background-image: url('images/fontop.png');
+    background-position:bottom;
+    background-repeat:no-repeat;
+    cursor:pointer;
+}
+/* ------------------------------------------------------------------------ */
+.tabHeader{
+    font-size:12pt;
+    font-weight:bold;
+    color:#fff;
+    text-align:center;
+    background:#5cb85c;
+    border:1px solid;
+}
+.tabDate{
+    width:250px;
+    font-size:10pt;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #5cb85c;
+}
+.tabType{
+    width:70px;
+    font-size:10pt;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #5cb85c;
+}
+.tabStatus{
+    width:70px;
+    font-size:10pt;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #5cb85c;
+}
+.tabData{
+    font-size:10pt;
+    color:#333;
+    text-align:justify;
+    border-bottom:1px solid #5cb85c;
+}
+.tabQuest{
+    width:70px;
+    font-size:10pt;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #5cb85c;
+}
+.tabPost{
+    width:70px;
+    font-size:10pt;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #5cb85c;
+}
+.vtcTitle{
+    font-size:10pt;
+    font-weight:bold;
+}
+.vtcDescription{
+    font-size:10pt;
+    font-style:italic;
+    padding:3px;
+    margin-top:5px;
+    border-top:1px dotted #5cb85c;
+}
+.trData:hover{
+    background:#cfcfcf;
+}
+.tabHeader{
+    font-size:12pt;
+    font-weight:bold;
+    color:#fff;
+    text-align:center;
+    background:#5cb85c;
+    border:1px solid;
+}
+.tabDataJustify{
+    max-width:100px;
+    font-size:10pt;
+    font-weight:bold;
+    color:#333;
+    text-align:justify;
+    border-bottom:1px solid #5cb85c;
+}
+.tabDataCenter{
+    max-width:100px;
+    font-size:10pt;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+    border-bottom:1px solid #5cb85c;
+}

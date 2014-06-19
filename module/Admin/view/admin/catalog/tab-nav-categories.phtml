@@ -1,0 +1,14 @@
+<?php if(isset($categoryList) && is_array($categoryList)){ ?>
+    <?php foreach($categoryList as $item){ ?>
+        <?php if(isset($item['subcategory'])){ ?>                            
+            <li class="dropdown-submenu">
+                <a href="<?php echo($this->easyUrl(array('action' => 'index', 'category' => $item['id']))); ?>"><?php echo($item['name']); ?></a>
+                <ul class="dropdown-menu">
+                   <?php echo($this->partial('admin/catalog/tab-nav-categories.phtml', array('categoryList' => $item['subcategory']))); ?>
+               </ul>
+            </li>
+        <?php }else{ ?>                            
+            <li><a href="<?php echo($this->easyUrl(array('action' => 'index', 'category' => $item['id']))); ?>"><?php echo($item['name']); ?></a></li>
+        <?php } ?>
+    <?php } ?>
+<?php } ?>

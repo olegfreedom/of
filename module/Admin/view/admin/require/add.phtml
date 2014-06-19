@@ -1,0 +1,32 @@
+<form class="form-validator add" action="<?php echo($this->easyUrl(array('action' => 'add'))); ?>" method="post">
+    <fieldset>
+        <legend>Добавить</legend>
+        <div class="control-group">
+            <label class="control-label">Рубрика</label>
+            <div class="controls">
+                <?php if ($getCategory) { ?>
+                    <select class="selectpicker span3" name="category_id">
+                        <?php echo($this->partial('admin/catalog/category/add-category-select.phtml', array('categoryList' => $getCategory, 'tab' => ''))); ?>
+                    </select>
+                <?php } ?>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Поля</label>
+            <div class="controls">
+                <input type="checkbox" value="y" name="params[description]"> Описание
+            </div>
+            <div class="controls">
+                <input type="checkbox" value="y" name="params[phone]"> Телефон
+            </div>
+            <div class="controls">
+                <input type="checkbox" value="y" name="params[price]"> Цена
+            </div>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Отменить</a>
+        </div>
+    </fieldset>
+    <input type="hidden" name="add-form" value="1">
+</form>

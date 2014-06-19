@@ -1,0 +1,23 @@
+<?php if($logList){ ?>
+    <div class="row-fluid">
+        <div class="col">
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Запрос</th>
+                    <th>Количество</th>
+                    <th>Время</th>
+                </tr>
+                </thead>
+                <?php foreach($logList as $item){ ?>
+                    <tr>
+                        <td><?php echo($item['text']); ?></td>
+                        <td><?php echo($item['count']); ?></td>
+                        <td><?php echo($item['date']); ?></td>
+                    </tr>
+                <?php } ?>
+            </table>
+            <?php echo($this->partial('admin-partials/paginator.phtml', array('paginator' => $paginator))); ?>
+        </div>
+    </div>
+<?php } ?>

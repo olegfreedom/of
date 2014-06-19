@@ -1,0 +1,52 @@
+<div class="row-fluid">
+    <div class="col">
+        <div class="btn-toolbar vehicles-tab-nav">
+            <div class="btn-group">
+                <a class="btn<?php echo(($this->routeNames('action') == 'index') ? ' btn-primary' : ''); ?>" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Опции</a>
+                <button class="btn<?php echo(($this->routeNames('action') == 'index') ? ' btn-primary' : ''); ?> dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'add'))); ?>">Добавить</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Список</a></li>
+                    <?php if (isset($categoryList) && is_array($categoryList)) { ?>
+                        <li class="divider"></li>
+                        <?php echo($this->partial('admin/catalog/tab-nav-categories.phtml', array('categoryList' => $categoryList))); ?>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<?php if ($itemsList) { ?>
+    <div class="row-fluid">
+        <div class="col">
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Раздел</th>
+                    <th>Название</th>
+                    <th>Тип</th>
+                    <th class="action-box"></th>
+                </tr>
+                </thead>
+                <?php foreach ($itemsList as $item) { ?>
+                    <tr>
+                        <td>
+                            <?php if(isset($item['breadcrumbs']) && is_array($item['breadcrumbs'])){ ?>
+                                <?php echo($this->partial('admin/catalog/category/breadcrumbs.phtml', array('breadcrumbs' => $item['breadcrumbs']))); ?>
+                            <?php }else{ ?> 
+                                <a href="<?php echo($this->easyUrl(array('category' => $item['category_id']))); ?>"><?php echo($item['category_name']); ?></a>
+                            <?php } ?> 
+                        </td>
+                        <td><?php echo($item['name']); ?></td>
+                        <td><?php echo($item['type']); ?></td>
+                        <td class="action-box">
+                            <a href="<?php echo($this->easyUrl(array('action' => 'edit', 'id' => $item['id']), array(), true)) ?>" class="icon-edit" title="редактировать"></a>
+                            <a href="<?php echo($this->easyUrl(array('action' => 'remove', 'id' => $item['id']), array(), true)) ?>" class="icon-remove confirm-remove" title="удалить"></a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+            <?php echo($this->partial('admin-partials/paginator.phtml', array('paginator' => $paginator))); ?>
+        </div>
+    </div>
+<?php } ?>

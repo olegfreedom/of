@@ -1,0 +1,52 @@
+<div class="wrapper">
+    <div class="wrapper-center">
+        <div class="container">
+            <?php echo($this->partial('profile-partials/tabs-menu.phtml')); ?>
+            <div class="tab-content">
+                <section class="tab-item">
+                    <div class="section-content">
+                        <h1 class="section-heading">Баланс: <?php echo(isset($getStar) ? $getStar : 0); ?> <i
+                                class="ico-star-blue"></i></h1>
+                        <?php /* TODO: Временно закоментировано так как не подключена система оплаты ?>
+            <form action="<?php echo($this->easyUrl(array('action' => 'buy'))); ?>" class="form buy-stars" method="post">
+                <fieldset>
+                    <h2>Пополнение баланса</h2>
+                    <div class="row-holder">
+                        <div class="row">
+                            <label>Кол-во звезд</label>
+                            <div class="count-box">
+                                <div class="arrows">
+                                    <span class="up">up</span>
+                                    <span class="down">down</span>
+                                </div>
+                                <span class="stars-count" contenteditable="true">10</span>
+                                <i class="ico-star-blue"></i>
+                                <input type="hidden" class="stars-count-input" name="stars_count" value="10" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>Сумма к оплате</label>
+                            <span class="price-val"><span class="num">1000</span> руб.</span>
+                        </div>
+                        <div class="row accept-box">
+                            <input type="checkbox" id="accept-checkbox" name="accept" value="1" >
+                            <label for="accept-checkbox">С условиями Договора ознакомлен и согласен</label>
+                        </div>
+                    </div>
+                    <div class="submit-holder">
+                        <input type="submit" value="Перейти к оплате">
+                    </div>
+                </fieldset>
+                <input type="hidden" class="price-rate" name="price_rate" value="<?php echo(isset($getPriceRate) ? $getPriceRate : 1); ?>">
+            </form>
+            <?php */
+                        ?>
+                        <p>
+                            Для пополнения баланса обратитесь в наш офис.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

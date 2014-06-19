@@ -1,0 +1,42 @@
+<?php if ($getEdit) { ?>
+<form class="form-validator edit" action="<?php echo($this->easyUrl(array('action' => 'edit', 'id' => $getEdit['id']))); ?>" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Редактирование</legend>
+        <div class="cont">
+            <div class="control-group">
+                <div class="controls">
+                    <label class="control-label">Название</label>
+                    <input type="text" class="span3" name="title" value="<?php echo $getEdit['title']; ?>">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="control-label">URL</label>
+                    <input type="text" class="span3" name="url" value="<?php echo $getEdit['url']; ?>">
+                </div>
+            </div>
+            <label class="control-label">Размер</label>
+            <div class="controls">
+                <select class="type-option selectpicker span3" name="height">
+                    <option <?php echo ($getEdit['height'] == 240 ? 'selected="selected"' : ''); ?> value="240">200x240</option>
+                    <option <?php echo ($getEdit['height'] == 400 ? 'selected="selected"' : ''); ?> value="400">200x400</option>
+                </select>
+            </div>
+            <label class="control-label">Изображение</label>
+            <div class="controls">
+                <input type="file" name="img">
+            </div>
+            <?php if($getEdit['image']){ ?>
+                <br><br>
+                <img src="<?php echo($this->basePath().$getEdit['image']); ?>" alt="" class="photo-preview">
+            <?php } ?>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Отменить</a>
+            </div>
+        </div>
+    </fieldset>
+    <input type="hidden" name="edit-form" value="0">
+    <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+</form>
+<?php } ?>

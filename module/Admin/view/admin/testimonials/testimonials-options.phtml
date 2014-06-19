@@ -1,0 +1,22 @@
+<div class="col">        
+    <div class="btn-toolbar">
+        <div class="btn-group">
+            <a href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>"
+               class="btn <?php echo(($this->routeNames('action')=='index') ? ' btn-primary' : ''); ?>">
+                Отзывы
+            </a>
+        <button data-toggle="dropdown" 
+            class="btn <?php echo(($this->routeNames('action')=='index') ? ' btn-primary' : ''); ?> dropdown-toggle">
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Список</a></li>
+            <li class="divider"></li>
+            <li><a href="<?php echo($this->easyUrl(array('action' => 'index', 'type' => 'grate'))) ?>">Благодарность</a></li>
+            <li><a href="<?php echo($this->easyUrl(array('action' => 'index', 'type' => 'advice'))) ?>">Предложение</a></li>
+            <li><a href="<?php echo($this->easyUrl(array('action' => 'index', 'type' => 'complaint'))) ?>">Жалоба</a></li>
+            <li><a href="<?php echo($this->easyUrl(array('action' => 'index', 'type' => 'advert'))) ?>">Объявление: Отзыв</a></li>
+        </ul>
+        </div> 
+    </div>
+</div>

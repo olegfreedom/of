@@ -1,0 +1,123 @@
+<?php if($getEdit){ ?>
+<form class="form-validator edit" action="<?php echo($this->easyUrl(array('id' => $getEdit['id']), array(), true)); ?>" method="post" enctype="multipart/form-data">
+  <fieldset>
+    <legend>Редактирование</legend>
+    <div class="control-group">
+      <label class="control-label">Ищу / предлагаю</label>
+      <div class="controls">
+          <select class="selectpicker" name="type_id">
+              <?php foreach($getType as $item){ ?>
+                  <option value="<?php echo($item['id']); ?>"<?php echo(($item['id']==$getEdit['type']) ? ' selected="selected"' : ''); ?>><?php echo($item['name']); ?></option>
+              <?php } ?>
+          </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Заголовок</label>
+      <div class="controls">
+          <input class="span4" type="text" name="name" placeholder="Введите текст…" maxlength="50" value="<?php echo($getEdit['name']); ?>">
+      </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Рубрика</label>
+        <div class="controls">
+            <select class="selectpicker span3 load-category-options" name="category_id">
+              <?php echo($this->partial('admin/catalog/category/edit-category-select.phtml', array('categoryList' => $getCategory, 'parent_id' => $getEdit['category'], 'tab' => '', 'disabled' => true))); ?>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label options"></label>
+      <div class="control-group options">
+
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Короткое описание</label>
+      <div class="controls">
+          <textarea name="description_short" class="textarea-fix-size span5 tinymce" maxlength="20000" placeholder="Введите текст…" rows="10"><?php echo($getEdit['description_short']); ?></textarea>
+      </div>
+      <label class="control-label">Полное описание</label>
+      <div class="controls">
+          <textarea name="description_full" class="textarea-fix-size span5 tinymce" maxlength="20000" placeholder="Введите текст…" rows="10"><?php echo($getEdit['description_full']); ?></textarea>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Фото</label>
+      <?php if($getGallery){ ?>
+          <?php foreach($getGallery as $item){
+              $exp = explode('/', $item['url']);
+              $imgName = end($exp);
+              ?>
+              <div class="row-fluid">
+                  <a href="<?php echo($this->basePath().$item['url']); ?>" data-lightbox="car-gallery"><?php echo($imgName); ?></a>
+                  &nbsp;&nbsp;
+                  <a href="<?php echo($this->easyUrl(array('action' => 'remove-gallery', 'advert' => $getEdit['id'], 'id' => $item['id']))) ?>" class="icon-remove gallery-remove-image" title="удалить"></a>
+              </div>
+          <?php } ?>
+      <?php } ?>
+      <div class="controls">
+          <?php echo($this->partial('admin-partials/gallery-upload-box.phtml')); ?>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Цена</label>
+      <div class="controls">
+          <input type="text" name="price" class="span1" placeholder="Цифра…" maxlength="10" value="<?php echo($getEdit['price']); ?>">
+          <select class="selectpicker span1" name="currency">
+              <?php foreach($getCurrency as $item){ ?>
+                  <option value="<?php echo($item['id']); ?>"<?php echo(($item['id']==$getEdit['currency']) ? ' selected="selected"' : ''); ?>><?php echo($item['name']); ?></option>
+              <?php } ?>
+          </select>
+      </div>
+    </div>
+    <div class="control-group">        
+        <label class="control-label">Регион</label>
+        <div class="controls">
+            <select class="selectpicker location" name="location">
+              <?php foreach($getLocation as $item){ ?>
+                  <option value="<?php echo($item['id']); ?>"<?php echo(($item['id']==$region) ? ' selected="selected"' : ''); ?>><?php echo($item['name']); ?></option>
+              <?php } ?>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+      <div class="controls cities">
+
+      </div>
+    </div>
+    <?php echo($this->partial('admin-partials/phone-box.phtml')); ?>
+    <div class="control-group">
+      <label class="control-label">Пользователь</label>
+      <div class="controls">
+          <select class="selectpicker span3" name="user_id">
+              <?php foreach($usersList as $item){ ?>
+                  <option value="<?php echo($item['id']); ?>"<?php echo(($item['id']==$getEdit['user_id']) ? ' selected="selected"' : ''); ?>><?php echo($item['username']); ?></option>
+              <?php } ?>
+          </select>
+      </div>
+    </div>
+    <div class="control-group">
+        <hr>
+        <label class="checkbox">
+            <input type="checkbox" name="up_advert" value="1"> Поднять объявление
+        </label>
+        <label class="checkbox">
+            <input type="checkbox" name="status" value="y"<?php echo(($getEdit['status'] == 'y') ? ' checked="checked"' : ''); ?>> Статус объявления "Активный"
+        </label>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Сохранить</button>
+      <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index', 'id' => null), array(), true)); ?>">Отменить</a>
+    </div>
+  </fieldset>
+  <input type="hidden" name="edit-form" value="0">
+  <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+  <input type="hidden" name="load_options" value="<?php echo($this->easyUrl(array('action' => 'load-options'))); ?>">
+  <input type="hidden" name="advert_id" value="<?php echo $getEdit['id']; ?>">
+  <input type="hidden" name="location_url" value="<?php echo($this->easyUrl(array('action' => 'getCity'))); ?>">
+  <input type="hidden" name="city_id" value="<?php echo($getEdit['location']); ?>">
+</form>
+<?php }else{ ?>
+<h3>Нет данных</h3>
+<?php } ?>

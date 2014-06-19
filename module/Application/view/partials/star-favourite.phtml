@@ -1,0 +1,7 @@
+<?php if(isset($userId) && isset($advert) && $userId > 0){ ?>
+    <?php if ($advert['favorite'] === null) { ?>
+    <span class="star_favourite favorites-button" data-url="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'favorites', 'action' => 'add-favorites', 'advert' => $advert['id']))); ?>" title="Добавить в избранное"></span>
+    <?php } else { ?>
+    <span class="star_favourite favorites-button full" data-url="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'favorites', 'action' => 'remove-favorites', 'advert' => $advert['id'], 'id' => $advert['favorite']))); ?>" title="Удалить из избранного"></span>
+    <?php } ?>
+<?php } ?>

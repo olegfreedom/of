@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 clearfix">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Каталог
+                </h1>
+            </div>
+            <div class="row clearfix">
+                <div class="col-sm-12">
+                    <?php echo $this->partial('partials/categories-list.phtml', array('categoriesList' => $categoriesList)); ?>
+                </div>
+            </div>
+
+            <?php if (!empty($currentCategory) ): ?>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <ul class="breadcrumb">
+                            <?php $cnt = sizeof($currentCategory) - 1; ?>
+                            <?php foreach ($currentCategory as $key => $row): ?>
+                                <?php if ($key != $cnt): ?>
+                                    <li><a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $row ['id']));?>"><?php echo $row ['name'];?></a></li>
+                                <?php else: ?>
+                                    <li class="active"><?php echo $row ['name'];?></li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <?php echo($this->partial('partials/catalog-tabs.phtml', array('advertListPartial' => 'partials/adverts-list.phtml', 'advertsList' => $advertsList, 'Model' => $Model))); ?>
+
+        </div>
+    </div>
+</div>

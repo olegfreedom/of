@@ -1,0 +1,28 @@
+<?php if($getEdit){ ?>
+    <form class="form-validator edit" action="<?php echo($this->easyUrl(array('id' => $getEdit['id']))); ?>" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend><?php echo($getEdit['url']); ?></legend>
+            <div class="control-group">
+                <label class="control-label">Тема</label>
+                <div class="controls">
+                    <input class="span5" type="text" name="title" maxlength="100" value="<?php echo($getEdit['title']); ?>"/>
+                </div>
+                <label class="control-label">Текст</label>
+                <div class="controls">
+                    <textarea name="text" class="textarea-fix-size span5 tinymce" maxlength="10000" placeholder="Введите текст…" rows="20"><?php echo($getEdit['text']); ?></textarea>
+                </div>
+            </div>
+            <div class="alert alert-error">
+                <strong>Переменные такого типа ##title##, удалять и редактировать нельзя!</strong>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Отменить</a>
+            </div>
+        </fieldset>
+        <input type="hidden" name="edit-form" value="0">
+        <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+    </form>
+<?php }else{ ?>
+    <h3>Нет данных</h3>
+<?php } ?>

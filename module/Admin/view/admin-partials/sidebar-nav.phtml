@@ -1,0 +1,78 @@
+<ul class="nav nav-pills nav-stacked">
+    <li<?php echo(($this->routeNames('controller')=='index') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array())); ?>">
+            <span class="icon-home"></span> Главная
+        </a>
+    </li>
+    <li<?php echo(($this->routeNames('controller')=='catalog') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'catalog'))); ?>">
+            <span class="icon-th-list"></span> Каталог
+        </a>
+    </li>
+<!--    <li<?php /*echo(($this->routeNames('controller')=='options') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'options'))); */?>">
+            <span class="icon-edit"></span> Редактор опций
+        </a>
+    </li>-->
+    <li<?php echo(($this->routeNames('controller')=='locations') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'locations'))); ?>">
+            <span class="icon-globe"></span> Города/Регионы
+        </a>
+    </li>
+<!--    <li<?php /*echo(($this->routeNames('controller')=='require') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'require'))); */?>">
+            <span class="icon-certificate"></span> Обязательные поля
+        </a>
+    </li>-->
+    <li<?php echo(($this->routeNames('controller')=='testimonials') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'testimonials'))); ?>">
+            <span class="icon-pencil"></span> Отзывы
+        </a>
+    </li>
+    <li<?php echo(($this->routeNames('controller')=='users') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'users'))); ?>">
+            <span class="icon-user"></span> Пользователи
+        </a>
+    </li>
+    <li<?php echo(($this->routeNames('controller')=='pages') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'pages'))); ?>">
+            <span class="icon-globe"></span> Страницы
+        </a>
+    </li>
+<!--    <li<?php /*echo(($this->routeNames('controller')=='faq') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'faq'))); */?>">
+            <span class="icon-info-sign"></span> FAQ
+        </a>
+    </li>-->
+    <li<?php echo(($this->routeNames('controller')=='notification') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'notification'))); ?>">
+            <span class="icon-envelope"></span> Почта
+        </a>
+    </li>
+<!--    <li<?php /*echo(($this->routeNames('controller')=='contact-us') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'contact-us'))); */?>">
+            <span class="icon-comment"></span> Обратная связь
+        </a>
+    </li>
+    <li<?php /*echo(($this->routeNames('controller')=='helps') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'helps'))); */?>">
+            <span class="icon-question-sign"></span> Помощник
+        </a>
+    </li>
+    <li<?php /*echo(($this->routeNames('controller')=='search-log') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'search-log'))); */?>">
+            <span class="icon-search"></span> Поисковые запросы
+        </a>
+    </li>
+    <li<?php /*echo(($this->routeNames('controller')=='banners') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'banners'))); */?>">
+            <span class="icon-bullhorn"></span> Баннеры
+        </a>
+    </li>
+    </li>
+    <li<?php /*echo(($this->routeNames('controller')=='subscribe') ? ' class="active"' : ''); */?>>
+        <a href="<?php /*echo($this->easyUrl(array('controller' => 'subscribe'))); */?>">
+            <span class="icon-share"></span> Подписчики
+        </a>
+    </li>-->
+</ul>

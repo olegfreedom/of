@@ -1,0 +1,16 @@
+<!-- Nav tabs :BEGIN -->
+<ul id="tabs" class="nav nav-tabs">
+    <li <?php echo(($this->routeNames('controller') == 'adverts') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'adverts'))); ?>"> Управление объявлениями</a>
+    </li>
+    <li <?php echo(($this->routeNames('controller') == 'settings') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'settings'))); ?>"> Профиль</a>
+    </li>
+    <li <?php echo(($this->routeNames('controller') == 'comments') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'comments', 'ctype' => 'advert'))); ?>">Мои комментарии</a>
+    </li>
+    <li <?php echo(($this->routeNames('controller') == 'favorites') ? ' class="active"' : ''); ?>>
+        <a href="<?php echo($this->easyUrl(array('controller' => 'messages'))); ?>" class="last_tab">Мои оценки</a>
+    </li>
+</ul>
+<!-- Nav tabs :END -->

@@ -1,0 +1,120 @@
+<?php /*
+<a class="add-img">Добавить</a>
+<a class="delete">Сброс</a>
+<div class="input-holder">
+    <ul id="loading-content">
+        <li><input id="uploadbtn" name="gallery[]" multiple="multiple" type="file"/></li>
+    </ul>
+    <div id="uploaded-holder">
+        <div id="dropped-files">
+                <?php if ( !empty($getGallery) ): ?>
+                    <?php foreach ( $getGallery as $item ): ?>
+                        <li class="image uploaded" style="background: url('<?php echo($item['slider']['small']); ?>') no-repeat center center/cover  #fff;">
+                             <a href="<?php echo($this->easyUrl(array('action' => 'remove-gallery', 'advert' => $getEdit['id'], 'id' => $item['id']))) ?>" class="icon-remove gallery-remove-image" title="удалить"></a>
+                        </li>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </div>
+    </div>
+</div>
+*/
+// var_dump($getGallery);
+// die();
+
+?>
+
+
+<!--
+<div class="row clearfix">
+    <div class="col-sm-2">
+        <input id="img" type="file" title="Добавить" class="form-control mar-bot">
+    </div>
+    <div class="col-sm-10">
+        <span class="help-block">логотип.png</span>
+    </div>
+</div>
+-->
+
+
+<!--
+<div class="row clearfix">
+    <div class="col-sm-12">
+        <span class="help-block"><a class="add-img" href="#">Добавить еще файл (Максимальный размер 100 Мб)</a></span>
+    </div>
+</div>
+
+<div class="row clearfix">
+    <div class="col-sm-12">
+        <a class="delete btn btn-default" href="#">Сброс</a>
+    </div>
+</div>
+-->
+
+<?php /*
+
+    <a class="add-img">Добавить</a>
+    <a class="delete">Сброс</a>
+    <div class="input-holder">
+        <ul id="loading-content">
+            <li><input id="uploadbtn" name="gallery[]" multiple="multiple" type="file"/></li>
+        </ul>
+        <div id="uploaded-holder">
+            <div id="dropped-files">
+                <?php if(isset($getGallery) && $getGallery){ ?>
+                    <?php foreach($getGallery as $item) { ?>
+                        <li class="image uploaded" style="background: url('<?php echo($item['slider']['small']); ?>') no-repeat center center/cover  #fff;">
+                            <a href="<?php echo($this->easyUrl(array('action' => 'remove-gallery', 'advert' => $getEdit['id'], 'id' => $item['id']))) ?>" class="icon-remove gallery-remove-image" title="удалить"></a>
+                        </li>
+                    <?php } ?>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
+ */ ?>
+
+
+<div class="row clearfix" id="uploaded-holder">
+    <div id="dropped-files">
+        <?php if ( !empty($getGallery) ): ?>
+            <ul style="padding-left: 15px;">
+            <?php foreach($getGallery as $item): ?>
+                <li class="image uploaded" style="background: url('<?php echo($item['slider']['small']); ?>') no-repeat center center/cover  #fff;">
+                    <a href="<?php echo($this->easyUrl(array('action' => 'remove-gallery', 'advert' => $getEdit['id'], 'id' => $item['id']))) ?>" class="icon-remove gallery-remove-image" title="удалить"></a>
+                </li>
+            <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+    </div>
+</div>
+
+<div class="row clearfix">
+    <ul class="files-upload">
+        <li><input title="Загрузить" name="gallery[]" type="file" /></li>
+    </ul>
+</div>
+
+<?php /*<a class="add-file" href="#">Добавить файл</a> */ ?>
+
+<?php /*
+<a class="add-img btn btn-default" href="#">Добавить</a>
+<a class="delete btn btn-default" href="#">Сброс</a>
+
+<div class="input-holder">
+    <ul id="loading-content">
+        <li><input title="Загрузить файлы" id="uploadbtn" name="gallery[]" multiple="multiple" type="file" /></li>
+    </ul>
+    <div id="uploaded-holder">
+        <div id="dropped-files">
+            <?php if ( !empty($getGallery) ): ?>
+                <?php foreach ( $getGallery as $item ): ?>
+                    <li class="image uploaded" style="background: url('<?php echo($item['slider']['small']); ?>') no-repeat center center/cover #fff;">
+                        <a href="<?php echo($this->easyUrl(array('action' => 'remove-gallery', 'advert' => $getEdit['id'], 'id' => $item['id']))) ?>" class="icon-remove gallery-remove-image" title="удалить"></a>
+                    </li>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+
+*/ ?>

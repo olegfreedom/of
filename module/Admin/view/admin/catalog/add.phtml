@@ -1,0 +1,102 @@
+<form class="form-validator add" action="<?php echo($this->easyUrl(array('action' => 'add'))); ?>" method="post" enctype="multipart/form-data">
+  <fieldset>
+    <legend>Добавление</legend>
+      <div class="control-group">
+          <label class="control-label">Ищу / предлагаю</label>
+          <div class="controls">
+              <select class="selectpicker" name="type_id">
+                  <?php foreach($getType as $item){ ?>
+                      <option value="<?php echo($item['id']); ?>"><?php echo($item['name']); ?></option>
+                  <?php } ?>
+              </select>
+          </div>
+      </div>
+      <div class="control-group">
+          <label class="control-label">Заголовок</label>
+          <div class="controls">
+              <input class="span4" type="text" name="name" placeholder="Введите текст…" maxlength="50" value="">
+          </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label">Рубрика</label>
+        <div class="controls">
+            <select class="selectpicker span3 load-category-options" name="category_id">
+              <?php echo($this->partial('admin/catalog/category/add-category-select.phtml', array('categoryList' => $getCategory, 'tab' => '', 'disabled' => true))); ?>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label options"></label>
+      <div class="control-group options">
+
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Короткое описание</label>
+      <div class="controls">
+          <textarea name="description_short" class="textarea-fix-size span5 tinymce" maxlength="20000" placeholder="Введите текст…" rows="10"></textarea>
+      </div>
+      <label class="control-label">Полное описание</label>
+      <div class="controls">
+          <textarea name="description_full" class="textarea-fix-size span5 tinymce" maxlength="20000" placeholder="Введите текст…" rows="10"></textarea>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Фото</label>
+      <div class="controls">
+          <?php echo($this->partial('admin-partials/gallery-upload-box.phtml')); ?>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">Цена</label>
+      <div class="controls">
+          <input type="text" name="price" class="span1" placeholder="Цифра…" maxlength="10" value="">
+          <select class="selectpicker span1" name="currency">
+              <?php foreach($getCurrency as $item){ ?>
+                  <option value="<?php echo($item['id']); ?>"><?php echo($item['name']); ?></option>
+              <?php } ?>
+          </select>
+      </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">Регион</label>
+        <div class="controls">
+            <select class="selectpicker location" name="region">
+              <?php foreach($getLocation as $item){ ?>
+                <option value="<?php echo($item['id']); ?>"><?php echo($item['name']); ?></option>
+              <?php } ?>
+            </select>
+        </div>
+    </div>
+    <div class="control-group">
+      <div class="controls cities">
+
+      </div>
+    </div>
+    <?php echo($this->partial('admin-partials/phone-box.phtml')); ?>
+    <div class="control-group">
+      <label class="control-label">Пользователь</label>
+      <div class="controls">
+          <select class="selectpicker span3" name="user_id">
+              <?php foreach($usersList as $item){ ?>
+                  <option value="<?php echo($item['userid']); ?>"><?php echo($item['username']); ?></option>
+              <?php } ?>
+          </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <hr>
+      <label class="checkbox">
+          <input type="checkbox" name="status" value="y" checked="checked"> Статус объявления "Активный"
+      </label>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Сохранить</button>
+      <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Отменить</a>
+    </div>
+  </fieldset>
+  <input type="hidden" name="add-form" value="0">
+  <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+  <input type="hidden" name="load_options" value="<?php echo($this->easyUrl(array('action' => 'load-options'))); ?>">
+  <input type="hidden" name="location_url" value="<?php echo($this->easyUrl(array('action' => 'getCity'))); ?>">
+</form>

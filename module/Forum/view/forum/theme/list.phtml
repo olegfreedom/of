@@ -1,0 +1,62 @@
+<?php echo $this->form; ?>
+<fieldset style='border:1px dotted #5CB85C; border-radius:6px; text-align:center;'>
+    <legend style='color:#5CB85C; font-size:14pt; font-weight:bold; padding:5px;'><?php echo  $this->groupData['type_organization_title']; ?></legend>
+     <table class='linkButton'>
+                <tr valign='top'><td width='140px'>
+                        <img src='<?php echo $this->groupData['avatar_url']; ?>' style='float:left; margin-right:20px; max-width:150px;'>
+                    </td>
+                    <td>
+                        <div style='margin:1px; padding:1px; font-size:12pt;'><a href='
+                                    <?php echo $this->url('forum/default', array('controller' => 'group', 'action' => 'list')); ?>'><b><?php echo  $this->groupData['type_organization_title'] . ':   ' .  $this->groupData['title']; ?></b></a></div>
+                        <div>&nbsp;</div>
+                        <div><?php echo $this->groupData['description'] ?></div>
+                    </td>
+                </tr>
+     </table>
+    <table style='width:99%; margin-bottom:20px;'>
+        <tr>
+            <td style=' text-align:left;'>
+
+                <input type='search' name='googlesearch' style='width:70%;'>
+                <input type='button' style='width:24px; height:22px; background-image:url(/cms/assets/image/199dfaf69bfc4809346f4368017268d6x.jpg);background-size: 19px 19px;'>
+            </td>
+            <td style='width:25%;text-align:right;'>
+                <a href='<?php echo $this->url('forum/group-view/theme-add', array('id_group' =>  $this->groupData['id'])); ?>'>
+                    <span style='display:inline-block; width:200px; text-align:center; color:#ffffff; background-color:#5cb85c; padding:3px;'>Створити тему</span>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <div style='margin:auto;width:98.8%;'>
+    <?php if(is_array($this->themeList)): ?>
+        <?php foreach ($this->themeList as $key => $value): ?>
+            <table class='linkButton'>
+                <tr valign='top'>
+                    <td colspan=2>
+                        <div style='margin:1px; padding:1px; font-size:12pt;'><a href='
+                            <?php echo $this->url('forum/group-view/theme-view', array('id_group' => $this->groupData['id'], 'id_theme' =>$value['id'] )); ?>'>
+                                <b>Тема: <?php echo $value['title']?></b></a></div>
+                        <div>&nbsp;</div>
+                        <div>Опис: <?php echo $value['description'] ?></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style='text-align:right; border-top:1px dotted;'>
+                        Створена: <?php echo $value['creation'] ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan=2 style='text-align:right;'>
+                        Дійсна від: <?php echo $value['begin_date']; ?> до: <?php echo $value['end_date']; ?>
+                    </td>
+                </tr>
+                <tr><td>
+                        <a href="<?php echo $this->url('forum/group-view/theme-edit', array('id_group' => $this->groupData['id'],'id_theme' => $value['id'])); ?>" style="padding-right: 50px ">EDIT</a>
+                        <a href="<?php echo $this->url('forum/group-view/theme-delete', array('id_group' => $this->groupData['id'],'id_theme' => $value['id'])); ?>" >DELETE</a>
+                    </td>
+                </tr>
+            </table>	
+        <?php endforeach; ?>
+    <?php endif; ?>
+    </div></div>
+</fieldset>

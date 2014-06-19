@@ -1,0 +1,19 @@
+<form method="post" action="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'login'))); ?>" class="popup login-form">
+  <div class="row">
+      <label for="inputUser">Эл. почта</label>
+      <input type="text" maxlength="100" value="" placeholder="" name="username" id="inputUser">
+  </div>
+  <div class="row">
+      <label for="inputPassword">Пароль</label>
+      <input type="password" maxlength="100" value="" placeholder="" name="password" id="inputPassword">
+  </div>
+  <div class="submit-holder">
+        <input type="submit" value="Вход">
+  </div>
+  <div class="add-buttons">
+      <a href="<?php echo($this->easyUrl(array('module' => 'profile' ,'controller' => 'forgot'))); ?>" class="btn-forgot">Забыли пароль?</a>
+      <a href="<?php echo($this->easyUrl(array('module' => 'profile' ,'controller' => 'registration'))); ?>" class="btn-registration">Регистрация</a>
+  </div>
+  <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'login', 'action' => 'validator'))); ?>">
+  <input type="hidden" name="login-form" value="0">
+</form>

@@ -1,0 +1,7 @@
+<?php if ( !isset($currentLevel) ) $currentLevel = 0; ?>
+
+<?php if ( !empty($comments) ): ?>
+    <?php foreach ( $comments as $item ): ?>
+        <?php echo $this->partial('partials/user-comment-item.phtml', array('item' => $item, 'currentLevel' => $currentLevel, 'userId' => $userId)); ?>
+    <?php endforeach; ?>
+<?php endif; ?>

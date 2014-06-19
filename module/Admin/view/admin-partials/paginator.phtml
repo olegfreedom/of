@@ -1,0 +1,22 @@
+<?php if($paginator !== null && is_array($paginator)){ ?>
+<div class="pagination pagination-centered">
+    <ul>
+      <?php $first=true; foreach($paginator as $item){ ?>
+        <?php
+            $params = array('page' => $item['val']);
+        ?>
+        <?php if($item['type'] == 'prev'){ ?>
+        <li><a href="<?php echo($this->easyUrl($params, array(), true)); ?>"><i class="icon-arrow-left"></i></a></li>
+        <?php }else if($item['type'] == 'next'){ ?>
+        <li><a href="<?php echo($this->easyUrl($params, array(), true)); ?>"><i class="icon-arrow-right"></i></a></li>
+        <?php }else if($item['type'] == 'empty'){ ?>
+        <li class="disabled"><a><?php echo($item['val']); ?></a></li>
+        <?php }else if($item['type'] == 'current'){ ?>
+        <li class="active"><a><?php echo($item['val']); ?></a></li>
+        <?php }else{ ?>
+        <li><a href="<?php echo($this->easyUrl($params, array(), true)); ?>"><?php echo($item['val']); ?></a></li>
+        <?php } ?>  
+      <?php } ?>
+    </ul>
+</div>
+<?php } ?>

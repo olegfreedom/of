@@ -1,0 +1,11 @@
+<form autocomplete="off" method="post" action="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'forgot'))); ?>" class="popup forgot">
+  <div class="row">
+      <label for="inputUser">Эл. почта</label>
+      <input type="text" maxlength="100" value="" placeholder="" name="username" id="inputUser">
+  </div>
+  <div class="submit-holder">
+        <input type="submit" value="Отправить">
+  </div>
+  <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'forgot', 'action' => 'validator'))); ?>">
+  <input type="hidden" name="forgot-form" value="0">
+</form>

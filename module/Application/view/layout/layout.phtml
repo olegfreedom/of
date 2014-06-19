@@ -1,0 +1,80 @@
+<?php echo $this->doctype(); ?>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php
+            $this->headTitle($this->siteName())
+                 ->setSeparator(' - ')
+                 ->setAutoEscape(false);
+
+            echo($this->headTitle());
+        ?>
+        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+        <!-- styles and js -->
+        <?php
+           $this->headLink()
+                ->appendStylesheet($this->basePath() . '/css/bootstrap.min.css')
+                ->appendStylesheet($this->basePath() . '/css/bootstrap-formhelpers.min.css')
+                ->appendStylesheet($this->basePath() . '/fonts/stylesheet.css')
+                ->appendStylesheet($this->basePath() . '/css/ie8.css')
+
+                ->appendStylesheet($this->basePath() . '/css/jquery.rating.css')
+                ->appendStylesheet($this->basePath() . '/css/ie8.css')
+
+                ->appendStylesheet($this->basePath() . '/css/all.css')
+                ->appendStylesheet($this->basePath() . '/css/prettyCheckable.css')
+                ->appendStylesheet($this->basePath() . '/css/slider.css')
+                ->appendStylesheet($this->basePath() . '/css/galleryka.css');
+
+            $this->headScript()
+                // JQuery
+                ->appendFile($this->basePath() . '/js/libs/jquery/jquery-1.9.0.min.js')
+                ->appendFile($this->basePath() . '/js/libs/jquery/jquery.maskedinput.min.js')
+                ->appendFile($this->basePath() . '/js/libs/jquery/jquery.widget.min.js')
+                ->appendFile($this->basePath() . '/js/libs/jquery/jquery.rating-2.0.min.js')
+
+                // Bootstrap
+                ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap-collapse.js')
+                ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap.min.js')
+                ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap-datepicker.js')
+                ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap-slider.js')
+                ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap-formhelpers.js')
+                ->appendFile($this->basePath() . '/js/libs/bootstrap/bootstrap-select.min.js')
+
+                // Custom
+                ->appendFile($this->basePath() . '/js/file-input.js')
+                ->appendFile($this->basePath() . '/js/rating.js')
+                ->appendFile($this->basePath() . '/js/autoresize.js')
+                ->appendFile($this->basePath() . '/js/prettyCheckable.min.js')
+
+                // HTML Fix
+                // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+                // WARNING: Respond.js doesn't work if you view the page via file://
+                ->appendFile($this->basePath() . 'https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+                ->appendFile($this->basePath() . 'https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+
+                // Main
+                ->appendFile($this->basePath() . '/js/default.js')
+                ->appendFile($this->basePath() . '/js/main.js')
+
+                ->appendFile($this->basePath() . '/js/libs/jquery/jquery.carouselka.js');
+
+            $this->mediaLoader();
+
+            echo($this->headLink()."\n");
+            echo($this->headScript()."\n");
+        ?>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="w1">
+                <?php echo($this->partial('application/layout/header')); ?>
+                <?php echo($this->content); ?>
+            </div>
+        </div>
+
+        <!-- /container -->
+        <?php echo($this->partial('application/layout/footer', array('currentUrl' => $currentUrl))); ?>
+        <?php echo($this->inlineScript()); ?>
+    </body>
+</html>

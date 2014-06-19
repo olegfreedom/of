@@ -1,0 +1,21 @@
+
+<div class="row-fluid">
+    <div class="col span3">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>Список страниц</th>
+                <th class="action-box"></th>
+            </tr>
+            </thead>
+            <?php foreach($pagesList as $page){ ?>
+                <tr>
+                    <td><?php echo $page['title']; ?></td>
+                    <td class="action-box">
+                        <a href="<?php echo($this->easyUrl(array('action' => 'edit', 'id' => $page['id']))); ?>" class="icon-edit" title="редактировать"></a>
+                    </td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
+</div>

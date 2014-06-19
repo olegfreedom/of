@@ -1,0 +1,361 @@
+<div class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="container">
+                <img class="pull-right" src="../../img/tmp/slide2.png" alt="slide1">
+                <div class="carousel-caption pull-left">
+                    Один из лучших торговых<br>центров в интернете
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="container">
+                <img class="no-margin pull-right" src="../../img/tmp/slide1.png" alt="slide2">
+                <div class="carousel-caption pull-left">
+                    Покупайте<br> легко и быстро
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="container">
+                <img class="pull-right" src="../../img/tmp/slide3.png" alt="slide3">
+                <div class="carousel-caption pull-left">
+                    Вы сможете<br> быстро продать все
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <!--                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>-->
+</div>
+
+
+
+<div class="tab-content">
+    <div class="tab-pane fade active in page-tabs" id="controlls">
+        <div class="tabs-styled">
+            <div class="container">
+                <ul id="tabs2" class="nav nav-tabs">
+                    <li class="active tab1"><a href="#products" data-toggle="tab"><span></span>Товары</a></li>
+                    <li class="tab2"><a href="#services" data-toggle="tab"><span></span>Услуги</a></li>
+                    <li class="tab3"><a href="#technologies" data-toggle="tab"><span></span>Технологии</a></li>
+                    <li class="tab4"><a href="#investments" data-toggle="tab"><span></span>Инвестиции</a></li>
+                </ul>
+            </div>
+        </div>
+
+<?php /*
+
+        <div class="container">
+            <div class="tab-content pad">
+                <div class="tab-pane fade" id="services">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#services-buy" data-toggle="tab">Продам</a></li>
+                        <li><a href="#services-sell" data-toggle="tab">Куплю</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="services-buy">
+                            <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_SERVICE_BUY)); ?>
+                        </div>
+                        <div class="tab-pane fade" id="services-sell">
+                            <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_SERVICE_SELL)); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="technologies">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#technologies-out" data-toggle="tab">Вложения</a></li>
+                        <li><a href="#technologies-in" data-toggle="tab">Запросы</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="technologies-out">
+                            <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_TECHNOLOGIES_OUT)); ?>
+                        </div>
+                        <div class="tab-pane fade active in" id="technologies-in">
+                            <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_TECHNOLOGIES_IN)); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="investments">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#investments-out" data-toggle="tab">Вложения</a></li>
+                        <li><a href="#investments-in" data-toggle="tab">Запросы</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane fade" id="investments-out">
+                            <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_INVESTMENTS_OUT)); ?>
+                        </div>
+                        <div class="tab-pane fade active in" id="investments-in">
+                            <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_INVESTMENTS_IN)); ?>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+*/ ?>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row clearfix center-block centered">
+        <h1 class="page-header">
+            Каталог
+        </h1>
+    </div>
+    <?php // echo($this->easyUrl(array('action' => 'edit', 'id' => $item['id']))) ?>
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <?php echo $this->partial('partials/categories-list.phtml', array('categoriesList' => $categoriesList)); ?>
+        </div>
+    </div>
+
+    <?php if (!empty($currentCategory) ): ?>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+                    <?php $cnt = sizeof($currentCategory) - 1; ?>
+                    <?php foreach ($currentCategory as $key => $row): ?>
+                        <?php if ($key != $cnt): ?>
+                            <li><a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $row ['id']));?>"><?php echo $row ['name'];?></a></li>
+                        <?php else: ?>
+                            <li class="active"><?php echo $row ['name'];?></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    <?php endif; ?>
+
+</div>
+
+<?php /*
+<div class="wrapper">
+        <div class="wrapper-center">
+            <div class="container">
+                <form class="srch" action="<?php echo($this->easyUrl(array('controller' => 'catalog', 'action' => 'search', 'type' => ($advertsType > 0 ? $advertsType : null), 'category' => ($currentCategory > 0 ? $currentCategory : null)))); ?>" method="post">
+                    <?php echo($this->partial('/partials/main-holder.phtml')); ?>
+                    <div class="main">
+                        <section class="form-searching divide toggle-block4">
+                            <h2 class="issues">Фильтр поиска</h2>
+
+                            <div class="region">
+                                <div class="t-dotted">
+                                    <div class="col">
+                                        <label for="reg">Регион</label>
+                                        <select id="reg" name='region'>
+                                            <option value='0'>Все регионы</option>
+                                            <?php if ($locationList) { ?>
+                                                <?php foreach ($locationList as $item) { ?>
+                                                    <option <?php echo($params['region'] == $item['id'] ? 'selected' : ''); ?>
+                                                        value='<?php echo $item['id']; ?>'>
+                                                        <?php echo $item['name']; ?></option>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </select>
+                                        <!--<button id="btn-d">Disabled</button>-->
+                                    </div>
+                                    <div class="col">
+                                        <label for="reg">Город</label>
+                                        <div class="cities-box">
+                                            <select id="reg" name='location'>
+                                                <option value='0'>Выберите регион</option>
+                                            </select>
+                                        </div>
+                                        <!--<button id="btn-d">Disabled</button>-->
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="col">
+                                        <a href="#" class="openerer">расширенный поиск</a>
+                                    </div>
+                                    <div class="col">
+                                        <a class="btn-search sbmt-gr choose expnded-hidden">Подобрать</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class ="slideBlock">
+                            <div class="col">
+                                <div class="wrap">
+                                    <span class="form-searching-title-nohover"><em></em>Цена</span>
+                                    <a class="clr" href="#">Сбросить</a>
+                                </div>
+                                <div class="wrap">
+                                    <table class="slider-holder">
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="sample-rate"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label for="input-number1">От</label>
+                                                <input type="text" value="<?php echo($params['price_min']); ?>" name="price_min" id="input-number1"/>
+                                            </td>
+                                            <td>
+                                                <label for="input-number2">До</label>
+                                                <input type="text" value="<?php echo($params['price_max']); ?>" name="price_max" step="1" id="input-number2">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="wrap">
+                                    <input id="foto" type="checkbox"<?php echo($params['image'] == 'y' ? ' checked="checked"' : ''); ?> name="image" value="y">
+                                    <label for="foto">Только с фото</label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="wrap">
+                                    <span class="form-searching-title-nohover"><em class="t-star"></em>Рейтинг автора</span>
+                                    <a class="clr" href="#">Сбросить</a>
+                                </div>
+                                <table class="slider-holder">
+                                    <tr>
+                                        <td colspan="2">
+                                            <div class="sample-rate2"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="input-number3">От</label>
+                                            <input type="text" name="rate_min" min="0" max="40000" id="input-number3"/>
+                                        </td>
+                                        <td>
+                                            <label for="input-number4">До</label>
+                                            <input type="text" name="rate_max" min="40000" max="65000" step="1" id="input-number4">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <a class="btn-search sbmt-gr choose">Подобрать</a>
+                            </div>
+                            </div>
+                        </section>
+                        <section class="top posts">
+                            <a class="ask" href="<?php echo ($this->easyUrl(array('controller'=> 'faq')));?>?howto">Как попасть в Топ?</a>
+
+                            <h1>Топ объявления</h1>
+
+                            <?php if ($topList) { ?>
+                                <?php foreach ($topList as $item) { ?>
+                                    <article>
+                                        <div class="post-info">
+                                            <?php if (!empty($item['img_id'])) { ?>
+                                                <img src="<?php echo($this->easyUrl(array('controller' => 'image', 'action' => 'adverts-gallery', 'id' => $item['img_id'], 'w' => 100, 'h' => 100, 'crop' => 'y'))) ?>" alt=""/>
+                                            <?php } else { ?>
+                                                <img src="/img/tmp/postimg10.jpg" alt=""/>
+                                            <?php } ?>
+                                            <div>
+                                                <h2>
+                                                    <a class="item" href="<?php echo($this->easyUrl(array('controller' => 'adverts', 'action' => 'view', 'type' => $item['type_id'], 'id' => $item['id']))); ?>">
+                                                        <?php echo($item['name']); ?>
+                                                    </a>
+                                                </h2>
+                                                <div class="post-info-place-holder">
+                                                        <span class="post-info-place">
+                                                            <em></em><a><?php echo($item['location']); ?></a>
+                                                        </span>
+                                                    <span><?php echo($item['created']); ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php if ($item['price'] > 0) {?>
+                                            <div class="post-price">
+                                                <span><span class="symb"></span><?php echo($item['price']); ?></span>
+                                            </div>
+                                        <?php } ?>
+                                    </article>
+                                <?php } ?>
+                            <?php } ?>
+
+                        </section>
+
+                        <section class="posts t-no-pad">
+                            <?php if ($advertsCount > 0) { ?>
+                                <span class="amount">Найденных объявлений :  <?php echo ($advertsCount); ?></span>
+                            <?php } else { ?>
+                                <span class="amount">По запросу ничего не найдено</span>
+                            <?php } ?>
+                            <h1>Обычные объявления</h1>
+                            <?php if ($advertList) { ?>
+                                <?php foreach ($advertList as $item) { ?>
+                                    <article>
+                                            <div class="post-info">
+                                                <?php if (!empty($item['img_id'])) { ?>
+                                                    <img src="<?php echo($this->easyUrl(array('controller' => 'image', 'action' => 'adverts-gallery', 'id' => $item['img_id'], 'w' => 100, 'h' => 100, 'crop' => 'y'))) ?>" alt=""/>
+                                                <?php } else { ?>
+                                                    <img src="/img/tmp/postimg10.jpg" alt=""/>
+                                                <?php } ?>
+                                                <div>
+                                                    <h2>
+                                                        <a class="item" href="<?php echo($this->easyUrl(array('controller' => 'adverts', 'action' => 'view', 'type' => $item['type_id'], 'id' => $item['id']))); ?>">
+                                                            <?php echo($item['name']); ?>
+                                                        </a>
+                                                    </h2>
+                                                    <div class="post-info-place-holder">
+                                                        <span class="post-info-place">
+                                                            <em></em><a><?php echo($item['location']); ?></a>
+                                                        </span>
+                                                        <span><?php echo($item['created']); ?></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <?php if ($item['price'] > 0) {?>
+                                                <div class="post-price">
+                                                    <span><span class="symb"></span><?php echo($item['price']); ?></span>
+                                                </div>
+                                            <?php } ?>
+                                    </article>
+                                <?php } ?>
+                            <?php } ?>
+                        </section>
+                        <?php echo($this->partial('partials/paginator.phtml', array('paginator' => $paginator, 'setAction' => 'category'))); ?>
+                    </div>
+                    <input type="submit" style="display: none;">
+                    <input type="hidden" name="type" value="<?php echo($advertsType); ?>"/>
+                    <input type="hidden" name="category" value="<?php echo($currentCategory); ?>"/>
+                    <input type="hidden" class="maxPrice" name="maxPrice" value="<?php echo($maxPrice); ?>"/>
+                    <input type="hidden" name="location_url" value="<?php echo($this->easyUrl(array('action' => 'get-city'))); ?>">
+                    <input type="hidden" name="location_city" value="<?php echo($params['location']); ?>">
+                </form>
+                <aside>
+                    <section class="banner form-searching">
+                        <h2 class="issues">Разделы</h2>
+                        <span>У нас вы найдете:</span>
+                        <ul class="accordion multilevel-accordion">
+                            <?php echo($this->partial('application/catalog/category/list-items.phtml', array('categoryList' => $categoryList, 'currentCategory' => $currentCategory, 'menuLevel' => 1))); ?>
+                        </ul>
+                    </section>
+                    <?php if ($bannersList) { ?>
+                        <?php foreach ($bannersList as $item) { ?>
+                            <a class="banner" target="_blank" href="<?php echo $item['url']; ?>">
+                                <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>"/>
+                            </a>
+                        <?php } ?>
+                    <?php } ?>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+ */ ?>
+

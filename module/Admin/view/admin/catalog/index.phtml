@@ -1,0 +1,67 @@
+<?php echo($this->partial('admin/catalog/tab-nav.phtml')); ?>
+<?php if($itemsList && is_array($itemsList)){ ?>
+<div class="row-fluid">
+    <div class="col">      
+        <table class="table table-striped table-bordered">
+            <thead>        
+                <tr>
+                    <th>Раздел</th>
+                    <th>Тип</th>
+                    <th>Название</th>
+                    <th>Местонахождение</th>
+                    <th>Цена</th>
+                    <th class="status-box">Статус объявления</th>
+                    <th class="status-box">Статус пользователя</th>
+                    <th class="action-box"></th>
+                </tr>
+            </thead>
+            <?php foreach($itemsList as $key => $val){ ?>
+                <?php foreach((array)$val as $vals) { ?>
+                    <?php foreach((array)$vals as $item) { ?>
+                        <tr>
+                            <td>
+                            <?php if(isset($item['breadcrumbs']) && is_array($item['breadcrumbs'])){ ?>
+                                <?php echo($this->partial('admin/catalog/category/breadcrumbs.phtml', array('breadcrumbs' => $item['breadcrumbs']))); ?>
+                            <?php }else{ ?>
+                                <a href="<?php echo($this->easyUrl(array('category' => $item['category_id']))); ?>"><?php echo($item['category']); ?></a>
+                            <?php } ?>
+                            </td>
+                            <td><a href="<?php echo($this->easyUrl(array('type' => $item['type_id']))); ?>"><?php echo($item['type']); ?></a></td>
+                            <td><?php echo($item['name']); ?></td>
+                            <td><?php echo($item['location']['city']); ?></td>
+                            <td><?php echo($item['price'].' '.$item['currency']); ?></td>
+                            <td class="status-box">
+                              <a href="<?php echo($this->easyUrl(array('action' => 'status', 'id' => $item['id']), array(), true)) ?>" title="сменить статус">
+                                <?php if($item['status']=='y'){ ?>
+                                    <span class="label label-success">Активный</span>
+                                <?php }else{ ?>
+                                    <span class="label label-important">Неактивный</span>
+                                <?php } ?>
+                              </a>
+                            </td>
+                            <td class="status-box">
+                            <?php if($item['is_admin']==true){ ?>
+                              <span class="label label-info">Админ</span>
+                            <?php }else{ ?>
+                              <a href="<?php echo($this->easyUrl(array('action' => 'user-status', 'id' => $item['user_id']), array(), true)) ?>" title="сменить статус">
+                                <?php if($item['user_status']=='y'){ ?>
+                                    <span class="label label-success">Активный</span>
+                                <?php }else{ ?>
+                                    <span class="label label-important">Неактивный</span>
+                                <?php } ?>
+                              </a>
+                            <?php } ?>
+                            </td>
+                            <td class="action-box">
+                               <a href="<?php echo($this->easyUrl(array('action' => 'edit', 'id' => $item['id']), array(), true)) ?>" class="icon-edit" title="редактировать"></a>
+                               <a href="<?php echo($this->easyUrl(array('action' => 'remove', 'id' => $item['id']), array(), true)) ?>" class="icon-remove confirm-remove" title="удалить"></a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+            <?php } ?>
+        </table>
+        <?php echo($this->partial('admin-partials/paginator.phtml', array('paginator' => $paginator))); ?>
+    </div>
+</div>
+<?php } ?>

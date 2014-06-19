@@ -1,0 +1,36 @@
+<div class="container reg-container">
+    <div class="row clearfix">
+        <div class="col-md-12 separation">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Восстановление пароля
+                </h1>
+                <p>
+                    Введите эл.почту c которой Вы регистрировались на сайте.
+                    Дальнейшие инструкции будут высланы на Ваш e-mail.
+                </p>
+            </div>
+
+            <div class="row clearfix">
+                <form autocomplete="off" method="post"  action="<?php echo($this->easyUrl(array('module' => 'profile' ,'controller' => 'forgot'))); ?>" class="forgot form-horizontal login-form" role="form">
+                    <div class="form-group col-sm-12">
+                        <label for="e-mail" class="col-sm-4 control-label">Электронная почта</label>
+                        <div class="input-holder col-sm-8 ">
+                            <input name="username" id="e-mail" type="email" class="form-control">
+                            <span class="errors"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 text-center">
+                        <div class="center-block">
+                            <a class="btn btn-default btn-success" onclick="$(this).closest('form').submit()">Отправить</a>
+                            <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('module' => 'profile','controller' => 'forgot', 'action' => 'validator'))); ?>">
+                            <input type="hidden" name="forgot-form" value="0">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<?php if(isset($breadcrumbs) && is_array($breadcrumbs)){ $first = true; ?>
+    <?php foreach($breadcrumbs as $item){ ?>
+    <?php if($first == true){ $first=false; }else{ ?> &bull; <?php } ?>
+        <?php if(isset($unlink)){  ?>
+            <span><?php echo($item['name']); ?></span>
+        <?php } else {?>
+            <a href="<?php echo($this->easyUrl(array('category' => $item['id']))); ?>"><?php echo($item['name']); ?></a>
+        <?php } ?>
+    <?php } ?>
+<?php } ?>

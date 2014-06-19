@@ -1,0 +1,132 @@
+/**
+ * Use to URL:
+ *  /profile/
+ *  /profile/index
+ *  /profile/index/*
+ */
+
+#drop-files p {
+    clear:none;
+    padding:0;
+    margin:0;
+}
+
+#uploaded-holder {
+    display: block;
+    left: 0;
+    position: relative;
+    top: 0;
+    z-index: 100;
+}
+
+#dropped-files {
+    display:block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#upload-button {
+    z-index: 9999;
+    display: none;
+    margin: 0px 0;
+}
+
+.drop-button {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    padding: 5px;
+    width: 95%;
+    background: rgba(0,0,0,0.6);
+    font-size: 10px;
+    bottom: 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    color: #FFF;
+}
+
+#dropped-files .image {
+    position: relative;
+    width: 122px;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    background: #fff;
+    float: left;
+    border-radius: 1px;
+    margin: 0 4px 4px 0;
+    overflow: hidden;
+    text-align: right;
+    vertical-align:top ;
+    list-style: none outside none;
+}
+
+.gallery-remove-image {
+    background-image: url("/img/gallery-delete.png");
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+}
+
+#loading-content {
+    position: absolute;
+    top: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    width: 405px;
+}
+.main {
+    width:900px;
+    margin:0 auto;
+    height:100%;
+    margin-top:100px;
+}
+.main img {
+    position:relative;
+    float:left;
+    width:280px;
+    height:180px;
+    margin:10px;
+}
+a.nav {
+    font-family:tahoma;
+    font-size:20px;
+    color:#4280af;
+    text-decoration:none;
+    margin-bottom:10px;
+}
+a.nav:hover {
+    color:#fffb89;
+}
+.wrap.img .input-holder {
+    position: relative;
+    z-index: 200;
+    min-height: 130px;
+    overflow: hidden;
+}
+
+.wrap.img #dropped-files .image,
+.form-tab .wrap.img .input-holder ul li,
+.form-tab .wrap.img .file-area{
+    height: 122px;
+}
+
+.wrap.options .input-holder .radio.option-size {
+    width:48%;
+}
+
+.form-tab .wrap.options label{
+    line-height: 18px;
+}
+
+.wrap.options .input-holder .chk-area{
+    margin: 0 9px 7px 0;
+    height: 18px;
+    width: 18px;
+}

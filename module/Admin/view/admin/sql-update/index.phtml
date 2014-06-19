@@ -1,0 +1,46 @@
+
+<div class="row-fluid">
+    <div class="col span3">      
+        <table class="table table-striped table-bordered">
+            <thead>        
+                <tr>
+                    <th>Список добавленных обновлений</th>
+                </tr>
+            </thead>
+            <?php if($filesList){ ?>
+                <?php foreach($filesList as $item){ ?>
+                <tr>
+                    <td><?php echo($item); ?></td>
+                </tr>
+                <?php } ?> 
+            <?php } ?> 
+        </table>
+    </div>
+    <div class="col span3">  
+        <form action="<?php echo($this->easyUrl(array('action' => 'update'))); ?>" method="post" class="update-form">            
+            <table class="table table-striped table-bordered">
+                <thead>        
+                    <tr>
+                        <th>Список доступных обновлений</th>
+                        <th><input type="checkbox" class="checkbox check-all"></th>
+                    </tr>
+                </thead>
+                <?php if($scanDir){ ?>
+                    <?php foreach($scanDir as $item){ ?>
+                    <tr>
+                        <td><?php echo($item); ?></td>
+                        <td><input type="checkbox" class="checkbox check-items" name="files[]" value="<?php echo($item); ?>"></td>
+                    </tr>
+                    <?php } ?> 
+                <?php } ?> 
+            </table>
+            <div class="alert-box"></div>
+            <div class="form-inline">
+              <button type="button" class="btn btn-primary set-update-type" data-val="update">Обновить</button>
+              <button type="button" class="btn set-update-type" data-val="ignore">Пропустить</button>
+            </div>
+            <input type="hidden" name="update-form" value="1">
+            <input type="hidden" name="type" value="update">
+        </form>
+    </div>
+</div>

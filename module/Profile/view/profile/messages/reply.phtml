@@ -1,0 +1,47 @@
+<div class="wrapper">
+    <div class="wrapper-center">
+
+        <div class="container">
+            <div class="lk">
+                <div class="form-tab">
+                    <h2 class="lk-title">Ответить</h2>
+
+                    <form id="frm" class="form-validator add" action="<?php echo($this->easyUrl(array('action' => 'reply', 'id' => $getOne['id']))); ?>" method="post" enctype="multipart/form-data">
+                        <div class="wrap">
+                            <label for="tadv-rubr">Сообщение: </label>
+
+                            <div class="input-holder">
+                                <p><?php echo $getOne['text']?></p>
+                            </div>
+                        </div>
+                        <div class="wrap userList">
+                            <label for="tadv-rubr">Кому:</label>
+
+                            <div class="input-holder">
+                                <input name="username" type="text" autocomplete="off" value="<?php echo $getOne['username']?>"/>
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <label for="tadv-rubr">Заголовок:</label>
+
+                            <div class="input-holder">
+                                <input name="title" type="text" value="<?php echo $getOne['title']?>"/>
+                            </div>
+                        </div>
+                        <div class="wrap">
+                            <label for="tadv-rubr">Текст</label>
+
+                            <div class="input-holder">
+                                <textarea id="tadv-desc" name="text"></textarea>
+                            </div>
+                        </div>
+                        <a class="submitIt" type="submit" href="#">Отправить</a>
+                        <input type="hidden" name="add-form" value="0">
+                        <input type="hidden" name="username_url" value="<?php echo($this->easyUrl(array('action' => 'getUsers'))); ?>">
+                        <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

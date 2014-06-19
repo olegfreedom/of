@@ -1,0 +1,123 @@
+<div class="container reg-container">
+    <div class="row clearfix">
+        <div class="col-md-12 separation">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Регистрация
+                </h1>
+                <p>Для того, чтобы пользоваться всеми возможностями сервиса заполните регистрационные поля ниже</p>
+            </div>
+            <div class="row clearfix">
+                <form method="post" action="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'registration'))); ?>" class="registration form-validator form-horizontal" role="form">
+                    <!--
+                    <div class="form-group col-sm-12 first-raw">
+                        <label class="control-label col-sm-4 no-pad">Вы регистрируетесь как</label>
+                        <div class="col-sm-8">
+                            <div class="col-sm-4 row">
+                                <input class="customStyled" name="type" id="as1" type="radio" value="p" checked="checked"><label for="as1">Физ. лицо</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input class="customStyled" name="type" id="as2" type="radio" value="l"><label for="as2">Юр. лицо</label>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <input type="hidden" name="type" value="p" />
+
+                    <div class="form-group col-sm-12">
+                        <label class="control-label col-sm-4"></label>
+                        <div class="col-sm-8">
+                            <a href="#">Подробнее о правах на сайте</a>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="e-mail" class="col-sm-4 control-label">Электронная почта *</label>
+                        <div class="input-holder col-sm-8">
+                            <input id="e-mail" placeholder="Введите адрес электронной почты" name="username" class="form-control">
+                            <span class="errors">* Заполните обязательное поле</span>
+                            <!-- <input id="e-mail" type="email" class="form-control"> -->
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="pasw" class="col-sm-4 control-label">Пароль *</label>
+                        <div class="input-holder col-sm-8">
+                            <input id="pasw" type="password" placeholder="Введите пароль" name="password" class="form-control">
+                            <span class="errors">* Заполните обязательное поле</span>
+                            <!-- <input id="pasw" type="password" class="form-control"> -->
+                        </div>
+                        <div id="passwordStrengthDiv" class="is0"></div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="pasw_repeat" class="col-sm-4 control-label">Подтверждение пароля *</label>
+                        <div class="input-holder col-sm-8">
+                            <input id="pasw_repeat" type="password" placeholder="Введите повторно пароль" name="retry_password" class="form-control">
+                            <span class="errors">* Заполните обязательное поле</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <label for="lastname" class="col-sm-4 control-label">Фамилия *</label>
+                        <div class="input-holder col-sm-8">
+                            <input name="lastname" id="lastname" type="text" class="form-control" placeholder="Буцко" value="" />
+                            <span class="errors">* Заполните обязательное поле</span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="firstname" class="col-sm-4 control-label">Имя *</label>
+                        <div class="input-holder col-sm-8">
+                            <input name="firstname" id="firstname" type="text" class="form-control" placeholder="Василий" value="" />
+                            <span class="errors">* Заполните обязательное поле</span>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-12">
+                        <label for="secondname" class="col-sm-4 control-label">Отчество *</label>
+                        <div class="input-holder col-sm-8">
+                            <input name="secondname" id="secondname" type="text" class="form-control" placeholder="Васильевич" value="" />
+                            <span class="errors">* Заполните обязательное поле</span>
+                        </div>
+                    </div>
+
+                    <?php echo($this->partial('profile-partials/location-box.phtml', array('regionList' => $regionList, 'container_class' => 'col-sm-12', 'label_class' => 'col-sm-4', 'input_class' => 'col-sm-8'))); ?>
+
+                    <div class="form-group col-sm-12">
+                        <label for="adr" class="col-sm-4 control-label">Адрес *</label>
+                        <div class="input-holder col-sm-8">
+                            <input name="address" id="adr" type="text" class="form-control" placeholder="ул. Мира, 43" value="" />
+                            <span class="errors">* Заполните обязательное поле</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <label for="agree" class="col-sm-4 control-label">Я согласен с <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'user-agreement')));?>" target="_blank" >правилами сервиса *</a></label>
+                        <div class="input-holder col-sm-8">
+                            <input name="agree" id="agree" type="checkbox" class="form-control" value="0" />
+                            <span class="errors">* Заполните обязательное поле</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group col-sm-12">
+                        <label class="col-sm-4 control-label" for="captcha">Пожалуйста, докажите, что вы человек</label>
+                        <div class="input-holder col-sm-8">
+                            <?php
+                            $form = $this->form;
+                            $form->get('captcha')->setAttribute('class' , 'form-control');
+                            echo $this->formRow($form->get('captcha')->setAttribute('class' , 'form-control'));
+                            ?>
+                            <span class="errors">* значение Captcha неверно</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 centered">
+                        <div class="center-block text-center">
+                            <a class="btn btn-default btn-success" onclick="$(this).closest('form').submit()">Отправить</a>
+                            <input type="hidden" name="referrer" value="<?php echo $referrer; ?>">
+                            <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('module' => 'profile','controller' => 'registration', 'action' => 'validator'))); ?>" />
+                            <input type="hidden" name="registration-form" value="0" />
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

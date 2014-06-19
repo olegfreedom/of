@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Личный кабинет
+                </h1>
+            </div>
+            <!-- Nav tabs -->
+            <?php echo($this->partial('profile-partials/tabs-menu.phtml')); ?>
+            <div class="tab-content">
+            <div class="tab-pane fade active in" id="controlls">
+                <div class="col-sm-12 pad">
+                    <button onclick="location.href = '<?php echo($this->easyUrl(array('controller' => 'adverts', 'action' => 'add'))); ?>';return false;" type="button" class="btn btn-default">Добавить</button>
+                </div>
+                <ul id="tabs2" class="nav nav-tabs">
+                    <li class="active"><a href="#products" data-toggle="tab">Товары</a></li>
+                    <li><a href="#services" data-toggle="tab">Услуги</a></li>
+                </ul>
+                <div class="tab-content pad">
+                    <div class="tab-pane fade active in" id="products">
+                        <ul id="tabs3" class="nav nav-tabs">
+                            <li class="active"><a href="#buy" data-toggle="tab">Спрос</a></li>
+                            <li><a href="#sell" data-toggle="tab">Предложение</a></li>
+                        </ul>
+                        <div class="tab-content pad">
+
+                            <div class="tab-pane fade active in" id="buy">
+                                <?php echo $this->partial('profile-partials/adverts-list.phtml', array('advertsList' => $advertsList [$Model::TYPE_PRODUCT_BUY])); ?>
+                            </div>
+                            <div class="tab-pane fade" id="sell">
+                                <?php echo $this->partial('profile-partials/adverts-list.phtml', array('advertsList' => $advertsList [$Model::TYPE_PRODUCT_SELL])); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="services">
+                        <ul id="tabs3-2" class="nav nav-tabs">
+                            <li class="active"><a href="#buy2" data-toggle="tab">Спрос</a></li>
+                            <li><a href="#sell2" data-toggle="tab">Предложение</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active in" id="buy2">
+                                <?php echo $this->partial('profile-partials/adverts-list.phtml', array('advertsList' => $advertsList [$Model::TYPE_SERVICE_BUY])); ?>
+                            </div>
+                            <div class="tab-pane fade" id="sell2">
+                                <?php echo $this->partial('profile-partials/adverts-list.phtml', array('advertsList' => $advertsList [$Model::TYPE_SERVICE_SELL])); ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

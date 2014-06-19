@@ -1,0 +1,119 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Раздел в разработке
+                </h1>
+            </div>
+            <!-- Nav tabs -->
+            <?php echo($this->partial('profile-partials/tabs-menu.phtml')); ?>
+
+        </div>
+    </div>
+</div>
+
+<?php /*
+<div class="wrapper sms-page">
+    <div class="wrapper-center">
+        <div class="subnav">
+            <div class="holders group">
+                <a class="sbmt-gr active" href="#">Сообщения</a>
+                <a class="sbmt-gr" href="#">Архив</a>
+
+                <select class="select-filtr" id="filtr" name='filtr'>
+                    <option value='option-1'>по дате, сначала новые</option>
+                    <option value='option-2'>option2</option>
+                    <option value='option-3'>option3</option>
+                </select>
+            </div>
+        </div>
+        <?php if ($inboxList) { ?>
+            <?php foreach ($inboxList as $item) { ?>
+                <div class="toggle-block2 slide">
+                    <div class="holders">
+                        <div class="sms-post">
+                            <span class="envelope"></span>
+
+                            <div class="col">
+                                <a class="opener amount-sms" href="#">
+                                    <em><?php echo $item['count']; ?></em>
+                                    <span>сообщения</span>
+                                </a>
+                            </div>
+                            <div class="col text-col">
+                                <div class="post-text-holder">
+                                    <img src="<?php echo $item['image']; ?>" alt="#"/>
+
+                                    <h2><?php echo $item['name']; ?></h2>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <?php if ($item['price'] > 0) { ?>
+                                <div class="post-text-holder group">
+                                <span class="pricing">
+                                    <span class="symb"></span>
+                                    <?php echo $item['price']; ?>
+                                </span>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php if (isset($item['messages'])) { ?>
+                        <?php foreach ($item['messages'] as $mess) { ?>
+
+                            <div class="slide">
+                                <div class="toggle-block3 slide message-detail">
+                                    <div class="slide3 controll-panel">
+                                        <div class="holders">
+                                            <div class="controlls-wrapper group">
+                                                <a class="deleteIt" href="#">Удалить</a>
+                                                <a class="archiveIt" href="#">Отправить в архив</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="holders">
+                                        <div class="col">
+                                            <a class="opener3 the-opener" href="#">
+                                                <input type="checkbox" name="type" value="#">
+                                            </a>
+                                        </div>
+                                        <div class="col clickable" data-href="<?php echo $this->easyUrl(array('action' => 'talk','user' => $mess['f_user_id'], 'advert' => $item['id']))?>">
+                                            <!--                                <img class="ava" src="/img/tmp/avka1.png" alt="#"/>-->
+                                        </div>
+                                        <div class="col clickable" data-href="<?php echo $this->easyUrl(array('action' => 'talk','user' => $mess['f_user_id'], 'advert' => $item['id']))?>">
+                                            <span class="med pers-name"><?php echo $mess['username']; ?></span>
+                                        </div>
+                                        <div class="col clickable text" data-href="<?php echo $this->easyUrl(array('action' => 'talk','user' => $mess['f_user_id'], 'advert' => $item['id']))?>">
+                                            <span class="med">сообщение</span> <span
+                                                class="reg-gr">- <?php echo substr($mess['text'], 0, 80); ?>&#8230;</span>
+                                        </div>
+                                        <!--                            <div class="col clickable">-->
+                                        <!--                                <div class="y-file">-->
+                                        <!--                                    <span>Прикрепленный файл</span>-->
+                                        <!--                                </div>-->
+                                        <!--                            </div>-->
+                                        <div class="col clickable date" data-href="<?php echo $this->easyUrl(array('action' => 'talk','user' => $mess['f_user_id'], 'advert' => $item['id']))?>">
+                                            <span class="sms-timing"><?php echo $mess['timestamp']; ?></span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        <?php } ?>
+                    <?php } ?>
+                </div>
+            <?php } ?>
+        <?php } ?>
+
+
+    </div>
+</div>
+
+
+
+
+*/ ?>

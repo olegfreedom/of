@@ -1,0 +1,24 @@
+<?php if($limiter !== null && is_array($limiter)){ ?>
+<div class="pagination-options limiter">
+    Элементов на странице: 
+    <ul class="pagination">
+      <?php $first=true; foreach($limiter as $item){ ?>
+        <?php
+            $params = array(
+                        'page' => 1,
+                        'limit' => $item['val']
+                      );
+            if(isset($setAction)){
+                $params['action'] = $setAction;
+            }
+            $name = ($item['val'] == 'all') ? 'все' : $item['val'];
+        ?>
+        <?php if($item['type'] == 'current'){ ?>
+        <li class="<?php echo(($first) ? 'first ' : ''); ?>active"><a><?php echo($name); ?></a></li>
+        <?php $first=false; }else{ ?>
+        <li<?php echo(($first) ? ' class="first"' : ''); ?>><a href="<?php echo($this->easyUrl($params, array(), true)); ?>"><?php echo($name); ?></a></li>
+        <?php $first=false; } ?>  
+      <?php } ?>
+    </ul>
+</div>
+<?php } ?>

@@ -1,0 +1,27 @@
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <form class="form-horizontal" action="<?php echo($this->easyUrl(array('controller' => 'login'))); ?>" method="post">
+      <div class="control-group pagination-centered">
+        <h3>Админ-панель</h3>    
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputUser">Логин</label>
+        <div class="controls">
+          <input type="text" id="inputUser" name="username" placeholder="Введите логин" value="" maxlength="100">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputPassword">Пароль</label>
+        <div class="controls">
+          <input type="password" id="inputPassword" name="password" placeholder="Введите пароль" value="" maxlength="100">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">Вход</button>
+        </div>
+      </div>
+      <input type="hidden" name="login-form" value="1">
+    </form>
+  </div>
+</div>

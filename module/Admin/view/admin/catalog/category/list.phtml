@@ -1,0 +1,16 @@
+<?php echo($this->partial('admin/catalog/tab-nav.phtml')); ?>
+<?php if($categoryList){ ?>
+<div class="row-fluid">
+    <div class="col">      
+        <table class="table table-striped table-bordered">
+            <thead>        
+                <tr>
+                    <th>Категория</th>
+                    <th class="action-box"></th>
+                </tr>
+            </thead>
+            <?php echo($this->partial('admin/catalog/category/list-items.phtml', array('categoryList' => $categoryList, 'tab' => ''))); ?>
+        </table>
+    </div>
+</div>
+<?php } ?>

@@ -1,0 +1,19 @@
+<div class="login-holder<?php echo(isset($_SESSION['profile']->auth['id']) ? ' logged' : ''); ?>">
+    <?php if(isset($_SESSION['profile']->auth['id'])){ ?>
+            <ul class="for-logged-in-user group">
+                <li><a class="logged-in-name" href="<?php echo($this->easyUrl(array('module' => 'profile'))); ?>"><?php echo($_SESSION['profile']->auth['username']); ?></a></li>
+                <li><a class="sms-amount" href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'messages', 'action' => 'index'))); ?>">
+                        <?php if ($_SESSION['profile']['messages'] && $_SESSION['profile']['messages'] > 0) { ?>
+                        <span class="sms-new-amount"><?php echo($_SESSION['profile']['messages']); ?></span>
+                        <?php } ?>
+                    </a>
+                </li>
+                <li><a class="logged-in" href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'login', 'action' => 'logout'))); ?>"></a></li>
+            </ul>
+    <?php }else{ ?>
+        <a class="btn-login">Вход</a>
+        <?php echo($this->partial('profile-partials/form-login.phtml')); ?>
+        <?php echo($this->partial('profile-partials/form-forgot.phtml')); ?>
+        <?php echo($this->partial('profile-partials/form-register.phtml')); ?>
+    <?php } ?>
+</div>

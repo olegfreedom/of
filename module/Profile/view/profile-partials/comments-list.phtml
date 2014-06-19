@@ -1,0 +1,9 @@
+<?php if ( !isset($currentLevel) ) $currentLevel = 0; ?>
+
+<?php if ( !empty($advertComments) ): ?>
+    <?php foreach ( $advertComments as $item ): ?>
+        <?php echo $this->partial('profile-partials/comment-item.phtml', array('item' => $item, 'currentLevel' => $currentLevel, 'userId' => $userId)); ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+

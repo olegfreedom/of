@@ -1,0 +1,158 @@
+<div class="tab-pane fade active in" id="controlls">
+    <div class="col-sm-12 pad">
+        <button onclick="location.href = '<?php echo($this->easyUrl(array('controller' => 'index', 'action' => 'add'))); ?>';return false;" type="button" class="btn btn-default">Добавить</button>
+    </div>
+    <ul id="tabs2" class="nav nav-tabs">
+        <li class="active"><a href="#products" data-toggle="tab">Товары</a></li>
+        <li><a href="#services" data-toggle="tab">Услуги</a></li>
+    </ul>
+    <div class="tab-content pad">
+        <div class="tab-pane fade active in" id="products">
+            <ul id="tabs3" class="nav nav-tabs">
+                <li class="active"><a href="#buy" data-toggle="tab">Спрос</a></li>
+                <li><a href="#sell" data-toggle="tab">Предложение</a></li>
+            </ul>
+            <div class="tab-content pad">
+                <div class="tab-pane fade active in" id="buy">
+                    <div class="clearfix pad mar-bot post">
+                        <div class="col-sm-12">
+                            <div class="col-sm-8">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-1 pull-left">
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="row">
+                                            <h4><a href="#">Название товара/услуги</a></h4>
+                                        </div>
+                                        <div class="row">
+                                            <a href="#"><span>Винница</span></a>
+                                        </div>
+                                        <div class="row">
+                                            <span>01.03.2014</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2 text-center">
+                                        <span>300 грн</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="row text-center">
+                                    <span>7</span>
+                                </div>
+                                <div class="row text-center">
+                                    <span>дня осталось</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="row text-center pad">
+                                    <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+                                </div>
+                                <div class="row text-center pad">
+                                    <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="sell">
+
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="services">
+            <ul id="tabs3-2" class="nav nav-tabs">
+                <li class="active"><a href="#buy2" data-toggle="tab">Спрос</a></li>
+                <li><a href="#sell2" data-toggle="tab">Предложение</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="buy2">
+
+                </div>
+                <div class="tab-pane fade" id="sell2">
+                    <div class="clearfix pad mar-bot post">
+                        <div class="col-sm-12 row">
+
+                            <div class="col-sm-8 row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-3 row">
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="col-sm-7 row">
+                                        <div class="row">
+                                            <h4><a href="#">Название товара/услуги</a></h4>
+                                        </div>
+                                        <div class="row">
+                                            <a href="#"><span>Винница</span></a>
+                                        </div>
+                                        <div class="row">
+                                            <span>01.03.2014</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 row text-center">
+                                        <span>300 грн</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 row">
+                                <div class="row text-center pad">
+                                    <a href="#"><img src="images/pencil.png" alt="#"/></a>
+                                </div>
+                                <div class="row text-center pad">
+                                    <a href=""><img src="images/cancel.png" alt="#"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix pad mar-bot post">
+                        <div class="col-sm-12 row">
+                            <div class="col-sm-2 row">
+                                <div class="row text-center">
+                                    <span>8</span>
+                                </div>
+                                <div class="row text-center">
+                                    <span>дня осталось</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-3 row">
+                                        <span class="glyphicon glyphicon-picture"></span>
+                                    </div>
+                                    <div class="col-sm-7 row">
+                                        <div class="row">
+                                            <h4><a href="#">Название товара/услуги</a></h4>
+                                        </div>
+                                        <div class="row">
+                                            <a href="#"><span>Винница</span></a>
+                                        </div>
+                                        <div class="row">
+                                            <span>01.03.2014</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 row text-center">
+                                        <span>300 грн</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-2 row">
+                                <div class="row text-center pad">
+                                    <a href="#"><img src="images/pencil.png" alt="#"/></a>
+                                </div>
+                                <div class="row text-center pad">
+                                    <a href=""><img src="images/cancel.png" alt="#"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tab-pane fade" id="investments">.2</div>
+
+<div class="tab-pane fade" id="comments">.4</div>
+<div class="tab-pane fade" id="rates">.5</div>

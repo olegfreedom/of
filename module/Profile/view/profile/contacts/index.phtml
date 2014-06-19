@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Личный кабинет
+                </h1>
+            </div>
+            <!-- Nav tabs -->
+            <?php echo($this->partial('profile-partials/tabs-menu.phtml')); ?>
+<!--
+                <div class="tab-content uslugi kab form-tab">
+                    <div id="tab2">
+                        <h2 class="t-dotted">Укажите Ваше имя или имя контактного лица, с которым мы могли бы связаться
+                        </h2>
+
+                        <div class="wrap t-dotted">
+                            <form action="<?php echo($this->easyUrl(array('action' => 'edit'))); ?>"
+                                  class="contact_inf">
+                                <div class="wrap">
+                                    <label for="person">Контактное лицо<span>*</span></label>
+
+                                    <div class="input-holder person">
+                                        <input name="person" id="person" type="text"
+                                               value="<?php echo(isset($getEdit['name']) ? $getEdit['name'] : ''); ?>"
+                                               placeholder="Введите контактные данные"/>
+                                        <span>* Заполните обязательное поле</span>
+                                    </div>
+                                </div>
+                                <?php echo($this->partial('profile-partials/user-phone-box.phtml')); ?>
+                                <input type="hidden" name="validator"
+                                       value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+                                <input type="hidden" name="contacts-form" value="0">
+                            </form>
+                        </div>
+                        <a class="submitIt" type="submit" href="#">Сохранить</a>
+                    </div>
+                </div>
+
+-->
+        </div>
+    </div>
+</div>

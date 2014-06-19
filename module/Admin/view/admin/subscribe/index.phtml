@@ -1,0 +1,25 @@
+<?php if ($emailsList) { ?>
+    <div class="row-fluid">
+        <div class="col">
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Дата</th>
+                    <th class="action-box"></th>
+                </tr>
+                </thead>
+                <?php foreach ($emailsList as $item) { ?>
+                    <tr>
+                        <td><?php echo($item['email']); ?></td>
+                        <td><?php echo($item['date']); ?></td>
+                        <td class="action-box">
+                            <a href="<?php echo($this->easyUrl(array('action' => 'remove', 'id' => $item['id']), array(), true)) ?>" class="icon-remove confirm-remove" title="удалить"></a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+            <?php echo($this->partial('admin-partials/paginator.phtml', array('paginator' => $paginator))); ?>
+        </div>
+    </div>
+<?php } ?>

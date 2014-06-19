@@ -1,0 +1,32 @@
+<div class="phone-box">    
+    <label class="control-label">Телефон</label>
+    <?php if(isset($getPhone) && is_array($getPhone)){ ?>
+        <div class="control-group">        
+            <div class="controls">                
+                <?php foreach($getPhone as $item){ ?>
+                    <div class="row-fluid">            
+                        <?php echo($item['phone']); ?>
+                        &nbsp;&nbsp;
+                        <a href="<?php echo($this->easyUrl(array('action' => 'remove-phone', 'id' => $item['id']))) ?>" class="icon-remove phone-remove-item" title="удалить"></a>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    <?php } ?>
+    <div class="control-group">        
+        <div class="controls">
+             <input type="text" class="phone-items bfh-phone span2" data-format="<?php echo(isset($phoneMask) ? $phoneMask : ''); ?>" name="phone[]" placeholder="<?php echo(isset($phonePlaceholder) ? $phonePlaceholder : ''); ?>" maxlength="20" value="">
+             <?php if(isset($phoneMaskArray) && is_array($phoneMaskArray)){ ?>
+              <select class="selectpicker span2 phone-change-mask" name="mask[]">                    
+                <?php foreach($phoneMaskArray as $item){ ?>
+                    <option value="<?php echo($item['id']); ?>" data-mask="<?php echo($item['mask']); ?>"><?php echo($item['placeholder']); ?></option>
+                <?php } ?>
+              </select>
+             <?php } ?>
+        </div>
+    </div>
+</div>
+<div class="control-group">
+    <input type="hidden" class="phone-item-data" data-phone-mask="<?php echo(isset($phoneMask) ? $phoneMask : ''); ?>" data-phone-placeholder="<?php echo(isset($phonePlaceholder) ? $phonePlaceholder : ''); ?>">
+    <a class="btn btn-success btn-small phone-add-item"><i class="icon-white icon-plus"></i> добавить поле</a>
+</div>

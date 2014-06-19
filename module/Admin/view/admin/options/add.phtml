@@ -1,0 +1,52 @@
+<form class="form-validator add" action="<?php echo($this->easyUrl(array('action' => 'add'))); ?>" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Добавление опции</legend>
+        <div class="cont">
+        <div class="control-group">
+            <div class="controls">
+                <label class="control-label">Название</label>
+                <input type="text" class="span3" name="name">
+            </div>
+            </div>
+            <label class="control-label">Категория</label>
+
+            <div class="controls">
+                <select class="selectpicker span3" name="category_id">
+                    <?php echo($this->partial('admin/catalog/category/add-category-select.phtml', array('categoryList' => $getCategory, 'tab' => ''))); ?>
+                </select>
+            </div>
+            <label class="control-label">Тип</label>
+
+            <div class="controls">
+                <select class="type-option selectpicker span3" name="type">
+                    <option value="text">Text</option>
+                    <option value="select">Select</option>
+                    <option value="radio">Radio button</option>
+                    <option value="checkbox">Checkbox</option>
+                    <option value="multi">Multi checkbox</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <div class="controls change">
+                    <div class="row-fluid change">
+                        <div class="col span3">
+                            <div class="controls-row">
+                                <label class="control-label">По умолчанию</label>
+                                <input type="text" class="span12" name="default">
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="controls-add">
+                <a class="add-select btn btn-info" style="display: none;">Добавить</a>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Отменить</a>
+            </div>
+        </div>
+    </fieldset>
+    <input type="hidden" name="add-form" value="0">
+    <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+</form>

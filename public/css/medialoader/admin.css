@@ -1,0 +1,83 @@
+/**
+ * Use to URL:
+ *  /admin/*
+ */
+
+/*************
+ Table style
+**************/
+
+.table{
+    width: auto;
+}
+
+.table .status-box,
+.table .action-box{
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.table .action-box a{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+/*************
+  Forms
+*************/
+
+.legend-normal{
+    border: none;
+    margin-bottom: 0;
+}
+.legend-normal small{
+    color: #333333;
+}
+.textarea-fix-size{
+    resize: none;
+}
+
+/**************
+ gallery box
+**************/
+.gallery-upload-row{
+    margin: 10px 0 5px;
+}
+.gallery-upload-box span{
+    display: block;
+    margin: 5px 0 0;
+}
+.gallery-remove-image{
+    margin: 3px 0 0;
+}
+
+.photo-preview {
+    width: 200px;
+    height: auto;
+}
+
+/**************
+ phone box
+**************/
+.phone-box input{
+    display: block;
+    /*margin: 5px 0;*/
+}
+
+/****************
+ nav font weight
+****************/
+.font-normal {
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: none;
+}
+
+/******************
+ tinymce error
+******************/
+.control-group.error div.mce-tinymce.mce-container {
+    border-color: #B94A48;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}

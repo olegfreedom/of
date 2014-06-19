@@ -1,0 +1,31 @@
+<?php if ( !empty($categoriesList) ): ?>
+    <ul class="list-unstyled" id="accordion-categories">
+        <?php foreach ($categoriesList as $key => $row): ?>
+            <li id="accordion<?php echo $row ['id'];?>" class="accordion">
+                <a class="acc-title accordion-toggle" data-toggle="collapse" data-parent="#accordion<?php echo $row ['id'];?>" href="#collapse<?php echo $row ['id'];?>"><?php echo $row ['name'];?></a>
+                <a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $row ['id']));?>" class="show-all">Все</a>
+                <?php if ( !empty($row ['subcategory']) ): ?>
+                    <ul class="accordion-body collapse" id="collapse<?php echo $row ['id'];?>">
+                        <?php foreach ( $row ['subcategory'] as $rowSub1 ): ?>
+                            <li id="accordion<?php echo $rowSub1 ['id'];?>" class="accordion">
+                                <?php if ( !empty($rowSub1 ['subcategory']) ): ?>
+                                    <a class="acc-title accordion-toggle" data-toggle="collapse" data-parent="#accordion<?php echo $rowSub1 ['id'];?>" href="#collapse<?php echo $rowSub1 ['id'];?>"><?php echo $row ['name'];?></a>
+                                    <a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $row ['id']));?>" class="show-all">Все</a>
+                                    <ul class="accordion-body collapse" id="collapse<?php echo $rowSub1 ['id'];?>">
+                                        <?php foreach ( $rowSub1 ['subcategory'] as $rowSub2 ): ?>
+                                            <li>
+                                                <a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $rowSub2 ['id']));?>"><?php echo $rowSub2 ['name'];?></a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php else: ?>
+                                    <a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $rowSub1 ['id']));?>"><?php echo $rowSub1 ['name'];?></a>
+                                <?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

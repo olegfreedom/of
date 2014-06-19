@@ -1,0 +1,45 @@
+<div class="item-testimonials">
+    <h2><span>Отзывы</span></h2>
+    <div class="content" id="testimonialsForm">
+        <form action="<?php echo($this->easyUrl(array('action' => 'testimonial-add'))); ?>" method="post" class="testimonial-form">
+            <fieldset>
+                <div class="row">
+                    <label>Ваше имя</label>
+                    <input type="text" name="name" maxlength="150" value="">
+                </div>
+                <div class="row">
+                    <label>Электронная почта</label>
+                    <input type="email" name="email" maxlength="200" value="">
+                </div>
+                <div class="row">
+                    <label>Отзыв</label>
+                    <textarea cols="30" rows="10" name="comment" maxlength="1000"></textarea>
+                </div>
+                <div class="row">
+                    <div class="testi-star">
+                    <?php echo($this->partial('partials/rating-testimonial.phtml')); ?>
+                    </div>
+                    <div class="submit-holder">
+                        <input type="submit" value="Оставить отзыв">
+                    </div>
+                </div>
+            </fieldset>
+            <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'testimonial-validator'))); ?>">
+            <input type="hidden" name="advert_id" value="<?php echo $advert['id']; ?>">
+        </form>
+        <?php echo($this->partial('partials/paginator.phtml', array('paginator' => $paginator, 'setAction' => 'view', 'pageTestimonials' => true))); ?>
+        <?php if(isset($commentItems) && is_array($commentItems)){ ?>
+            <div class="testimonials-list">
+                <?php foreach ($commentItems as $item){ ?>
+                    <div class="item">
+                        <strong class="title"><?php echo($item['name']); ?>, <?php echo($item['date']); ?></strong>
+                        <p><?php echo(nl2br($item['comment'])); ?></p>
+                    </div>
+                <?php } ?>
+            </div>
+        <?php }?>
+        <?php if(isset($tpage) && (int)$tpage > 0){ ?>
+        <input type="hidden" id="scroll-to-testimonials-form" value="1">
+        <?php } ?>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+/**
+ * Use to URL:
+ *  /adverts
+ *  /adverts/*
+ */
+
+.big-img{
+    display: none;
+}
+
+.main .options-container p{
+    color: #000000;
+    font: 14px/18px 'pf_agora_sans_promedium',Arial,Verdana,sans-serif;
+    margin: 5px 0;
+    text-align: left;
+    white-space: normal;
+    float: left;
+    width: 235px;
+    min-height: 20px;
+
+}
+
+.options-container {
+    margin: 0 15px;
+}

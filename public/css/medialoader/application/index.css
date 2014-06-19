@@ -1,0 +1,33 @@
+/**
+ * Use to URL:
+ *  /
+ *  /index
+ *  /index/*
+ */
+
+.w2.fleft.adverts{
+    width: 620px;
+    margin-right: 10px;
+}
+.w2.fleft.adverts .item{
+    margin-bottom: 15px;
+}
+.w2.fleft.adverts .item > h3{
+    margin-bottom: 0px;
+}
+
+.w2.fright.category{
+    width: 350px;
+}
+.w2.fright.category .category-menu ul{
+    padding-left: 15px;
+}
+.w2.fright.category .category-menu ul li{
+    list-style: circle;
+}
+.w2.fright.category .category-menu li a{
+    text-decoration: none;
+}
+.w2.fright.category .category-menu li a.active{
+    font-weight: bold;
+}

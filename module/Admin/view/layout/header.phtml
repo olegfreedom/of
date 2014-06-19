@@ -1,0 +1,16 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="<?php echo($this->easyUrl(array())); ?>">Админ-панель</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <?php if(isset($_SESSION['admin']->auth['id'])){ ?>
+                    <li><a href="<?php echo($this->easyUrl(array('controller' => 'login', 'action' => 'logout'))); ?>">Выход (<?php echo($_SESSION['admin']->auth['username']); ?>)</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('controller' => 'sql-update'))); ?>">SQL Update</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('controller' => 'clear-cache'))); ?>">Clear Cache</a></li>
+                    <?php } ?>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>

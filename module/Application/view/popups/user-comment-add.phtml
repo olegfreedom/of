@@ -1,0 +1,11 @@
+<div class="popup-container modal fade col-sm-12 text-center" id="popup-user-comment-add">
+
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h4>Комментарий</h4>
+    </div>
+
+    <div class="modal-body">
+        <?php echo $this->partial('partials/user-comment-add.phtml', array('user' => $user, 'parent_id' => 0, 'id' => 0)); ?>
+    </div>
+</div>

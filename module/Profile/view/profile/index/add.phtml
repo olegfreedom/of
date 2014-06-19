@@ -1,0 +1,191 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    <?php echo((isset($isGuest) && $isGuest == true) ? 'Добавление объявления' : 'Личный кабинет'); ?>
+                </h1>
+            </div>
+
+            <?php if(!isset($isGuest)): ?>
+                <?php echo($this->partial('profile-partials/tabs-menu.phtml')); ?>
+            <?php endif; ?>
+
+            <!-- Tab panes -->
+            <?php
+            /*
+            <div class="tab-content">
+
+                <div class="tab-pane fade active in" id="controlls">
+                    <ul id="tabs2" class="nav nav-tabs">
+                        <li class="active"><a href="#products" data-toggle="tab">Товары</a></li>
+                        <li><a href="#services" data-toggle="tab">Услуги</a></li>
+                    </ul>
+                    <div class="tab-content pad">
+                        <div class="tab-pane fade active in" id="products">
+                            <ul id="tabs3" class="nav nav-tabs">
+                                <li class="active"><a href="#buy" data-toggle="tab">Спрос</a></li>
+                                <li><a href="#sell" data-toggle="tab">Предложение</a></li>
+                            </ul>
+                            <div class="tab-content pad">
+                                <div class="tab-pane fade active in" id="buy">
+
+                                </div>
+                                <div class="tab-pane fade" id="sell">
+ */ ?>
+                                    <form id="frm" class="form-validator add helper" action="<?php echo($this->easyUrl(array('action' => 'add'))); ?>" method="post" enctype="multipart/form-data">
+                                        <div class="form-group col-sm-12">
+                                            <label for="section" class="col-sm-2 control-label">Тип</label>
+                                            <div class="col-sm-10">
+                                                <select name="type_id" class="form-control">
+                                                    <?php foreach ($getType as $item): ?>
+                                                        <option value="<?php echo($item['id']); ?>"><?php echo($item['name']); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-12">
+                                            <label for="section" class="col-sm-2 control-label">Раздел</label>
+                                            <div class="col-sm-10">
+                                                <select class="form-control category" id="tadv-rubr" name="category_id">
+                                                    <?php echo($this->partial('admin/catalog/category/add-category-select.phtml',
+                                                        array('categoryList' => $getCategory, 'tab' => '', 'disabled' => true)));?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="title" class="col-sm-2 control-label">Заголовок</label>
+                                            <div class="input-holder col-sm-10">
+                                                <input class="form-control" maxlength="50" id="tadv-title" value="" name="name" type="text" placeholder="Введите заголовок обьявления"/>
+                                                <span class="errors">* Заполните обязательное поле</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="description-short" class="col-sm-2 control-label">Краткое описание</label>
+                                            <div class="input-holder col-sm-10">
+                                                <input id="description-short" name="description_short" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="description-full" class="col-sm-2 control-label">Полное описание</label>
+                                            <div class="input-holder col-sm-10">
+                                                <textarea id="description-full" class="form-control" name="description_full" cols="30" rows="10"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-12">
+                                            <label for="img" class="col-sm-2 control-label">Изображение</label>
+                                            <div class="col-sm-10">
+                                                <div class="wrap img">
+                                                    <?php echo($this->partial('profile-partials/gallery-upload-box.phtml')); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-12">
+                                            <label class="col-sm-2 control-label">Базовая цена</label>
+                                            <div class="form-group col-sm-6">
+                                                <input class="form-control" onkeypress="return isNumberKey(event)" name="price" id="tadv-price" value="" type="text" />
+                                            </div>
+                                            <div class="form-group col-sm-1">
+                                                <span class="help-block">грн.</span>
+                                            </div>
+                                            <div class="form-group col-sm-1">
+                                                <label for="for" class="col-sm-4 control-label">За</label>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <select name="unit_type" class="form-control small">
+                                                    <?php foreach ($getUnitTypes as $item): ?>
+                                                        <option value="<?php echo($item['id']); ?>"><?php echo($item['shortname']); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-sm-12">
+                                            <div class="form-group col-sm-6">
+                                                <div class="row clearfix">
+                                                    <div class="form-group col-sm-12">
+                                                        <div class="col-sm-1"><input id="fund" type="radio" name="s-f" class="form-control"></div>
+                                                        <div class="col-sm-2"><label for="fund" class="col-sm-4 control-label">Фонд развития</label></div>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" onkeypress="return isNumberKey(event)" name="price_fond" id="tadv-price" value="" type="text"/>
+                                                        </div>
+                                                        <div class="col-sm-1"><span class="help-block">грн</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row clearfix">
+                                                    <div class="form-group col-sm-12">
+                                                        <div class="col-sm-1"><input id="sale" type="radio" name="s-f" class="form-control"></div>
+                                                        <div class="col-sm-2"><label for="sale" class="col-sm-4 control-label">Размер скидки</label></div>
+                                                        <div class="col-sm-8">
+                                                            <input class="form-control" onkeypress="return isNumberKey(event)" name="discount" id="tadv-price" value="" type="text"/>
+                                                        </div>
+                                                        <div class="col-sm-1"><span class="help-block">грн</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="img" class="col-sm-2 control-label">Товар доступен</label>
+                                            <div class="row input-holder col-sm-10">
+                                                <div class="col-sm-3">
+                                                    <div class="input-append date" id="dp1">
+                                                        <input class="span2 datepicker" size="16" type="text">
+                                                        <span class="add-on"><i class="icon-th"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group col-sm-12">
+                                                        <div class="input-append date" id="dp2">
+                                                            <input class="span2 datepicker" size="16" type="text">
+                                                            <span class="add-on"><i class="icon-th"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <span class="help-block"><a href="#">Еще даты</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 text-center">
+                                            <a onclick="$(this).closest('form').submit();" class="btn btn-default btn-success" href="#">Добавить</a>
+                                        </div>
+
+                                        <input type="hidden" name="location" value="0">
+                                        <input type="hidden" name="add-form" value="0">
+                                        <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+                                        <input type="hidden" name="load_options" value="<?php echo($this->easyUrl(array('action' => 'load-options'))); ?>">
+                                        <input type="hidden" name="require-url" value="<?php echo $this->easyUrl(array('action' => 'get-fields')); ?>">
+                                        <input type="hidden" name="location_url" value="<?php echo($this->easyUrl(array('action' => 'getCity'))); ?>">
+                                    </form>
+<?php /*
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="services">
+                            <ul id="tabs3-2" class="nav nav-tabs">
+                                <li class="active"><a href="#buy2" data-toggle="tab">Спрос</a></li>
+                                <li><a href="#sell2" data-toggle="tab">Предложение</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="buy2">
+
+                                </div>
+                                <div class="tab-pane fade" id="sell2">
+                                    empty
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="investments">.2</div>
+                <div class="tab-pane fade" id="profile">.3</div>
+                <div class="tab-pane fade" id="comments">.4</div>
+                <div class="tab-pane fade" id="rates">.5</div>
+            </div>
+ */ ?>
+        </div>
+    </div>
+</div>

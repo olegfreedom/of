@@ -1,0 +1,14 @@
+<?php if(isset($categoryList) && is_array($categoryList) && isset($tab)){ ?>
+    <?php foreach($categoryList as $item){ ?>
+        <tr>
+            <td><?php echo($tab.$item['name']); ?></td>
+            <td class="action-box">
+               <a href="<?php echo($this->easyUrl(array('action' => 'category-edit', 'id' => $item['id']))) ?>" class="icon-edit" title="редактировать"></a>
+               <a href="<?php echo($this->easyUrl(array('action' => 'category-remove', 'id' => $item['id']))) ?>" class="icon-remove confirm-remove" title="удалить"></a>
+            </td>
+        </tr>
+        <?php if(isset($item['subcategory'])){ ?>
+        <?php echo($this->partial('admin/catalog/category/list-items.phtml', array('categoryList' => $item['subcategory'], 'tab' => $tab.'<i class="icon-arrow-right"></i>&nbsp;'))); ?>
+        <?php } ?> 
+    <?php } ?> 
+<?php } ?>

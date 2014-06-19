@@ -1,0 +1,15 @@
+<div class="control-group">        
+    <label class="control-label">Гос. номер авто</label>
+    <div class="controls">
+        <input type="text" name="callsign_number" class="span1 callsign-number" data-url="<?php echo($this->easyUrl(array('action' => 'callsign', 'car_id' => (isset($getEdit['id']) ? $getEdit['id'] : 0)))); ?>" placeholder="Цифра…" maxlength="3" value="<?php echo(isset($getEdit['callsign_number']) ? $getEdit['callsign_number'] : ''); ?>" autocomplete="off">
+        <input type="hidden" name="old_callsign_number" class="old-callsign-number" value="<?php echo(isset($getEdit['callsign_number']) ? $getEdit['callsign_number'] : '000'); ?>">
+    </div>
+</div>
+<div class="control-group">        
+    <label class="control-label">Позывной</label>
+    <div class="controls">
+        <input type="text" class="span1 callsign-code" value="<?php echo(isset($getEdit['callsign']) ? $getEdit['callsign'] : ''); ?>" readonly="readonly">
+        <input type="hidden" name="old_callsign_prefix" class="old-callsign-prefix" value="<?php echo(isset($getEdit['callsign_prefix']) ? $getEdit['callsign_prefix'] : 0); ?>">
+        <input type="hidden" name="callsign_prefix" class="callsign-prefix" value="<?php echo(isset($getEdit['callsign_prefix']) ? $getEdit['callsign_prefix'] : 0); ?>">
+    </div>
+</div>

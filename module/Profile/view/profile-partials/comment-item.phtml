@@ -1,0 +1,52 @@
+<?php
+$offset_value = 2 * $currentLevel % 8;
+$offset_class = !empty($currentLevel) ? 'col-sm-offset-' . $offset_value : '';
+$col_class = 'col-sm-' . (8 - $offset_value);
+?>
+
+<div class="row">
+    <div class="col-sm-12<?php echo !empty($offset_class) ? ' ' . $offset_class : ''; ?>">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="<?php echo $col_class; ?>">
+                        <p><?php echo $item ['created']; ?></p>
+                        <p>
+                            <?php echo $item ['comment_full']; ?>
+                        </p>
+
+                    </div>
+
+                    <div class="col-sm-2">
+                        <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'adverts', 'action' => 'view', 'id' => $item ['advert_id']))); ?>"><?php echo $item ['advert_name']; ?><a>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <span><?php echo $item ['rating'] > 0 ? '+' . $item ['rating'] : $item ['rating']; ?></span>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <!--
+                                <?php if ($item ['user_id'] == $userId ): ?>
+                                    <a class="comment-edit" href="<?php echo($this->easyUrl(array('action' => 'editComment', 'id' => $item ['id'], 'advert_id' => $item ['advert_id']))); ?>"><span class="glyphicon glyphicon-edit"></span></a>
+                                    <a class="confirm-remove" href="<?php echo($this->easyUrl(array('action' => 'removeComment', 'id' => $item ['id'], 'advert_id' => $item ['advert_id']))); ?>"><span class="glyphicon glyphicon-remove"></span></a>
+                                <?php elseif ( empty($item ['is_voted']) ): ?>
+                                    <?php if ( isset($_SESSION['profile']->auth['id']) ): ?>
+                                        <a class="comment-rating-up" href="<?php echo($this->easyUrl(array('action' => 'upComment', 'id' => $item ['id'], 'advert_id' => $item ['advert_id']))); ?>"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                                        <a class="comment-rating-down" href="<?php echo($this->easyUrl(array('action' => 'downComment', 'id' => $item ['id'], 'advert_id' => $item ['advert_id']))); ?>"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                                    <?php else: ?>
+                                        <a class="register-request" href="#"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                                        <a class="register-request" href="#"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                                -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

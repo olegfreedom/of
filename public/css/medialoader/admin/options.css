@@ -1,0 +1,11 @@
+/**
+ * Use to URL:
+ *  /admin/options
+ *  /admin/options/*
+ */
+.row-fluid .col.span1.select{
+    width: 0px;
+}
+.row-fluid .icon-remove{
+    cursor: pointer;
+}

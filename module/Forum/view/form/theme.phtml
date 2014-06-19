@@ -1,0 +1,59 @@
+<?php     $form = $this->form;
+            $form->prepare(); 
+     echo $this->form()->openTag($form);?>
+        <fieldset>
+          <legend>Додати </legend>
+          <?php // id Напрям розвитку групи ?>
+          <?php echo $this->formElement($this->form->get('id')); ?>
+         
+         <div class="control-group">
+              <?php $element = $this->form->get('title'); ?>
+            <label class="control-label" for="title">Назва теми</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+              <p class="help-block">Деяке пояснення поля, що ми повинні писати у полі Тема </p>
+            </div>
+         </div>
+         <div class="control-group">
+             <?php $element = $this->form->get('description'); ?>
+            <label class="control-label" for="title">Опис (про що тема)</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+         <div class="control-group">
+             <?php $element = $this->form->get('visibility'); ?>
+            <label class="control-label" for="title">Видимість</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+            </div>
+         </div> 
+          <div class="control-group">
+             <?php $element = $this->form->get('type'); ?>
+            <label class="control-label" for="title">Обов’язкове</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+        <div class="control-group">
+             <?php $element = $this->form->get('begin_date'); ?>
+            <label class="control-label" for="title">Відкрита тема від дати</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+          
+        <div class="control-group">
+             <?php $element = $this->form->get('end_date'); ?>
+            <label class="control-label" for="title">Відкрита тема до дати</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn green ">Зберегти</button>
+            <button class="btn">Відмінити</button>
+          </div>
+        </fieldset>
+<?php echo $this->form()->closeTag($form); ?>

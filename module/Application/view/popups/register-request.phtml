@@ -1,0 +1,16 @@
+<div class="popup-container modal fade col-sm-12 text-center" id="popup-register-request">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h4>Ошибка</h4>
+    </div>
+
+    <div class="modal-body">
+        <p>Данное действие доступно только зарегистрированным пользователям.</p>
+        <p>
+            Пожалуйста,
+            <a href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'login', 'action' => 'index', 'referrer' => !empty($url) ? $url : ''))); ?>">войдите</a>
+            или
+            <a href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'registration', 'action' => 'index', 'referrer' => !empty($url) ? $url : ''))); ?>">зарегистрируйтесь</a>.
+        </p>
+    </div>
+</div>

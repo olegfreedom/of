@@ -1,0 +1,158 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-sm-12">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    <?php echo $user['lastname'] . ' ' . $user['firstname'] . ' ' . $user['secondname']; ?>
+                </h1>
+            </div>
+            <div class="row clearfix">
+                <div class="col-sm-12">
+                    <div class="col-sm-9">
+                        <div class="row">
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-12">
+                                        <ul class="breadcrumb">
+                                            <?php if ( !empty($user ['breadcrumbs']) ): ?>
+                                                <?php $last = sizeof($user ['breadcrumbs']) - 1; foreach ( $user ['breadcrumbs'] as $key => $row ): ?>
+                                                    <li<?php echo ($key == $last ? ' class="active"' : '');?>><?php echo($row['name']);?></li>
+                                                <?php endforeach; ?>
+                                            <?php endif; ?>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 mar-bot">
+                                <div class="col-sm-2">
+                                    <?php if ( !empty($user ['avatar_img']) ): ?>
+                                        <img class="img-rounded" border="0" width="72" height="72" src="<?php echo $user ['avatar_img']; ?>" alt="" />
+                                    <?php else: ?>
+                                        <img class="img-rounded" border="0" width="72" height="72" src="/img/ava.png" />
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-sm-10">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <?php echo($user ['about']); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <p>Текущий рейтинг пользователя: <span><?php echo round($user ['rating_mark']); ?></span></p>
+                                            <p>Проголосовало: <span><?php echo $user ['rating_users']; ?></span> пользователей</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            Оценить пользователя:
+                                        </div>
+                                    </div>
+                                    <form method="post" action="<?php echo $this->easyUrl(array('module' => 'profile', 'controller' => 'users', 'action' => 'set-rating')); ?>">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-3">
+                                                                <div class="bfh-slider" data-name="rating" data-value="<?php echo $user ['rating']; ?>"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row col-sm-12 margined">
+                                                    <?php if ( isset($_SESSION['profile']->auth['id']) ): ?>
+                                                        <a onclick="$(this).closest('form').submit();return false;" class="btn btn-default btn-success" href="#">Отправить</a>
+                                                    <?php else: ?>
+                                                        <a class="register-request btn btn-default btn-success" href="#">Отправить</a>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" name="id" value="<?php echo $user ['id']; ?>" />
+                                    </form>
+                                    <?php // endif; ?>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- Comments :BEGIN -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="margined">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3>Комментарии</h3>
+                                                </div>
+                                            </div>
+
+                                            <?php echo $this->partial('partials/user-comments-list.phtml', array('comments' => $comments, 'userId' => $userId)); ?>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h4>Комментарий</h4>
+                                                    <?php echo $this->partial('partials/user-comment-add.phtml', array('user' => $user, 'parent_id' => 0)); ?>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="row bordered mar-bot">
+                            <div class="col-sm-12">
+                                <h4>Местонахождение:</h4>
+                                <?php if (!empty($user ['city'])): ?>
+                                    <p>
+                                        <?php echo $user ['region']; ?>,
+                                        <?php echo $user ['area']; ?>,
+                                        <?php echo $user ['city']; ?>
+                                    </p>
+                                <?php endif; ?>
+                                <h4>Контакты</h4>
+                                <p>Тел.: <?php echo $user ['phone1']; ?></p>
+                                <?php if (!empty($user ['phone2'])): ?><p>Доп. тел.: <?php echo $user ['phone2']; ?></p><?php endif; ?>
+                                <?php if (!empty($user ['fax'])): ?><p>Факс: <?php echo $user ['fax']; ?></p><?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<?php if ( isset($_SESSION['profile']->auth['id']) ): ?>
+    <?php echo $this->partial('popups/user-comment-add.phtml', array('user' => $user, 'parent_id' => 0, 'id' => 0)); ?>
+<?php endif; ?>
+
+
+
+<!-- Comments :END -->

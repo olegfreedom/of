@@ -1,0 +1,15 @@
+<div class="send-form-holder sms-form">
+    <div class="toHide">
+        <form class="add-sms-form" action="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'messages', 'action' => 'add-sms'))); ?>" method="post">   
+            <textarea name="text"></textarea>
+            <div class="wrap">
+                <a class="sbmt-gr r-aligned sendIT">Отправить</a>
+            </div>
+            <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'messages', 'action' => 'validator-sms'))); ?>">
+            <input type="hidden" name="to_user" value="<?php echo($advert['user_id']) ;?>">
+            <input type="hidden" name="advert_id" value="<?php echo($advert['id']); ?>">
+        </form>
+    </div>
+    <h3 class="toShow hidden">Сообщение<br />отправлено</h3>
+    <h3 class="toError hidden">Ошибка<br />отправки сообщения</h3>
+</div>

@@ -1,0 +1,53 @@
+<?php if (isset($categoryList) && is_array($categoryList) && isset($currentCategory) && isset($menuLevel)) { ?>
+    <?php foreach ($categoryList as $item) { ?>
+        <?php if ($menuLevel == 1) { ?>
+            <li>
+
+            <?php if (isset($item['subcategory'])) { ?>
+                <a href="<?php echo($this->easyUrl(array('action' => 'search', 'category' => $item['id']), array(), true)); ?>" class="opener">
+                    <?php echo($item['name']); ?>
+                </a>
+                <?php echo($this->partial('application/catalog/category/list-items.phtml', array('categoryList' => $item['subcategory'], 'currentCategory' => $currentCategory, 'menuLevel' => ($menuLevel + 1)))); ?>
+            <?php } else { ?>
+                <a  class="opener empty" href="<?php echo($this->easyUrl(array('action' => 'search', 'category' => $item['id']), array(), true)); ?>">
+                    <?php echo($item['name']); ?>
+                </a>
+            <?php } ?>
+                </li>
+        <?php } elseif ($menuLevel == 2) { ?>
+            <div class="slide">
+                <ul>
+                    <li>
+                        <?php if (isset($item['subcategory'])) { ?>
+                            <a class="opener" href="<?php echo($this->easyUrl(array('action' => 'search', 'category' => $item['id']), array(), true)); ?>">
+                                <?php echo($item['name']); ?>
+                            </a>
+                            <?php echo($this->partial('application/catalog/category/list-items.phtml', array('categoryList' => $item['subcategory'], 'currentCategory' => $currentCategory, 'menuLevel' => ($menuLevel + 1)))); ?>
+                        <?php } else { ?>
+                            <p>
+                                <a href="<?php echo($this->easyUrl(array('action' => 'search', 'category' => $item['id']), array(), true)); ?>">
+                                <?php echo($item['name']); ?>
+                                </a>
+                            </p>
+                        <?php } ?>
+                    </li>
+                </ul>
+            </div>
+        <?php } else { ?>
+            <div class="slide">
+                <?php if (isset($item['subcategory'])) { ?>
+                    <a class="opener" href="<?php echo($this->easyUrl(array('action' => 'search', 'category' => $item['id']), array(), true)); ?>">
+                        <?php echo($item['name']); ?>
+                    </a>
+                    <?php echo($this->partial('application/catalog/category/list-items.phtml', array('categoryList' => $item['subcategory'], 'currentCategory' => $currentCategory, 'menuLevel' => ($menuLevel + 1)))); ?>
+                <?php } else { ?>
+                    <p>
+                        <a href="<?php echo($this->easyUrl(array('action' => 'search', 'category' => $item['id']), array(), true)); ?>">
+                            <?php echo($item['name']); ?>
+                        </a>
+                    </p>
+                <?php } ?>
+            </div>
+        <?php } ?>
+    <?php } ?>
+<?php } ?>

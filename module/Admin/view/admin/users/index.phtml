@@ -1,0 +1,38 @@
+<?php if($usersList){ ?>
+<div class="row-fluid">
+    <div class="col">      
+        <table class="table table-striped table-bordered">
+            <thead>        
+                <tr>
+                    <th>Дата</th>
+                    <th>Логин</th>
+                    <th>Место прожевания</th>
+                    <th class="status-box">Статус</th>
+                    <th class="action-box"></th>
+                </tr>
+            </thead>
+            <?php foreach($usersList as $item){ ?>
+            <tr>
+                <td><?php echo($item['joindate']); ?></td>
+                <td><?php echo($item['username']); ?></td>
+                <td><?php echo($item['city']); ?></td>
+                <td class="status-box">
+                  <a href="<?php echo($this->easyUrl(array('action' => 'status', 'userid' => $item['userid']), array(), true)) ?>" title="сменить статус">
+                    <?php if($item['status']=='y'){ ?>
+                        <span class="label label-success">Активный</span>
+                    <?php }else{ ?>
+                        <span class="label label-important">Неактивный</span>
+                    <?php } ?>
+                  </a>
+                </td>
+                <td class="action-box">
+                   <a href="<?php echo($this->easyUrl(array('action' => 'edit', 'userid' => $item['userid']))) ?>" class="icon-edit" title="редактировать"></a>
+                   <a href="<?php echo($this->easyUrl(array('action' => 'remove', 'userid' => $item['userid']))) ?>" class="icon-remove confirm-remove" title="удалить"></a>
+                </td>
+            </tr>
+            <?php } ?> 
+        </table>
+        <?php echo($this->partial('admin-partials/paginator.phtml', array('paginator' => $paginator))); ?>
+    </div>
+</div>
+<?php } ?>

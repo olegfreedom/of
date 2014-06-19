@@ -1,0 +1,25 @@
+<div class="popup-holder">
+    <div id="popup1">
+        <section class="popup-opinion">
+            <h1>Обратная связь</h1>
+            <form class="testimonial-main-form" action="<?php echo($this->easyUrl(array('controller' => 'testimonials', 'action' => 'add'))); ?>" method="post">
+                <div class="col">
+                    <div class="row">
+                        <label for="name">Представьтесь</label>
+                        <input id="name" name="name" type="text" placeholder="Имя и фамилия"/>
+                    </div>
+                    <div class="row">
+                        <label for="mail">Эл.почта</label>
+                        <input id="mail" name="email" type="text" placeholder="Введите эл. почту"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="message">Сообщение</label>
+                    <textarea name="message" id="comment" cols="30" rows="10" placeholder="Ваш комментарий"></textarea>
+                </div>
+                <button class="sbmt-gr" value="подобрать" type="submit">отправить</button>
+                <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('controller' => 'testimonials', 'action' => 'validator'))); ?>">
+            </form>
+        </section>
+    </div>
+</div>

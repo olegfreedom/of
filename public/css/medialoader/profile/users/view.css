@@ -1,0 +1,11 @@
+/**
+ * Use to URL:
+ *  /profile/users/view
+ *  /profile/users/view/*
+ */
+
+#popup-user-comment-add .user-comment-form textarea {
+    height: 100px !important;
+    margin: 0 0 10px;
+    width: 330px;
+}

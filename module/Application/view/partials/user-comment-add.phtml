@@ -1,0 +1,19 @@
+<?php
+$commentController = 'users';
+?>
+<form action="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => $commentController, 'type' => 'user', 'action' => 'editComment', 'user_id' => $user ['id']))); ?>" class="user-comment-form form-validator form-horizontal" method="post" role="form">
+    <div class="col">
+        <?php if ( isset($_SESSION['profile']->auth['id']) ): ?>
+            <textarea name="comment_full" id="comment_full" cols="80" rows="5" placeholder="Ваш комментарий"></textarea>
+        <?php endif; ?>
+    </div>
+    <?php if ( !isset($_SESSION['profile']->auth['id']) ): ?>
+        <a class="register-request" href="#" class="btn btn-default btn-success">Отправить</a>
+    <?php else: ?>
+        <a onclick="$(this).closest('form').submit();return false;" class="btn btn-default send-btn btn-success">Отправить</a>
+    <?php endif; ?>
+    <input type="hidden" name="validator" value="<?php echo $this->easyUrl(array('module' => 'profile', 'controller' => 'comments', 'action' => 'validator')); ?>" />
+    <input type="hidden" name="id" value="<?php echo !empty($id) ? $id : 0; ?>" />
+    <input type="hidden" name="parent_id" value="<?php echo $parent_id; ?>" />
+    <input type="hidden" name="user-comment-form" value="0" />
+</form>

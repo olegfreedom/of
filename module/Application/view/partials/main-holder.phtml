@@ -1,0 +1,25 @@
+<a href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => (isset($_SESSION['profile']->auth['id']) ? 'index' : 'guest'), 'action' => 'add'))); ?>" class="new_adverticement">
+    <span></span> подать объявление
+</a>
+<ul class="tabset uslugi">
+    <?php foreach ($typeList as $item) { ?>
+        <li>
+            <a href="<?php echo($this->easyUrl(array('controller' => ($this->routeNames('controller') == 'index' ? 'index' : 'catalog'), 'action' => 'search', 'type' => $item['id'], 'id' => null), array(), true)); ?>"<?php echo((isset($advertsType) && $advertsType == $item['id']) ? ' class="active"' : ''); ?>>
+                <?php echo $item['name']; ?>
+            </a>
+        </li>
+    <?php } ?>
+</ul>
+<div class="tab-content uslugi">
+    <div id="tab1">
+        <fieldset>
+            <div class="searchholder">
+                <input class="searchfield" type="text" maxlength="100" placeholder="Поиск..." value="<?php echo (isset($searchText)) ? $searchText : ''; ?>" name="search_text">
+                <a class="btn-search">найти</a>
+                <input type="hidden" name="search-form" value="0">
+                <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('controller' => 'catalog', 'action' => 'search-validator'))); ?>">
+            </div>
+        </fieldset>
+    </div>
+    <div id="tab2"></div>
+</div>

@@ -1,0 +1,39 @@
+<div class="wblock">
+    <div class="content" id="testimonialsForm">
+        <h1>Оставьте свой отзыв</h1>
+        <form action="<?php echo($this->easyUrl(array('action' => 'add'))); ?>" method="post" class="testimonial-form">
+            <fieldset>
+                <div class="row">
+                    <label>Ваше имя</label>
+                    <input type="text" name="name" maxlength="150" value="">
+                </div>
+                <div class="row">
+                    <label>Электронная почта</label>
+                    <input type="email" name="email" maxlength="200" value="">
+                </div>
+                <div class="row">
+                    <label>Отзыв</label>
+                    <textarea cols="30" rows="10" name="comment" maxlength="1000"></textarea>
+                </div>
+                <div class="submit-holder">
+                    <input type="submit" value="Оставить Отзыв">
+                </div>
+            </fieldset>
+            <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+        </form>
+        <?php echo($this->partial('partials/paginator.phtml', array('paginator' => $paginator, 'setAction' => 'list', 'showAllUrl' => $this->easyUrl(array('action' => 'all'))))); ?>
+        <?php if ($commentItems !== null){ ?>
+            <div class="testimonials-list">
+                <?php foreach ($commentItems as $item){?>
+                <div class="item" id="testimonial-<?php echo($item['id']); ?>">
+                    <strong class="title"><?php echo($item['name']); ?>, <?php echo($item['date']); ?></strong>
+                    <p><?php echo(nl2br($item['comment'])); ?></p>
+                </div>
+                <?php }?>
+            </div>
+        <?php }?>
+    </div>
+    <aside>
+
+    </aside>
+</div>

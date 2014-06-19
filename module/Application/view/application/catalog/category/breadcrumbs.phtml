@@ -1,0 +1,6 @@
+<?php if(isset($breadcrumbs) && is_array($breadcrumbs)){ $first = true; ?>
+    <?php foreach($breadcrumbs as $item){ ?>
+    <?php if($first == true){ $first=false; }else{ ?> » <?php } ?>
+    <a href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => (isset($controller) ? $controller : 'index'), 'action' => 'search', 'id' => $item['id']))); ?>"><?php echo($item['name']); ?></a>
+    <?php } ?>
+<?php } ?> 

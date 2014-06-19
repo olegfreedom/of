@@ -1,0 +1,3 @@
+RewriteEngine Off
+Options +Indexes
+DirectoryIndex disabled

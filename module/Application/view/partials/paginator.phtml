@@ -1,0 +1,32 @@
+<?php if($paginator !== null && is_array($paginator)){ ?>
+<div class="pagination">
+    <?php if(isset($showAllUrl)){ ?>
+    <a href="<?php echo($showAllUrl); ?>" class="btn-show">Показать все</a>
+    <?php } ?>
+    <ul class="">
+      <?php $first=true; foreach($paginator as $item){ ?>
+        <?php
+            if(isset($pageTestimonials)){
+                $params = array('tpage' => $item['val']);
+            }else{
+                $params = array('page' => $item['val']);
+            }
+            if(isset($setAction)){
+                $params['action'] = $setAction;
+            }
+        ?>
+        <?php if($item['type'] == 'prev'){ ?>
+        <li class=""><a href="<?php echo($this->easyUrl($params, array(), true)); ?>">←Предыдущая</a></li>
+        <?php }else if($item['type'] == 'next'){ ?>
+        <li class=""><a href="<?php echo($this->easyUrl($params, array(), true)); ?>">Следующая→</a></li>
+        <?php }else if($item['type'] == 'empty'){ ?>
+        <li class=""><a><?php echo($item['val']); ?></a></li>
+        <?php }else if($item['type'] == 'current'){ ?>
+        <li class="<?php echo(($first) ? 'first ' : ''); ?>active"><a><?php echo($item['val']); ?></a></li>
+        <?php $first=false; }else{ ?>
+        <li<?php echo(($first) ? ' class="first"' : ''); ?>><a href="<?php echo($this->easyUrl($params, array(), true)); ?>"><?php echo($item['val']); ?></a></li>
+        <?php $first=false; } ?>  
+      <?php } ?>
+    </ul>
+</div>
+<?php } ?>

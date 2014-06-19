@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Личный кабинет
+                </h1>
+            </div>
+            <!-- Nav tabs -->
+            <?php echo($this->partial('profile-partials/tabs-menu.phtml')); ?>
+            <?php echo($this->partial('partials/catalog-tabs.phtml', array('advertListPartial' => 'profile-partials/adverts-list.phtml', 'advertsList' => $advertsList, 'Model' => $Model))); ?>
+        </div>
+    </div>
+</div>

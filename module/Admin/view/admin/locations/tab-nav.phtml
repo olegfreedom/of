@@ -1,0 +1,22 @@
+<div class="row-fluid">
+    <div class="col">
+        <div class="btn-toolbar vehicles-tab-nav">
+            <div class="btn-group">
+                <a class="btn<?php echo(($this->routeNames('action') == 'index') ? ' btn-primary' : ''); ?>" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Регионы</a>
+                <button class="btn<?php echo(($this->routeNames('action') == 'index') ? ' btn-primary' : ''); ?> dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'add-region'))); ?>">Добавить</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Список</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn<?php echo(($this->routeNames('action') == 'city') ? ' btn-primary' : ''); ?>" href="<?php echo($this->easyUrl(array('action' => 'city'))); ?>">Города</a>
+                <button class="btn<?php echo(($this->routeNames('action') == 'city') ? ' btn-primary' : ''); ?> dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'city-add'))); ?>">Добавить</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'city'))); ?>">Список</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

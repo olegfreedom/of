@@ -1,0 +1,66 @@
+<?php     $form = $this->form;
+            $form->prepare(); 
+     echo $this->form()->openTag($form);?>
+        <fieldset>
+          <legend>Додати</legend>
+          <?php // id Напрям розвитку групи ?>
+          <?php echo $this->formElement($this->form->get('id')); ?>
+          <?php $element = $this->form->get('type_organization_id'); ?>
+          <div class="control-group">
+            <label class="control-label" for="type_organization_id">Тип організації</label>
+            <div class="controls">
+                 <?php echo $this->formElement($element); ?>
+              <p class="help-block">Деяке пояснення поля </p>
+            </div>
+          </div>
+         <div class="control-group">
+              <?php $element = $this->form->get('title'); ?>
+            <label class="control-label" for="title">Назва організації</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+              <p class="help-block">Деяке пояснення поля </p>
+            </div>
+         </div>
+         <div class="control-group">
+             <?php $element = $this->form->get('location'); ?>
+            <label class="control-label" for="location">Локація</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+              <p class="help-block">Введіть назву міста/села</p>
+            </div>
+         </div> 
+         <div class="control-group">
+             <?php $element = $this->form->get('description'); ?>
+            <label class="control-label" for="title">Опис організації</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+         <div class="control-group">
+             <?php $element = $this->form->get('avatar'); ?>
+            <label class="control-label" for="avatar">Фото організації</label>
+            <div class="controls">
+                <img src="/data/forum/avatars/default.jpg" class="change-photo" style="width: 200px;"><?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+         <div class="control-group">
+             <?php $element = $this->form->get('active'); ?>
+            <label class="control-label" for="type_organization">Автивність</label>
+            <div class="controls">
+                <?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+         
+        <div class="control-group">
+            <?php $element = $this->form->get('avaliable'); ?>
+            <label class="control-label" for="avaliable">Доступність</label>
+            <div class="controls">
+              <?php echo $this->formElement($element); ?>
+            </div>
+         </div>
+          <div class="form-actions">
+            <button type="submit" class="btn green ">Зберегти</button>
+            <button class="btn">Відмінити</button>
+          </div>
+        </fieldset>
+<?php echo $this->form()->closeTag($form); ?>

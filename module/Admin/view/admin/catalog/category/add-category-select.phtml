@@ -1,0 +1,9 @@
+<?php if(isset($categoryList) && is_array($categoryList) && isset($tab)){ ?>
+    <?php foreach($categoryList as $item){ ?>
+        <?php $setDisabled = (bool)(isset($disabled) && $disabled == true && isset($item['subcategory'])); ?>
+        <option<?php echo($setDisabled == true ? ' disabled="disabled"' : ''); ?> value="<?php echo($item['id']); ?>"><?php echo($tab.$item['name']); ?></option>
+        <?php if(isset($item['subcategory'])){ ?>
+        <?php echo($this->partial('admin/catalog/category/add-category-select.phtml', array('categoryList' => $item['subcategory'], 'tab' => $tab.'&nbsp;&bull;&nbsp;', 'disabled' => $setDisabled))); ?>
+        <?php } ?> 
+    <?php } ?>
+<?php } ?>

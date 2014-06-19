@@ -1,0 +1,42 @@
+<div class="row-fluid">
+    <div class="col">        
+        <div class="btn-toolbar vehicles-tab-nav">
+            <div class="btn-group">
+                <a class="btn<?php echo(($this->routeNames('action') == 'index') ? ' btn-primary' : ''); ?>" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Объявления</a>
+                <button class="btn<?php echo(($this->routeNames('action') == 'index') ? ' btn-primary' : ''); ?> dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'add'))); ?>">Добавить</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Список</a></li>
+                    <?php if(isset($categoryList) && is_array($categoryList)){ ?>
+                        <li class="divider"></li>
+                        <?php echo($this->partial('admin/catalog/tab-nav-categories.phtml', array('categoryList' => $categoryList))); ?>
+                    <?php } ?>
+                </ul>
+            </div> 
+            <div class="btn-group">
+                <a class="btn<?php echo(($this->routeNames('action') == 'category') ? ' btn-primary' : ''); ?>" href="<?php echo($this->easyUrl(array('action' => 'category'))); ?>">Категории</a>
+                <button class="btn<?php echo(($this->routeNames('action') == 'category') ? ' btn-primary' : ''); ?> dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'category-add'))); ?>">Добавить</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'category'))); ?>">Список</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn<?php echo(($this->routeNames('action') == 'type') ? ' btn-primary' : ''); ?>" href="<?php echo($this->easyUrl(array('action' => 'type'))); ?>">Типы</a>
+                <button class="btn<?php echo(($this->routeNames('action') == 'type') ? ' btn-primary' : ''); ?> dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'type-add'))); ?>">Добавить</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'type'))); ?>">Список</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <a class="btn<?php echo(($this->routeNames('action') == 'currency') ? ' btn-primary' : ''); ?>" href="<?php echo($this->easyUrl(array('action' => 'currency'))); ?>">Валюты</a>
+                <button class="btn<?php echo(($this->routeNames('action') == 'currency') ? ' btn-primary' : ''); ?> dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'currency-add'))); ?>">Добавить</a></li>
+                    <li><a href="<?php echo($this->easyUrl(array('action' => 'currency'))); ?>">Список</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> 

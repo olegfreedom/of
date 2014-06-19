@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <div class="wrapper-center">
+        <div class="container">
+            <h2 class="lk-title">Сообщения</h2>
+            <?php if ($archiveList) { ?>
+                <table>
+                    <tr>
+                        <th>Заголовок</th>
+                        <th>Получатель</th>
+                        <th>Текст</th>
+                        <th>Дата</th>
+                    </tr>
+                    <?php foreach ($archiveList as $item) { ?>
+                        <tr>
+                            <td><?php echo $item['title']; ?></td>
+                            <td><?php echo $item['username']; ?></td>
+                            <td><?php echo $item['text']; ?></td>
+                            <td><?php echo $item['timestamp']; ?></td>
+                            <td><a class="remove-message" href="">Удалить</a></td>
+                            <input type="hidden" name="message_id" value="<?php echo $item['id']; ?>"/>
+                            <input type="hidden" name="type" value="<?php echo $item['type']; ?>"/>
+                        </tr>
+                    <?php } ?>
+                </table>
+                <input type="hidden" name="delete_url" value="<?php echo $this->easyUrl(array('action' => 'delete'))?>"/>
+                <input type="hidden" name="action" value="archive"/>
+            <?php } ?>
+        </div>
+    </div>
+</div>

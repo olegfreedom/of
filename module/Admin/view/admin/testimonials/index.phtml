@@ -1,0 +1,49 @@
+<div class="row-fluid">
+<?php echo($this->partial('admin/testimonials/testimonials-options.phtml')); ?>
+<?php if ($testimonialsList) { ?>
+        <div class="col">
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Тип</th>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Сообщение</th>
+                    <th>Рейтинг</th>
+                    <th class="status-box">Статус</th>
+                    <th class="action-box"></th>
+                </tr>
+                </thead>
+                <?php foreach ($testimonialsList as $item) { ?>
+                    <tr>
+                        <td><?php echo($item['date']); ?></td>
+                        <td><a href="<?php echo($this->easyUrl(array('action' => 'index', 'type' => $item['type']))) ?>"><?php echo ($item['type_tr']); ?></a></td>
+                        <td><?php echo($item['name']); ?></td>
+                        <td><?php echo($item['email']); ?></td>
+                        <td><?php echo($item['message']); ?></td>
+                        <td><?php echo($item['rating']); ?></td>
+                        <td class="status-box">
+                            <?php if ($item['type'] == 'advert') { ?>
+                                <a href="<?php echo($this->easyUrl(array('action' => 'status', 'id' => $item['id']), array(), true)) ?>" title="сменить статус">            
+                                    <?php if ($item['active'] == 'y') { ?>
+                                        <span class="label label-success">Активный</span>
+                                    <?php } else { ?>
+                                        <span class="label label-important">Не активный</span>
+                                    <?php } ?>
+                                </a>
+                            <?php } else { ?>
+                                    <span class="label label-info">Админ-панель</span>
+                            <?php } ?>     
+                        </td>
+                        <td class="action-box">
+                            <a href="<?php echo($this->easyUrl(array('action' => 'edit', 'id' => $item['id']), array(), true)) ?>" class="icon-edit" title="редактировать"></a>
+                            <a href="<?php echo($this->easyUrl(array('action' => 'remove', 'id' => $item['id']), array(), true)) ?>" class="icon-remove confirm-remove" title="удалить"></a>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+            <?php echo($this->partial('admin-partials/paginator.phtml', array('paginator' => $paginator))); ?>
+        </div>
+    </div>
+<?php } ?>

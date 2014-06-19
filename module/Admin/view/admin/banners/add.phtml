@@ -1,0 +1,38 @@
+<form class="form-validator add" action="<?php echo($this->easyUrl(array('action' => 'add'))); ?>" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend>Добавление</legend>
+        <div class="cont">
+            <div class="control-group">
+                <div class="controls">
+                    <label class="control-label">Название</label>
+                    <input type="text" class="span3" name="title">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <label class="control-label">URL</label>
+                    <input type="text" class="span3" name="url">
+                </div>
+            </div>
+            <label class="control-label">Размер</label>
+            <div class="controls">
+                <select class="type-option selectpicker span3" name="height">
+                    <option value="240">200x240</option>
+                    <option value="400">200x400</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Изображение</label>
+                <div class="controls">
+                    <input type="file" name="img">
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+                <a class="btn" href="<?php echo($this->easyUrl(array('action' => 'index'))); ?>">Отменить</a>
+            </div>
+        </div>
+    </fieldset>
+    <input type="hidden" name="add-form" value="0">
+    <input type="hidden" name="validator" value="<?php echo($this->easyUrl(array('action' => 'validator'))); ?>">
+</form>

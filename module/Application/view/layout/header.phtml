@@ -1,0 +1,57 @@
+<div>
+    <div class="col-sm-12 clearfix header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-4">
+                    <strong class="logo"><a href="/">Future</a></strong>
+                </div>
+                <div class="col-sm-8 col-xs-8 clearfix nav-container">
+                    <div class="navig-holder pull-right">
+                        <a href="<?php echo($this->easyUrl(array('module'=>'application','controller'=>'catalog')));?>">Каталог</a><a target="_blank" href="/vb5">Обсуждения</a><?php if (!isset($_SESSION['profile']->auth['id'])):?><a class="register-request" href="#">Список пользователей</a><a href="<?php echo($this->easyUrl(array('module'=>'profile','controller'=>'registration')));?>">Регистрация</a><a href="<?php echo($this->easyUrl(array('module'=>'profile','controller'=>'login')));?>">Вход</a><?php else:?><a href="<?php echo($this->easyUrl(array('module'=>'profile','controller'=>'users')));?>">Список пользователей</a><a href="<?php echo($this->easyUrl(array('module'=>'profile','controller'=>'settings')));?>">Профиль</a><a class="logout" href="<?php echo($this->easyUrl(array('module'=> 'profile','controller'=>'login','action'=>'logout')));?>">Выход</a><?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="clearfix">
+    <div class="col-md-12">
+        <div class="clearfix container">
+            <div class="row">
+                <div class="col-sm-2 col-xs-2 clearfix">
+                    <div class="pull-left pad-add">
+                        <?php if ( !isset($_SESSION['profile']->auth['id']) ): ?>
+                            <a href="#" class="register-request btn btn-default btn-success">Новое объявление</a>
+                        <?php else: ?>
+                            <a href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'adverts', 'action' => 'add'))); ?>" class="btn btn-default btn-success">Новое объявление</a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="col-sm-10 col-xs-10">
+                    <form class="search-form" action="#">
+                        <div class="search-holder">
+                            <input type="text"/>
+                            <select class="selectpicker" name="" id="">
+                                <option value="#">Все регионы</option>
+                                <option value="#"></option>
+                            </select>
+                            <a class="search" href="<?php echo($this->easyUrl(array('module' => 'application', 'controller' => 'catalog'))); ?>"></a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="flashMessages">
+        <?php
+        echo $this->flashMessenger()->render('error',   array('alert', 'alert-dismissable', 'alert-danger'));
+        echo $this->flashMessenger()->render('info',    array('alert', 'alert-dismissable', 'alert-info'));
+        echo $this->flashMessenger()->render('default', array('alert', 'alert-dismissable', 'alert-warning'));
+        echo $this->flashMessenger()->render('success', array('alert', 'alert-dismissable', 'alert-success'));
+        ?>
+        </div>
+

@@ -1,0 +1,38 @@
+<?php $region_id = !empty($getEdit ['region_id']) ? $getEdit ['region_id'] : 0; ?>
+
+<div class="form-group<?php echo !empty($container_class) ? ' ' . $container_class : ''; ?> zip-holder">
+    <label for="section" class="control-label<?php echo !empty($label_class) ? ' ' . $label_class : ''; ?>">Индекс *</label>
+    <div class="input-holder zip<?php echo !empty($input_class) ? ' ' . $input_class : ''; ?>">
+        <input name="zip" type="text" class="form-control zip" placeholder="21001" value="<?php echo !empty($getEdit ['zip']) ? $getEdit ['zip'] : ''; ?>" />
+        <span class="errors">* В данном населенном пункте нет такого индекса</span>
+    </div>
+</div>
+
+<div class="form-group<?php echo !empty($container_class) ? ' ' . $container_class : ''; ?> region-holder" style="display: none;">
+    <label for="section" class="control-label<?php echo !empty($label_class) ? ' ' . $label_class : ''; ?>">Область *</label>
+    <div class="selectpicker-holder input-holder region_id<?php echo !empty($input_class) ? ' ' . $input_class : ''; ?>">
+        <select class="form-control region selectpicker" name="region_id">
+            <option value="0"<?php echo empty($region_id) ? ' selected="selected"' : ''; ?>>-= Выберите область =-</option>
+            <?php foreach ($regionList as $item): ?>
+                <option value="<?php echo($item['id']); ?>"<?php echo $region_id == $item ['id'] ? ' selected="selected"' : ''; ?>><?php echo($item['name']); ?></option>
+            <?php endforeach; ?>
+        </select>
+        <span class="errors">* Заполните обязательное поле</span>
+    </div>
+</div>
+<div class="form-group<?php echo !empty($container_class) ? ' ' . $container_class : ''; ?> areas-holder" style="display: none;">
+    <label for="section" class="control-label<?php echo !empty($label_class) ? ' ' . $label_class : ''; ?>">Район *</label>
+    <div class="selectpicker-holder input-holder area_id<?php echo !empty($input_class) ? ' ' . $input_class : ''; ?>">
+        <input name="area_id" type="hidden" value="<?php echo !empty($getEdit ['area_id']) ? $getEdit ['area_id'] : 0; ?>" />
+    </div>
+</div>
+<div class="form-group<?php echo !empty($container_class) ? ' ' . $container_class : ''; ?> cities-holder" style="display: none;">
+    <label for="section" class="control-label<?php echo !empty($label_class) ? ' ' . $label_class : ''; ?>">Город / Поселок / Село *</label>
+    <div class="selectpicker-holder input-holder city_id<?php echo !empty($input_class) ? ' ' . $input_class : ''; ?>">
+        <input name="city_id" type="hidden" value="<?php echo !empty($getEdit ['city_id']) ? $getEdit ['city_id'] : 0; ?>" />
+    </div>
+</div>
+
+<input type="hidden" name="region_url" value="<?php echo($this->easyUrl(array('action' => 'getAreas'))); ?>" />
+<input type="hidden" name="area_url" value="<?php echo($this->easyUrl(array('action' => 'getCities'))); ?>" />
+<input type="hidden" name="zip_url" value="<?php echo($this->easyUrl(array('action' => 'getZip'))); ?>" />

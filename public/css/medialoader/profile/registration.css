@@ -1,0 +1,11 @@
+/**
+ * Use to URL:
+ *  /profile/registration
+ *  /profile/registration/*
+ */
+
+.input-holder input[type="checkbox"] {
+    float: none;
+    text-align: left;
+    width: auto;
+}

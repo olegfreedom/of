@@ -1,0 +1,21 @@
+
+<div class="row-fluid">
+    <div class="col span3">
+        <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+                <th>FAQ</th>
+                <th class="action-box"></th>
+            </tr>
+            </thead>
+            <?php foreach($faqList as $faq){ ?>
+                <tr>
+                    <td><?php echo $faq['title']; ?></td>
+                    <td class="action-box">
+                        <a href="<?php echo($this->easyUrl(array('action' => 'edit', 'id' => $faq['id']))); ?>" class="icon-edit" title="редактировать"></a>
+                    </td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
+</div>

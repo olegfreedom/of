@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 1</title>
+
+    <!-- Bootstrap -->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+        <div class="row clearfix">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-12 clearfix">
+                        <div class="pull-right">
+                            <a href="catalog.html">Каталог</a> <a href="profile.html">Кабинет</a>
+                        </div>
+                        <div class="pull-left pad5">
+                            <a class="btn btn-default btn-success" href="#">Добавить объявление</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix center-block centered">
+                    <h1 class="page-header">
+                        Личный кабинет
+                    </h1>
+                </div>
+                <!-- Nav tabs -->
+                <ul id="tabs" class="nav nav-tabs">
+                    <li class="active"><a href="#controlls" data-toggle="tab">Управление объявлениями</a></li>
+                    <li><a href="#profile" data-toggle="tab">Профиль</a></li>
+                    <li><a href="#comments" data-toggle="tab">Мои комментарии</a></li>
+                    <li><a href="#rates" data-toggle="tab">Мои оценки</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content pad">
+                    <div class="tab-pane fade active in" id="controlls">
+                        <ul id="tabs2" class="nav nav-tabs">
+                            <li class="active"><a href="#products" data-toggle="tab">Товары</a></li>
+                            <li><a href="#services" data-toggle="tab">Услуги</a></li>
+                            <li><a href="#technologies" data-toggle="tab">Технологии</a></li>
+                            <li><a href="#investments" data-toggle="tab">Инвестиции</a></li>
+                        </ul>
+                        <div class="tab-content pad">
+                            <div class="tab-pane fade active in" id="products">
+                                <ul id="tabs3" class="nav nav-tabs">
+                                    <li><a href="#buy" data-toggle="tab">Спрос</a></li>
+                                    <li class="active"><a href="#sell" data-toggle="tab">Предложение</a></li>
+                                </ul>
+                                <div class="tab-content pad">
+                                    <div class="tab-pane fade" id="buy">
+
+                                    </div>
+                                    <div class="tab-pane fade active in" id="sell">
+                                        <form action="#" class="form-horizontal" role="form">
+                                            <div class="form-group col-sm-12">
+                                                <label for="section" class="col-sm-2 control-label">Раздел</label>
+                                                <div class="col-sm-10 selectpicker-holder">
+                                                    <select id="section" class="form-control selectpicker">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="subsection" class="col-sm-2 control-label">Подраздел</label>
+                                                <div class="col-sm-10 selectpicker-holder">
+                                                        <select id="subsection" class="form-control selectpicker">
+                                                            <option value="">1</option>
+                                                            <option value="">2</option>
+                                                            <option value="">3</option>
+                                                            <option value="">4</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="category" class="col-sm-2 control-label">Категория</label>
+                                                <div class="col-sm-10 selectpicker-holder">
+                                                        <select id="category" class="form-control selectpicker">
+                                                            <option value="">1</option>
+                                                            <option value="">2</option>
+                                                            <option value="">3</option>
+                                                            <option value="">4</option>
+                                                        </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="title" class="col-sm-2 control-label">Заголовок</label>
+                                                <div class="input-holder col-sm-10">
+                                                    <input id="title" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="description-short" class="col-sm-2 control-label">Краткое описание</label>
+                                                <div class="input-holder col-sm-10">
+                                                    <input id="description-short" type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="description-full" class="col-sm-2 control-label">Полное описание</label>
+                                                <div class="input-holder col-sm-10">
+                                                    <textarea id="description-full" class="form-control" rows="3"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="img" class="col-sm-2 control-label">Изображение</label>
+                                                <div class="col-sm-10">
+                                                    <div class="row clearfix">
+                                                            <div class="col-sm-2">
+                                                                <input id="img" type="file" title="Browse" class="form-control mar-bot">
+                                                            </div>
+                                                            <div class="col-sm-9">
+                                                                <span class="help-block">логотип.png</span>
+                                                            </div>
+                                                            <div class="col-sm-1 align-right">
+                                                                <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+                                                            </div>
+                                                    </div>
+                                                    <div class="row clearfix">
+                                                        <div class="col-sm-2">
+                                                            <input id="img" type="file" title="Browse" class="form-control mar-bot">
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <span class="help-block">Файл не выбран</span>
+                                                        </div>
+                                                        <div class="col-sm-1">
+                                                            <a href="#"></span></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row clearfix">
+                                                        <div class="col-sm-12">
+                                                            <span class="help-block"><a href="#">Добавить еще файл (Максимальный размер 100 Мб)</a></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-sm-12">
+                                                <label class="col-sm-2 control-label">Базовая цена</label>
+                                                <div class="col-sm-10">
+                                                    <div class="row clearfix">
+                                                        <div class="col-sm-12 form-group no-pad-r">
+                                                            <div class="col-sm-6">
+                                                                <input type="text" class="form-control">
+                                                            </div>
+                                                            <div class="col-sm-1">
+                                                                <span class="help-block">грн</span>
+                                                            </div>
+                                                            <div class="col-sm-1">
+                                                                <label for="for" class="col-sm-4 control-label">За</label>
+                                                            </div>
+                                                            <div class="col-sm-4 no-pad-r selectpicker-holder">
+                                                                <select id="for" class="form-control selectpicker">
+                                                                    <option value="">1</option>
+                                                                    <option value="">2</option>
+                                                                    <option value="">3</option>
+                                                                    <option value="">4</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row clearfix">
+                                                        <div class="mar-bot col-sm-12">
+                                                            <div class="col-sm-1"><input id="fund" type="radio" name="s-f" class="form-control"></div>
+                                                            <div class="col-sm-2"><label for="fund" class="col-sm-4 control-label nowrap">Фонд развития</label></div>
+                                                            <div class="col-sm-8"><input class="form-control" type="text"></div>
+                                                            <div class="col-sm-1 align-right no-pad-r"><span class="help-block">грн</span></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row clearfix">
+                                                        <div class="mar-bot col-sm-12">
+                                                            <div class="col-sm-1"><input id="sale" type="radio" name="s-f" class="form-control"></div>
+                                                            <div class="col-sm-2"><label for="sale" class="col-sm-4 control-label nowrap">Размер скидки</label></div>
+                                                            <div class="col-sm-8"><input class="form-control" type="text"></div>
+                                                            <div class="col-sm-1 align-right no-pad-r"><span class="help-block">грн</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12">
+                                                <label for="img" class="col-sm-2 control-label">Товар доступен</label>
+                                                <div class="row input-holder col-sm-10">
+                                                        <div class="col-sm-3">
+                                                                            <div class="input-append date" id="dp1" data-date="14-03-2014" data-date-format="dd-mm-yyyy">
+                                                                                <input class="span2 datepicker" size="16" type="text">
+                                                                                <span class="add-on"><i class="icon-th"></i></span>
+                                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <div class="form-group col-sm-12">
+                                                                        <div class="input-append date" id="dp2" data-date="14-03-2014" data-date-format="dd-mm-yyyy">
+                                                                            <input class="span2 datepicker" size="16" type="text">
+                                                                            <span class="add-on"><i class="icon-th"></i></span>
+                                                                        </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <span class="help-block"><a href="#">Еще даты</a></span>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 text-center">
+                                                    <a class="btn btn-default btn-success" href="#">Добавить</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="services">
+                                <ul id="tabs3-2" class="nav nav-tabs">
+                                    <li class="active"><a href="#buy2" data-toggle="tab">Спрос</a></li>
+                                    <li><a href="#sell2" data-toggle="tab">Предложение</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="buy2">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="sell2">
+                                        empty
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="technologies">
+                                <ul id="tabs3-3" class="nav nav-tabs">
+                                    <li class="active"><a href="#buy3" data-toggle="tab">Спрос</a></li>
+                                    <li><a href="#sell3" data-toggle="tab">Предложение</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="buy3">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="sell3">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="investments">
+                                <ul id="tabs3-4" class="nav nav-tabs">
+                                    <li class="active"><a href="#buy4" data-toggle="tab">Спрос</a></li>
+                                    <li><a href="#sell4" data-toggle="tab">Предложение</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade active in" id="buy4">
+
+                                    </div>
+                                    <div class="tab-pane fade" id="sell4">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile">.2</div>
+                    <div class="tab-pane fade" id="comments">.3</div>
+                    <div class="tab-pane fade" id="rates">.4</div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.9.0.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/file-input.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/autoresize.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

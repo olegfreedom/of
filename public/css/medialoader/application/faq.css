@@ -1,0 +1,9 @@
+/**
+ * Use to URL:
+ *  /faq
+ *  /faq/*
+ */
+.typical #anchor-howto {
+    position: absolute;
+    top: -200px;
+}

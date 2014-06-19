@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<phrases>
+	<group name="stylevar">
+		<phrase name="textdirection"><![CDATA[ltr]]></phrase>
+		<phrase name="left"><![CDATA[left]]></phrase>
+		<phrase name="right"><![CDATA[right]]></phrase>
+		<phrase name="languagecode"><![CDATA[en]]></phrase>
+		<phrase name="charset"><![CDATA[UTF-8]]></phrase>
+		<phrase name="decimalsep"><![CDATA[.]]></phrase>
+		<phrase name="thousandsep"><![CDATA[,]]></phrase>
+	</group>
+	<group name="authenticate">
+		<phrase name="upgrade_title"><![CDATA[Система обновления]]></phrase>
+		<phrase name="enter_upgrade_system"><![CDATA[Вход в систему обновления]]></phrase>
+		<phrase name="enter_install_system"><![CDATA[Вход в систему установки]]></phrase>
+		<phrase name="enter_cust_num"><![CDATA[Пожалуйста, введите ваш клиентский номер]]></phrase>
+		<phrase name="customer_number"><![CDATA[Клиентский номер]]></phrase>
+		<phrase name="cust_num_explanation"><![CDATA[Это номер, который отображается после входа в зону участников vBulletin.com]]></phrase>
+		<phrase name="cust_num_success"><![CDATA[Клиентский номер введён правильно.]]></phrase>
+		<phrase name="redirecting"><![CDATA[Перемещение...]]></phrase>
+		<phrase name="cust_num_incorrect"><![CDATA[Клиентский номер введён неверно]]></phrase>
+	</group>
+	<group name="install">
+		<phrase name="cli_install_not_supported"><![CDATA[Установка из режима командной строки не поддерживается]]></phrase>
+		<phrase name="upgrade_title"><![CDATA[Система обновления]]></phrase>
+		<phrase name="unable_to_create_db"><![CDATA[Невозможно создать базу данных <strong>%1$s</strong>, пожалуйста проверьте название базы данных в файле <em>includes/config.php</em> или попросите вашего хостера создать базу данных]]></phrase>
+		<phrase name="connect_failed"><![CDATA[Не удалось установить соединение с базой данных из-за следующей ошибки:<ul><li>(%1$s) %2$s</li></ul>Пожалуйста, убедитесь, что параметры базы данных и сервера указаны верно, а сам сервер корректно сконфигурирован и запущен, а затем попробуйте снова]]></phrase>
+		<phrase name="vb_installed_maybe_upgrade"><![CDATA[<p>По всей видимости, вы уже устанавливали vBulletin.</p><p>Желаете ли вы обновиться?</p>]]></phrase>
+		<phrase name="db_error_desc"><![CDATA[Описание ошибки: %1$s]]></phrase>
+		<phrase name="no_connect_permission"><![CDATA[Невозможно установить соединение с вашей базой данных, так как у вас нет прав на соединение с сервером. Пожалуйста, убедитесь в правильности значений, введённых в файле <em>includes/config.php</em>]]></phrase>
+		<phrase name="connect_success"><![CDATA[Соединение успешно установлено]]></phrase>
+		<phrase name="connect_success_tables_exist"><![CDATA[<p>Соединение с базой данных успешно установлено.</p><p>Не желаете ли вы посмотреть опции по удалению существующего содержимого базы данных?]]></phrase>
+		<phrase name="connect_success_vb_exists"><![CDATA[<p>Соединение с базой данных успешно установлено.</p><p>По всей видимости, вы уже устанавливали vBulletin. Не желаете ли вы посмотреть опции по удалению существующего содержимого базы данных?]]></phrase>
+		<phrase name="new_install_cant_continue"><![CDATA[<p>Новая установка не может быть выполнена до тех пор, пока таблицы vBulletin находятся в вашей базе данных.</p><p>Может быть, вы желаете <a href="upgrade.php">обновиться</a>, вместо новой установки?</p>]]></phrase>
+		<phrase name="reset_database"><![CDATA[Очистить базу данных]]></phrase>
+		<phrase name="delete_tables_instructions"><![CDATA[<p>Ниже находится полный список таблиц, найденных в вашей базе данных. Таблицы, которые относятся к vBulletin, уже выбраны. Возможно, есть ещё таблицы, которые, вероятно, также относятся к vBulletin - они выделены в списке.</p>
+<p style="font-size:12pt;color:red;">При нажатии кнопки <em>Удалить выбранные таблицы</em> все выбранные таблицы и их содержимое будет <strong>полностью удалено из базы данных без возможности восстановления</strong>.</p>
+<p>vBulletin, vBulletin Solutions Inc. и zCаrot не отвечают за возможную потерю каких-либо данных, произошедшую в результате удаления таблиц из базы данных.</p>]]></phrase>
+		<phrase name="delete_selected_tables"><![CDATA[Удалить выбранные таблицы]]></phrase>
+		<phrase name="select_deselect_all_tables"><![CDATA[Установка / отмена выбора на все таблицы]]></phrase>
+		<phrase name="alter_table_type_x"><![CDATA[Изменение %1$s в тип %2$s]]></phrase>
+		<phrase name="default_calendar"><![CDATA[Обычный календарь]]></phrase>
+		<phrase name="category_title"><![CDATA[Главная категория]]></phrase>
+		<phrase name="category_desc"><![CDATA[Описание главной категории]]></phrase>
+		<phrase name="forum_title"><![CDATA[Главный раздел]]></phrase>
+		<phrase name="forum_desc"><![CDATA[Описание главного раздела]]></phrase>
+		<phrase name="posticon_1"><![CDATA[Сообщение]]></phrase>
+		<phrase name="posticon_2"><![CDATA[Стрелка]]></phrase>
+		<phrase name="posticon_3"><![CDATA[Лампочка]]></phrase>
+		<phrase name="posticon_4"><![CDATA[Восклицание]]></phrase>
+		<phrase name="posticon_5"><![CDATA[Вопрос]]></phrase>
+		<phrase name="posticon_6"><![CDATA[Счастье]]></phrase>
+		<phrase name="posticon_7"><![CDATA[Радость]]></phrase>
+		<phrase name="posticon_8"><![CDATA[Злость]]></phrase>
+		<phrase name="posticon_9"><![CDATA[Печаль]]></phrase>
+		<phrase name="posticon_10"><![CDATA[Смех]]></phrase>
+		<phrase name="posticon_11"><![CDATA[Смущение]]></phrase>
+		<phrase name="posticon_12"><![CDATA[Подмигивание]]></phrase>
+		<phrase name="posticon_13"><![CDATA[Хорошо]]></phrase>
+		<phrase name="generic_avatars"><![CDATA[Основные аватары]]></phrase>
+		<phrase name="generic_smilies"><![CDATA[Основные смайлы]]></phrase>
+		<phrase name="generic_icons"><![CDATA[Основные иконки]]></phrase>
+		<phrase name="master_language_title"><![CDATA[English (US)]]></phrase>
+		<phrase name="master_language_langcode"><![CDATA[en]]></phrase>
+		<phrase name="master_language_charset"><![CDATA[ISO-8859-1]]></phrase>
+		<phrase name="master_language_decimalsep"><![CDATA[.]]></phrase>
+		<phrase name="master_language_thousandsep"><![CDATA[,]]></phrase>
+		<phrase name="default_style"><![CDATA[Обычный стиль]]></phrase>
+		<phrase name="smilie_smile"><![CDATA[Радость]]></phrase>
+		<phrase name="smilie_embarrass"><![CDATA[Смущение]]></phrase>
+		<phrase name="smilie_grin"><![CDATA[Смех]]></phrase>
+		<phrase name="smilie_wink"><![CDATA[Подмигивание]]></phrase>
+		<phrase name="smilie_tongue"><![CDATA[Язычок]]></phrase>
+		<phrase name="smilie_cool"><![CDATA[Счастье]]></phrase>
+		<phrase name="smilie_roll"><![CDATA[Сарказм]]></phrase>
+		<phrase name="smilie_mad"><![CDATA[Злость]]></phrase>
+		<phrase name="smilie_eek"><![CDATA[Удивление]]></phrase>
+		<phrase name="smilie_confused"><![CDATA[Непонимание]]></phrase>
+		<phrase name="smilie_frown"><![CDATA[Печаль]]></phrase>
+		<phrase name="socialgroups_uncategorized"><![CDATA[Вне категорий]]></phrase>
+		<phrase name="socialgroups_uncategorized_description"><![CDATA[Группы вне категорий]]></phrase>
+		<phrase name="usergroup_guest_title"><![CDATA[Не зарегистрированные / не вошедшие]]></phrase>
+		<phrase name="usergroup_guest_usertitle"><![CDATA[Гость]]></phrase>
+		<phrase name="usergroup_registered_title"><![CDATA[Зарегистрированные]]></phrase>
+		<phrase name="usergroup_activation_title"><![CDATA[Ожидающие подтверждения по электронной почте]]></phrase>
+		<phrase name="usergroup_coppa_title"><![CDATA[Ожидающие проверки]]></phrase>
+		<phrase name="usergroup_super_title"><![CDATA[Супер-модераторы]]></phrase>
+		<phrase name="usergroup_super_usertitle"><![CDATA[Супер-модератор]]></phrase>
+		<phrase name="usergroup_admin_title"><![CDATA[Администраторы]]></phrase>
+		<phrase name="usergroup_admin_usertitle"><![CDATA[Администратор]]></phrase>
+		<phrase name="usergroup_mod_title"><![CDATA[Модераторы]]></phrase>
+		<phrase name="usergroup_mod_usertitle"><![CDATA[Модератор]]></phrase>
+		<phrase name="usergroup_banned_title"><![CDATA[Заблокированные]]></phrase>
+		<phrase name="usergroup_banned_usertitle"><![CDATA[Заблокирован]]></phrase>
+		<phrase name="usergroup_channelowner_title"><![CDATA[Управляющий группы]]></phrase>
+		<phrase name="usergroup_channelmod_title"><![CDATA[Модератор группы]]></phrase>
+		<phrase name="usergroup_channelmember_title"><![CDATA[Участник группы]]></phrase>
+		<phrase name="channelowner_title"><![CDATA[Владелец канала]]></phrase>
+		<phrase name="channelmod_title"><![CDATA[Модератор канала]]></phrase>
+		<phrase name="channelmember_title"><![CDATA[Участник канала]]></phrase>
+		<phrase name="usertitle_jnr"><![CDATA[Новичок]]></phrase>
+		<phrase name="usertitle_mbr"><![CDATA[Пользователь]]></phrase>
+		<phrase name="usertitle_snr"><![CDATA[Местный]]></phrase>
+		<phrase name="general_settings"><![CDATA[Основные Настройки]]></phrase>
+		<phrase name="cookie_settings"><![CDATA[Настройки cookie]]></phrase>
+		<phrase name="bbtitle"><![CDATA[<b>Название</b> <dfn>Название форума. Появляется в заголовке каждой страницы.</dfn>]]></phrase>
+		<phrase name="bburl"><![CDATA[<b>Местоположение директории core</b> <dfn>Ссылка на вашу директорию core <span style="white-space:nowrap">(не добавляйте в конце "/").</span> Например, <em>http://www.vash-site.com/forum/core</em></dfn>]]></phrase>
+		<phrase name="webmasteremail"><![CDATA[<b>Адрес электронной почты веб-мастера</b> <dfn>Адрес электронной почты адрес веб-мастера.</dfn>]]></phrase>
+		<phrase name="cookiepath"><![CDATA[<b>Путь для сookies</b> <dfn>Путь для сохранения сookies. Если у вас более одного форума на одном и том же домене, то вам необходимо указать отдельные директории для каждого из форумов. Если форум один, просто оставьте как есть / .<br /><br />Предполагаемые значения для этого параметра доступны в ниспадающем меню. Если у вас есть хорошая причина указать другие параметры, то поставьте галочку и введите своё значение в поле. Помните, что ваш путь должен <b>всегда</b> заканчиваться на /; например '/forum/', '/vb/' и т.п.<br /><br /><span class="modlasttendays">Если вы введёте неверное значение, то не сможете зайти на форум.</span></dfn>]]></phrase>
+		<phrase name="cookiedomain"><![CDATA[<b>Домен сookies</b> <dfn>Этот параметр устанавливает домен, к которому вы хотите сделать привязку сookies. Самая частая причина исправления этого параметра - наличие двух разных ссылок на ваш форум, например example.com и forum.example.com. Чтобы разрешить пользователям оставаться на форуме, зайдя по другому адресу, вам следует установить здесь <b>.example.com</b> (помните, что домен начинается с <b>точки</b>).<br /><br />Предполагаемые значения для этого параметра доступны в ниспадающем меню. Если у вас есть хорошая причина указать другие параметры, то поставьте галочку и введите своё значение в поле.<br /><br /><span class="modlasttendays">Лучше пропустить этот пункт, так как если вы введёте неверное значение, то не сможете зайти на форум.</span></dfn>]]></phrase>
+		<phrase name="suggested_settings"><![CDATA[Предполагаемые значения]]></phrase>
+		<phrase name="custom_setting"><![CDATA[Другое значение]]></phrase>
+		<phrase name="use_custom_setting"><![CDATA[Использовать другое значение (укажите его ниже)]]></phrase>
+		<phrase name="blank"><![CDATA[(пусто)]]></phrase>
+		<phrase name="fill_in_for_admin_account"><![CDATA[Пожалуйста, заполните форму ниже, чтобы настроить доступ администратора]]></phrase>
+		<phrase name="field_required"><![CDATA[* Обязательное поле]]></phrase>
+		<phrase name="username"><![CDATA[Имя пользователя]]></phrase>
+		<phrase name="password"><![CDATA[Пароль]]></phrase>
+		<phrase name="confirm_password"><![CDATA[Подтверждение пароля]]></phrase>
+		<phrase name="email_address"><![CDATA[Адрес электронной почты]]></phrase>
+		<phrase name="error_username"><![CDATA[* Некорректное имя пользователя]]></phrase>
+		<phrase name="error_password"><![CDATA[* Некорректный пароль]]></phrase>
+		<phrase name="error_confirmpassword"><![CDATA[* Некорректное подтверждение пароля]]></phrase>
+		<phrase name="error_email"><![CDATA[* Некорректный email адрес]]></phrase>
+		<phrase name="error_password_not_match"><![CDATA[* Поля 'Пароль' и 'Подтверждение пароля' не совпадают!]]></phrase>
+		<phrase name="error_same_password_as_username"><![CDATA[* Ваш пароль не может совпадать с вашим именем пользователя]]></phrase>
+		<phrase name="default_guest_message"><![CDATA[Если это ваш первый визит, рекомендуем почитать <a href="faq.php{sessionurl_q}" target="_blank"><b>справку</b></a>.
+Для размещения своих сообщений необходимо <a href="{register_page}" target="_blank"><b>зарегистрироваться</b></a>.
+Для просмотра сообщений выберите раздел.]]></phrase>
+		<phrase name="general_settings_saved"><![CDATA[Основные настройки сохранены]]></phrase>
+		<phrase name="cookie_settings_saved"><![CDATA[Настройки cookie сохранены]]></phrase>
+		<phrase name="administrator_account_created"><![CDATA[Учётная запись администратора создана]]></phrase>
+		<phrase name="administrator_account_setup"><![CDATA[Настройка учётной записи администратора]]></phrase>
+	</group>
+	<group name="core">
+		<phrase name="javascript_disabled"><![CDATA[Для продолжения требуется поддержка Javascript, которая, по всей видимости, была отключена в вашем браузере. Если javascript включён, проверьте, что данный файл существует: <br /><br /><a href="vbulletin-upgrade.js">Javascript для обновления</a>]]></phrase>
+		<phrase name="no_alter_permission"><![CDATA[Для указанного пользователя базы данных нет прав на выполнение 'ALTER' запросов. Пожалуйста, свяжитесь с вашим хостером и попросите разрешить выполнение 'ALTER' запросов.]]></phrase>
+		<phrase name="css_not_writable"><![CDATA[Директория 'clientscript/vbulletin_css' не доступна для записи. Пожалуйста, убедитесь, что эта директория и её поддиректории доступны для записи вашим сервером.]]></phrase>
+		<phrase name="VB_AREA_not_defined"><![CDATA[Константы VB_AREA или THIS_SCRIPT должны быть определены, чтобы продолжить]]></phrase>
+		<phrase name="request_tainting_attempted"><![CDATA[Зафиксирована попытка вредоносного запроса.]]></phrase>
+		<phrase name="admin_cp"><![CDATA[Панель управления]]></phrase>
+		<phrase name="begin_upgrade"><![CDATA[Начать обновление]]></phrase>
+		<phrase name="upgrade_complete"><![CDATA[Обновление завершено]]></phrase>
+		<phrase name="vb_install_system"><![CDATA[Система установки vBulletin %1$s]]></phrase>
+		<phrase name="begin_install"><![CDATA[Начать установку]]></phrase>
+		<phrase name="vb_upgrade_system"><![CDATA[Система обновления vBulletin %1$s]]></phrase>
+		<phrase name="please_login"><![CDATA[Пожалуйста, введите своё:]]></phrase>
+		<phrase name="username"><![CDATA[<u>И</u>мя пользователя]]></phrase>
+		<phrase name="password"><![CDATA[<u>П</u>ароль]]></phrase>
+		<phrase name="login"><![CDATA[Вход]]></phrase>
+		<phrase name="php_version_too_old"><![CDATA[Для работы vBulletin 5 требуется PHP версии 5.3.0 или выше. Ваша версия PHP - %1$s, пожалуйста, попросите вашего хостера обновить PHP.]]></phrase>
+		<phrase name="mysql_version_too_old"><![CDATA[Для работы vBulletin 5 требуется MySQL версии 5.1.5 или выше. Ваша версия MySQL - %1$s, пожалуйста, попросите вашего хостера обновить MySQL.]]></phrase>
+		<phrase name="cant_find_config"><![CDATA[Мы не смогли найти файл 'includes/config.php' , пожалуйста, убедитесь, что он существует.]]></phrase>
+		<phrase name="cant_read_config"><![CDATA[Мы не смогли прочитать содержимое файла 'includes/config.php' , пожалуйста, проверьте права доступа.]]></phrase>
+		<phrase name="mysql_strict_mode"><![CDATA[MySQL запущен в строгом режиме. Вы можете продолжать, но некоторые области vBulletin не будут правильно функционировать. <em>Настоятельно рекомендуется</em> установить <code>$config['Database']['force_sql_mode']</code> на <code>true</code> в вашем файле includes/config.php. <br /><br /><code>$config['Database']['force_sql_mode'] = true]]></phrase>
+		<phrase name="step_x_of_y"><![CDATA[ (действие %1$d из %2$d)]]></phrase>
+		<phrase name="unknown"><![CDATA[Неизвестно]]></phrase>
+		<phrase name="file_not_found"><![CDATA[Файл не найден!]]></phrase>
+		<phrase name="xml_file_versions"><![CDATA[Версии файлов XML:]]></phrase>
+		<phrase name="may_take_some_time"><![CDATA[(Пожалуйста, проявите терпение, некоторые действия могут быть весьма долгими)]]></phrase>
+		<phrase name="update_v_number"><![CDATA[Обновление до версии {VERSION}... ]]></phrase>
+		<phrase name="skipping_v_number_update"><![CDATA[Пропускаем обновление номера версии, так как у вас уже есть более новая версия... ]]></phrase>
+		<phrase name="done"><![CDATA[Выполнено]]></phrase>
+		<phrase name="import_done"><![CDATA[Импорт завершён]]></phrase>
+		<phrase name="step_title"><![CDATA[Действие %1$d) %2$s]]></phrase>
+		<phrase name="batch_complete"><![CDATA[Группа действий завершена! Нажмите на кнопку справа, если вас не перенаправят автоматически.]]></phrase>
+		<phrase name="next_batch"><![CDATA[ Дальше]]></phrase>
+		<phrase name="next_step"><![CDATA[Дальше (%1$d/%2$d)]]></phrase>
+		<phrase name="click_button_to_proceed"><![CDATA[Нажмите кнопку справа для продолжения.]]></phrase>
+		<phrase name="page_x_of_y"><![CDATA[Страница %1$d из %2$d]]></phrase>
+		<phrase name="semicolons_file_intro"><![CDATA[СЛЕДУЮЩИЕ ИМЕНА ПОЛЬЗОВАТЕЛЕЙ СОДЕРЖАТ ТОЧКИ С ЗАПЯТОЙ ( ; ) И *ДОЛЖНЫ* БЫТЬ ИЗМЕНЕНЫ В ПАНЕЛИ УПРАВЛЕНИЯ:]]></phrase>
+		<phrase name="dump_data_to_sql"><![CDATA[Сохранение данных в файл SQL]]></phrase>
+		<phrase name="choose_table_to_dump"><![CDATA[Выберите таблицу для сохранения в файл]]></phrase>
+		<phrase name="dump_tables"><![CDATA[Сохранить таблицу(-ы)]]></phrase>
+		<phrase name="dump_data_to_csv"><![CDATA[Сохранение данных в файл CSV]]></phrase>
+		<phrase name="backup_individual_table"><![CDATA[Копирование <b>индивидуальных таблиц</b>]]></phrase>
+		<phrase name="field_seperator"><![CDATA[Разделители полей]]></phrase>
+		<phrase name="quote_character"><![CDATA[Символ кавычек]]></phrase>
+		<phrase name="show_column_names"><![CDATA[Отображать названия колонок]]></phrase>
+		<phrase name="dump_table"><![CDATA[Сохранить таблицу]]></phrase>
+		<phrase name="vb_db_dump_completed"><![CDATA[СОХРАНЕНИЕ БАЗА ДАННЫХ VBULLETIN ЗАВЕРШЕНО]]></phrase>
+		<phrase name="dump_all_tables"><![CDATA[* СОХРАНИТЬ ВСЕ ТАБЛИЦЫ *]]></phrase>
+		<phrase name="dump_database_desc"><![CDATA[<p class="smallfont">Отсюда вы можете сделать копию базы данных вашего vBulletin.</p> <p class="smallfont">Пожалуйста, помните, что если у вас очень большая база данных, то этот скрипт <i>может</i> сделать не полную копию.</p> <p class="smallfont">Для корректной резервной копии, войдите на ваш сервер через Telnet или SSH, и используйте команду <i>mysqldump</i> в командной строке.</p>]]></phrase>
+		<phrase name="vb_database_backup_system"><![CDATA[Система копирования базы данных vBulletin]]></phrase>
+		<phrase name="backup_after_upgrade"><![CDATA[<p class="smallfont">Вы должны сделать резервную копию базы данных до выполнения обновления, если обновление уже завершено - используйте для этого панель администратора.</p> <p class="smallfont">Для корректной резервной копии, войдите на ваш сервер через Telnet или SSH, и используйте команду <i>mysqldump</i> в командной строке.</p>]]></phrase>
+		<phrase name="eaccelerator_too_old"><![CDATA[eAccelerator для PHP должен быть обновлен до версии 0.9.3 или выше. ]]></phrase>
+		<phrase name="apc_too_old"><![CDATA[На вашем сервере установлена старая версия <a href="http://pecl.php.net/package/APC/">Alternative PHP Cache</a> (APC), которая не совместима с vBulletin. Вам следует обновить APC как минимум до 3.0.0.]]></phrase>
+		<phrase name="mmcache_not_supported"><![CDATA[Turck MMCache устарела в eAccelerator и не корректно работает с vBulletin.]]></phrase>
+		<phrase name="altering_x_table"><![CDATA[Изменение таблицы %1$s (%2$d из %3$d)]]></phrase>
+		<phrase name="wrong_bitfield_xml"><![CDATA[Файл includes/xml/bitfield_vbulletin.xml устарел. Пожалуйста, убедитесь, что вы загрузили правильный файл.]]></phrase>
+		<phrase name="drop_index_x_on_y"><![CDATA[Удаляем индекс %1$s в %2$s]]></phrase>
+		<phrase name="create_index_x_on_y"><![CDATA[Создаём индекс %1$s в %2$s]]></phrase>
+		<phrase name="new_tables_exist"><![CDATA[Новые таблицы базы данных уже существуют]]></phrase>
+		<phrase name="tables_exist_ajax"><![CDATA[<p>Следующие таблицы предполагалось добавить в эту версию vBulletin, но они уже существуют в вашей базе данных:<p><p style="font-weight:bold">%1$s</p><p>Вероятные причины этого:</p><ul><li>модификация vBulletin использует таблицу с таким же названием</li><li>стороннее приложение использует таблицу с таким же названием</li><li>вы восстановили базу данных старой версии vBulletin поверх новой базы данных.</li><li>по каким-то причинам вы выполнили этот шаг во второй раз.</li></ul>Пожалуйста, если вы не уверены в причинах или способе устранения, то обратитесь к службе поддержки. Если вы всё же желаете продолжить, пропустив установку этих таблиц, то нажмите кнопку "Продолжить".]]></phrase>
+		<phrase name="tables_exist_cli"><![CDATA[<br /><br />Следующие таблицы предполагалось добавить в эту версию vBulletin, но они уже существуют в вашей базе данных: %1$s<br /><br />Вероятные причины этого:<br />* модификация vBulletin использует таблицу с таким же названием<br />* стороннее приложение использует таблицу с таким же названием<br />* вы восстановили базу данных старой версии vBulletin поверх новой базы данных.<br />* по каким-то причинам вы выполнили этот шаг во второй раз.<br /><br />Пожалуйста, если вы не уверены в причинах или способе устранения, то обратитесь к службе поддержки. Если вы всё же желаете продолжить, пропустив установку этих таблиц, то введите "1".<br />]]></phrase>
+		<phrase name="continue"><![CDATA[Продолжить]]></phrase>
+		<phrase name="next_step_long_time"><![CDATA[<strong>Следующий шаг может занять длительное время. Пожалуйста, дождитесь завершения.</strong>]]></phrase>
+		<phrase name="next_step_notice"><![CDATA[Уведомление о следующем шаге]]></phrase>
+		<phrase name="illegal_user_names"><![CDATA[Illegal User Names.txt]]></phrase>
+		<phrase name="wrong_version"><![CDATA[Записи о ваших обновлениях указывают, что последнее обновление было до версии %1$s, но в данный момент вы используете версию %2$s.]]></phrase>
+		<phrase name="wrong_version_cli"><![CDATA[<br />Записи о ваших обновлениях указывают, что следующее обновление должно быть до версии %1$s, но в данный момент вы используете версию %2$s.<br /><br />Если вы желаете продолжить обновление до %1$s, то введите "1". Если вы желаете обновить до версии, следующей за %2$s, то введите "2".<br />]]></phrase>
+		<phrase name="dropping_old_table_x"><![CDATA[Удаление устаревшей таблицы %1$s]]></phrase>
+		<phrase name="skipping_not_needed"><![CDATA[Пропускаем ненужный шаг]]></phrase>
+		<phrase name="step_x"><![CDATA[Шаг %1$s - ]]></phrase>
+		<phrase name="step_x_y"><![CDATA[Шаг %1$s - %2$s]]></phrase>
+		<phrase name="updating_bbcode"><![CDATA[Обновление BB кодов]]></phrase>
+		<phrase name="updating_forum_permissions"><![CDATA[Обновление прав в разделах]]></phrase>
+		<phrase name="updating_permissions"><![CDATA[Обновление прав]]></phrase>
+		<phrase name="cache_update"><![CDATA[Обновление кэша]]></phrase>
+		<phrase name="version_mismatch"><![CDATA[Версия не совпадает]]></phrase>
+		<phrase name="upgrade_from_x"><![CDATA[Обновление с %1$s]]></phrase>
+		<phrase name="table_conflict"><![CDATA[Конфликт таблиц]]></phrase>
+		<phrase name="dberror_ajax"><![CDATA[<p>Произошла ошибка в базе данных. Пожалуйста, свяжитесь с технической поддержкой vBulletin, если требуется помощь.</p><p>Модуль: %1$s, шаг %2$s, ошибка базы данных: %3$s</p><p>%4$s</p><p>Запрос:</p><pre>%5$s</pre>]]></phrase>
+		<phrase name="phperror_ajax"><![CDATA[<p>Произошла ошибка. Пожалуйста, свяжитесь с технической поддержкой vBulletin, если требуется помощь.</p><p>Модуль: %1$s, шаг %2$s, ошибка:</p><p>%3$s</p>]]></phrase>
+		<phrase name="skipped_records_x"><![CDATA[Пропущено записей: %1$s]]></phrase>
+		<phrase name="processed_records_x"><![CDATA[Обработано записей: %1$s]]></phrase>
+		<phrase name="processed_records_x_y"><![CDATA[Обработка записей с %1$s по %2$s]]></phrase>
+		<phrase name="processing_records_x"><![CDATA[Записей для обработки: %1$s]]></phrase>
+		<phrase name="process_done"><![CDATA[Обработка завершена]]></phrase>
+		<phrase name="status_done"><![CDATA[Статус: выполнено]]></phrase>
+		<phrase name="status_x_y_z"><![CDATA[Статус: обработка %1$s, шаг %2$s из %3$s]]></phrase>
+		<phrase name="status_x"><![CDATA[Статус: обработка %1$s]]></phrase>
+		<phrase name="status_vbcms_x_y"><![CDATA[Статус: обработка CMS, шаг %1$s из %2$s]]></phrase>
+		<phrase name="status_vbblog_x_y"><![CDATA[Статус: обработка дневников, шаг %1$s из %2$s]]></phrase>
+		<phrase name="status_skimlinks_x_y"><![CDATA[Статус: обработка Skimlinks, шаг %1$s из %2$s]]></phrase>
+		<phrase name="status_final_x_y"><![CDATA[Статус: обработка XML, шаг %1$s из %2$s]]></phrase>
+		<phrase name="status_install_x_y"><![CDATA[Статус: установка, шаг %1$s из %2$s]]></phrase>
+		<phrase name="status_aborted"><![CDATA[Статус: отменено]]></phrase>
+		<phrase name="upgrade_progress"><![CDATA[Процесс обновления]]></phrase>
+		<phrase name="install_progress"><![CDATA[Процесс установки]]></phrase>
+		<phrase name="processing_final"><![CDATA[<strong>Обработка XML</strong>]]></phrase>
+		<phrase name="processing_vbblog"><![CDATA[<strong>Обработка дневников</strong>]]></phrase>
+		<phrase name="processing_vbcms"><![CDATA[<strong>Обработка CMS</strong>]]></phrase>
+		<phrase name="processing_install"><![CDATA[<strong>Установка</strong>]]></phrase>
+		<phrase name="processing_skimlinks"><![CDATA[<strong>Обработка Skimlinks</strong>]]></phrase>
+		<!-- "upgradeing" is a purposeful typo -->
+		<phrase name="upgradeing_to_x"><![CDATA[<strong>Обновление до %1$s</strong>]]></phrase>
+		<phrase name="installing_to_x"><![CDATA[<strong>Установка %1$s</strong>]]></phrase>
+		<phrase name="show_details"><![CDATA[Показать детали]]></phrase>
+		<phrase name="hide_details"><![CDATA[Скрыть детали]]></phrase>
+		<phrase name="close"><![CDATA[Закрыть]]></phrase>
+		<phrase name="action_required"><![CDATA[Требуется действие]]></phrase>
+		<phrase name="no_processes_found"><![CDATA[Процессы не найдены]]></phrase>
+		<phrase name="process_x_y_z"><![CDATA[Прошло времени: %1$s:%2$s:%3$s, шаг: %4$s, запрос: %5$s]]></phrase>
+		<phrase name="query_status"><![CDATA[Статус запроса]]></phrase>
+		<phrase name="query_status_title"><![CDATA[------ Статус запроса ------]]></phrase>
+		<phrase name="press_button_to_begin_install"><![CDATA[Нажмите кнопку ниже, чтобы начать установку<br />vBulletin %1$s]]></phrase>
+		<phrase name="press_button_to_begin_upgrade"><![CDATA[Нажмите кнопку ниже, чтобы начать обновление<br />с %1$s до %2$s]]></phrase>
+		<phrase name="products_removed"><![CDATA[<font color="red">При обновлении vBulletin до %1$s будут удалены все установленные продукты, которые несовместимы с %2$s.</font>]]></phrase>
+		<phrase name="press_button_to_begin_final_upgrade"><![CDATA[Нажмите кнопку ниже, чтобы запустить последний шаг обновления]]></phrase>
+		<phrase name="console_upgrade_steps"><![CDATA[В данный момент ваш форум содержит более %1$s сообщений. Если во время процесса установки возникали ошибки, вызванные слишком длительным выполнением скриптов, то для вас может подойти версия обновления через командную строку. Для выполнения обновления через командную строку, требуется выполнить следующие шаги:<ol><li>Зайти на ваш сервер через SSH</li><li>Перейти в директорию install вашего форума, например: <ul><li>cd /forum/install</li></ul></li><li>Выполнить скрипт обновления, например: <ul><li>php -f upgrade.php</li></ul></li></ol>Если вы всё ещё не уверены, как это сделать, свяжитесь с технической поддержкой vBulletin.]]></phrase>
+		<phrase name="unexpected_text"><![CDATA[<strong>Неожиданная ошибка:</strong><pre>%1$s</pre>]]></phrase>
+		<phrase name="server_no_response"><![CDATA[Сервер не ответил. Вероятно, это произошло из-за настроек ограничения времени выполнения. Пожалуйста, свяжитесь с технической поддержкой vBulletin для получения квалифицированной помощи.]]></phrase>
+		<phrase name="turck"><![CDATA[На вашем сервере обнаружен Turck MMCache. Он не поддерживается новыми версиями PHP и может вызывать проблемы с vBulletin. Мы рекомендуем отключить его.]]></phrase>
+		<phrase name="startup_errors"><![CDATA[Ошибки предустановок]]></phrase>
+		<phrase name="startup_errors_desc"><![CDATA[Из-за следующих ошибок установка/обновление не может быть продолжено:]]></phrase>
+		<phrase name="database_functions_not_detected"><![CDATA[Выбранный тип базы данных '%1$s' не был обнаружен в вашей сборке PHP]]></phrase>
+		<phrase name="invalid_version_x"><![CDATA[Некорректная версия обновления: '%1$s']]></phrase>
+		<phrase name="invalid_modification_type_x"><![CDATA[Указан некорректный тип модификации '%1$s'.]]></phrase>
+		<phrase name="table_creation_x_failed"><![CDATA[Не удалось создать таблицу InnoDB '%1$s'. Пожалуйста, свяжитесь с технической поддержкой. Код ошибки 1005:121. Ассоциированный файл .frm должен быть скопирован куда-нибудь, а таблица корректно удалена, прежде чем создание может быть продолжено.]]></phrase>
+		<phrase name="after_upgrade_cli"><![CDATA[<br />Пожалуйста, помните, что директория 'clientscript/vbulletin_css' и её поддиректории должны быть доступны для записи вашему серверу. Если вы выполните это обновление не от имени пользователя, под которым работает ваш веб сервер, то некоторые файлы и поддиректории 'clientscript/vbulletin_css' могут стать недоступными для записи, а в панели администратора может появиться сообщение об ошибке, уведомляющее о невозможности записи в директорию 'clientscript/vbulletin_css'.]]></phrase>
+		<phrase name="unexpected_error"><![CDATA[Произошла неожиданная ошибка, установка/обновление не может быть продолжено.]]></phrase>
+	</group>
+	<group name="phrasetype">
+		<phrase name="global"><![CDATA[ОСНОВНЫЕ]]></phrase>
+		<phrase name="cpglobal"><![CDATA[Контрольная панель. Основное]]></phrase>
+		<phrase name="cppermission"><![CDATA[Права и разрешения]]></phrase>
+		<phrase name="forum"><![CDATA[Связанное с форумом]]></phrase>
+		<phrase name="calendar"><![CDATA[Календарь]]></phrase>
+		<phrase name="attachment_image"><![CDATA[Вложения / картинки]]></phrase>
+		<phrase name="style"><![CDATA[Управление стилями]]></phrase>
+		<phrase name="logging"><![CDATA[Управление записями]]></phrase>
+		<phrase name="cphome"><![CDATA[Контрольная панель. Главная страница]]></phrase>
+		<phrase name="promotion"><![CDATA[Управление повышениями]]></phrase>
+		<phrase name="user"><![CDATA[Управление участниками (основное)]]></phrase>
+		<phrase name="help_faq"><![CDATA[Система справки]]></phrase>
+		<phrase name="sql"><![CDATA[Управление SQL]]></phrase>
+		<phrase name="subscription"><![CDATA[Управление подписками]]></phrase>
+		<phrase name="language"><![CDATA[Управление языками]]></phrase>
+		<phrase name="bbcode"><![CDATA[Управление BB кодами]]></phrase>
+		<phrase name="stats"><![CDATA[Управление статистикой]]></phrase>
+		<phrase name="diagnostics"><![CDATA[Управление диагностикой]]></phrase>
+		<phrase name="maintenance"><![CDATA[Управление обслуживанием]]></phrase>
+		<phrase name="profile"><![CDATA[Управление полями профиля]]></phrase>
+		<phrase name="cprofilefield"><![CDATA[Другие поля профиля]]></phrase>
+		<phrase name="thread"><![CDATA[Управление темами]]></phrase>
+		<phrase name="timezone"><![CDATA[Временные зоны]]></phrase>
+		<phrase name="banning"><![CDATA[Управление блокировками]]></phrase>
+		<phrase name="reputation"><![CDATA[Репутация]]></phrase>
+		<phrase name="wol"><![CDATA[Кто на сайте]]></phrase>
+		<phrase name="threadmanage"><![CDATA[Управление темами]]></phrase>
+		<phrase name="pm"><![CDATA[Личные сообщения]]></phrase>
+		<phrase name="cpuser"><![CDATA[Контрольная панель. Управление участниками]]></phrase>
+		<phrase name="register"><![CDATA[Регистрация]]></phrase>
+		<phrase name="accessmask"><![CDATA[Маски доступа]]></phrase>
+		<phrase name="cron"><![CDATA[Запланированные задачи]]></phrase>
+		<phrase name="moderator"><![CDATA[Модераторы]]></phrase>
+		<phrase name="cpoption"><![CDATA[Контрольная панель. Опции]]></phrase>
+		<phrase name="cprank"><![CDATA[Контрольная панель. Звания участников]]></phrase>
+		<phrase name="cpusergroup"><![CDATA[Контрольная панель. Группы пользователей]]></phrase>
+		<phrase name="holiday"><![CDATA[Праздники]]></phrase>
+		<phrase name="posting"><![CDATA[Сообщения]]></phrase>
+		<phrase name="poll"><![CDATA[Голосования]]></phrase>
+		<phrase name="fronthelp"><![CDATA[Соответствующая помощь]]></phrase>
+		<phrase name="search"><![CDATA[Поиск]]></phrase>
+		<phrase name="showthread"><![CDATA[Отображение темы]]></phrase>
+		<phrase name="postbit"><![CDATA[Части сообщений]]></phrase>
+		<phrase name="forumdisplay"><![CDATA[Отображение ]]></phrase>
+		<phrase name="messaging"><![CDATA[Сообщения]]></phrase>
+		<phrase name="front_end_error"><![CDATA[Сообщения об ошибках]]></phrase>
+		<phrase name="front_end_redirect"><![CDATA[Перемещения]]></phrase>
+		<phrase name="email_body"><![CDATA[Электронные письма. Сообщение]]></phrase>
+		<phrase name="email_subj"><![CDATA[Электронные письма. Тема]]></phrase>
+		<phrase name="vbulletin_settings"><![CDATA[Основные настройки]]></phrase>
+		<phrase name="cp_help"><![CDATA[Контрольная панель. Текст помощи]]></phrase>
+		<phrase name="faq_title"><![CDATA[Справка. Заголовки]]></phrase>
+		<phrase name="faq_text"><![CDATA[Справка. Текст]]></phrase>
+		<phrase name="stop_message"><![CDATA[Контрольная панель. Сообщения об ошибках]]></phrase>
+		<phrase name="hooks"><![CDATA[Система модулей]]></phrase>
+		<phrase name="inlinemod"><![CDATA[Встроенное управление]]></phrase>
+		<phrase name="reputationlevel"><![CDATA[Уровни репутации]]></phrase>
+		<phrase name="infraction"><![CDATA[Нарушения пользователей]]></phrase>
+		<phrase name="infractionlevel"><![CDATA[Уровни нарушений пользователей]]></phrase>
+		<phrase name="notice"><![CDATA[Важные сообщения]]></phrase>
+		<phrase name="prefix"><![CDATA[Префиксы тем]]></phrase>
+		<phrase name="prefixadmin"><![CDATA[Префиксы тем. Управление]]></phrase>
+		<phrase name="album"><![CDATA[Альбомы]]></phrase>
+		<phrase name="hvquestion"><![CDATA[Вопросы для отделения людей от роботов]]></phrase>
+		<phrase name="socialgroups"><![CDATA[Группы]]></phrase>
+		<phrase name="tagscategories"><![CDATA[Метки и распределение по категориям]]></phrase>
+		<phrase name="contenttypes"><![CDATA[Типы содержимого]]></phrase>
+		<phrase name="vbblock"><![CDATA[Блоки форума]]></phrase>
+		<phrase name="vbblocksettings"><![CDATA[Настройки блоков форума]]></phrase>
+		<phrase name="advertising"><![CDATA[Управление рекламой]]></phrase>
+		<phrase name="vb5blog"><![CDATA[Дневники]]></phrase>
+	</group>
+	<group name="vbphrase">
+		<phrase name="bitfield_conflicts_x"><![CDATA[В bitfields был обнаружен конфликт данных. Вы не можете продолжить установку, до тех пор, пока этот продукт не будет исправлен. Обнаруженный конфликт:
+<ul>
+%1$s
+</ul>]]></phrase>
+		<phrase name="product_x_installed_no_overwrite"><![CDATA[Продукт '%1$s' уже установлен, а вы не указали, что его следует перезаписать / обновить.]]></phrase>
+		<phrase name="rebuild_failed_to_write_css"><![CDATA[Не удалось сохранить css файлы. Пожалуйста, убедитесь в том, что директория 'clientscript/vbulletin_css' доступна для записи. Если директория доступна для записи, то вам необходимо установить параметр misc/baseurl в вашем файле конфигурации ядра (core/includes/config.php).]]></phrase>
+		<phrase name="must_wait_x_seconds_master_style_import"><![CDATA[Вам необходимо подождать как минимум ещё {1} секунд, преждче чем импортировать основной стиль снова.]]></phrase>
+		<phrase name="invalid_title_specified"><![CDATA[Указано неверное название]]></phrase>
+		<phrase name="no_notice_criteria_active"><![CDATA[Чтобы быть корректной, важная информация должна иметь как минимум один активный критерий отображения (иначе она никогда не отобразится).]]></phrase>
+		<phrase name="default_data_type"><![CDATA[Вставка данных в %1$s]]></phrase>
+		<phrase name="please_wait"><![CDATA[Пожалуйста, подождите]]></phrase>
+		<phrase name="language"><![CDATA[Язык]]></phrase>
+		<phrase name="master_language"><![CDATA[ОСНОВНОЙ ЯЗЫК]]></phrase>
+		<phrase name="admin_help"><![CDATA[Помощь администратору]]></phrase>
+		<phrase name="style"><![CDATA[Стиль]]></phrase>
+		<phrase name="styles"><![CDATA[Стили]]></phrase>
+		<phrase name="settings"><![CDATA[Настройки]]></phrase>
+		<phrase name="master_style"><![CDATA[ОСНОВНОЙ СТИЛЬ]]></phrase>
+		<phrase name="templates"><![CDATA[Шаблоны]]></phrase>
+		<phrase name="css"><![CDATA[CSS]]></phrase>
+		<phrase name="stylevars"><![CDATA[Переменные стиля]]></phrase>
+		<phrase name="replacement_variables"><![CDATA[Замещаемые переменные]]></phrase>
+		<phrase name="controls"><![CDATA[Управление]]></phrase>
+		<phrase name="rebuild_style_information"><![CDATA[Перестройка информации стиля]]></phrase>
+		<phrase name="updating_style_information_for_each_style"><![CDATA[Обновление информации о стиле для каждого из них]]></phrase>
+		<phrase name="updating_styles_with_no_parents"><![CDATA[Обновление стилей установленных с отсутствием предыдущей информации]]></phrase>
+		<phrase name="updated_x_styles"><![CDATA[Обновлено стилей: %1$s]]></phrase>
+		<phrase name="no_styles_needed_updating"><![CDATA[Стили не нуждаются в обновлении]]></phrase>
+		<phrase name="yes"><![CDATA[Да]]></phrase>
+		<phrase name="no"><![CDATA[Нет]]></phrase>
+		<phrase name="system"><![CDATA[Система]]></phrase>
+		<phrase name="template_merged_x_y"><![CDATA[Шаблон успешно обновлён: %1$s (стиль: %2$s)]]></phrase>
+		<phrase name="template_conflict_x_y"><![CDATA[Ошибка при обновлении шаблона: %1$s (стиль: %2$s)]]></phrase>
+		<phrase name="go_back"><![CDATA[Назад]]></phrase>
+		<phrase name="template_group_x"><![CDATA[Группа шаблонов: %1$s]]></phrase>
+		<phrase name="vbulletin_message"><![CDATA[Сообщение vBulletin]]></phrase>
+		<phrase name="create_table"><![CDATA[Создание таблицы %1$s]]></phrase>
+		<phrase name="remove_table"><![CDATA[Удаление таблицы %1$s]]></phrase>
+		<phrase name="alter_table"><![CDATA[Изменение таблицы %1$s]]></phrase>
+		<phrase name="update_table"><![CDATA[Обновление таблицы %1$s]]></phrase>
+		<phrase name="update_table_x"><![CDATA[Обновление таблицы %1$s (%2$d из %3$d)]]></phrase>
+		<phrase name="upgrade_start_message"><![CDATA[<p>Этот скрипт обновит ваш установленный vBulletin до версии <b>{VERSION}</b></p><p>Нажмите на кнопку 'Дальше', чтобы продолжить.</p>]]></phrase>
+		<phrase name="upgrade_wrong_version"><![CDATA[<p>Ваша версия vBulletin не совпадает с версией, для которой был создан этот скрипт (версия <b>{PREV_VERSION}</b>).</p><p>Пожалуйста, убедитесь, что вы пытаетесь запустить верный скрипт.</p><p>Если вы уверены, что это тот скрипт, который вы желаете запустить, то <a href="{THIS_SCRIPT}?step=1">нажмите здесь</a>.</p>]]></phrase>
+		<phrase name="file_not_found"><![CDATA[Ошибка! ./install/%1$s не существует!]]></phrase>
+		<phrase name="importing_file"><![CDATA[Импорт %1$s]]></phrase>
+		<phrase name="ok"><![CDATA[OK]]></phrase>
+		<phrase name="cancel"><![CDATA[Отмена]]></phrase>
+		<phrase name="query_took"><![CDATA[Запрос на выполнение занял %1$s секунд(ы).]]></phrase>
+		<phrase name="done"><![CDATA[Выполнено]]></phrase>
+		<phrase name="proceed"><![CDATA[Продолжить]]></phrase>
+		<phrase name="reset"><![CDATA[Сбросить]]></phrase>
+		<phrase name="alter_table_step_x"><![CDATA[Изменение таблицы %1$s (%2$d из %3$d)]]></phrase>
+		<phrase name="vbulletin_copyright"><![CDATA[vBulletin v{VERSION}, Copyright &copy; {date("Y")} vBulletin Solutions, Inc. All rights reserved. Перевод: zCarot]]></phrase>
+		<phrase name="vbulletin_copyright_orig"><![CDATA[vBulletin v%1$s, Copyright &copy; %2$s vBulletin Solutions, Inc. All rights reserved. Перевод:  zCarot]]></phrase>
+		<phrase name="processing_complete_proceed"><![CDATA[Обработка завершена - Продолжаем]]></phrase>
+		<phrase name="xml_error_x_at_line_y"><![CDATA[Ошибка XML: %1$s на строке %2$s]]></phrase>
+		<phrase name="apply_critical_template_change_to_x"><![CDATA[Выполнение важных изменений в шаблоне %1$s стиля %2$s]]></phrase>
+		<phrase name="compile_template_x_failed"><![CDATA[Сборка шаблона %1$s прошла неудачно. Обновление должно быть выполнено вручную]]></phrase>
+		<phrase name="compatible_starting_with_x"><![CDATA[Совместим с %1$s и выше]]></phrase>
+		<phrase name="incompatible_with_x_and_greater"><![CDATA[Не совместим с %1$s и выше]]></phrase>
+		<phrase name="dependencies_not_met_x"><![CDATA[Следующие зависимости не найдены: %1$s]]></phrase>
+		<phrase name="product_x_must_be_installed"><![CDATA[Продукт %1$s должен быть установлен, прежде чем сможет быть установлен этот продукт. %2$s]]></phrase>
+		<phrase name="product_x_must_be_activated"><![CDATA[Продукт %1$s должен быть включён, прежде чем сможет быть установлен этот продукт.]]></phrase>
+		<phrase name="product_incompatible_version_x_product_y"><![CDATA[Этот продукт не совместим с версией %1$s продукта %3$s. %2$s]]></phrase>
+		<phrase name="product_incompatible_version_x_mysql"><![CDATA[Этот продукт не совместим с MySQL версии %1$s. %2$s]]></phrase>
+		<phrase name="product_incompatible_version_x_php"><![CDATA[Этот продукт не совместим с PHP версии %1$s. %2$s]]></phrase>
+		<phrase name="product_incompatible_version_x_vbulletin"><![CDATA[Этот продукт не совместим с vBulletin версии %1$s. %2$s]]></phrase>
+		<phrase name="attachpathfailed"><![CDATA[Невозможно создать директорию в файловой системе, чтобы сохранить ваши вложения (%1$s).]]></phrase>
+		<phrase name="updating_channels"><![CDATA[Обновление каналов]]></phrase>
+		<phrase name="importing_from_x"><![CDATA[Импортирование данных из %1s]]></phrase>
+		<phrase name="upload_file_system_is_not_writable_path"><![CDATA[Путь для хранения вложений в файловой системе не доступен для записи (%1$s), пожалуйста, исправьте это и перезапустите процесс обновления.]]></phrase>
+	</group>
+	<group name="custom">
+		<group name="cprofilefield">
+			<phrase name="field1_title"><![CDATA[Биография]]></phrase>
+			<phrase name="field1_desc"><![CDATA[Немного о себе]]></phrase>
+			<phrase name="field2_title"><![CDATA[Местоположение]]></phrase>
+			<phrase name="field2_desc"><![CDATA[Где вы проживаете?]]></phrase>
+			<phrase name="field3_title"><![CDATA[Интересы]]></phrase>
+			<phrase name="field3_desc"><![CDATA[Ваши хобби и т.д.]]></phrase>
+			<phrase name="field4_title"><![CDATA[Чем занимаетесь]]></phrase>
+			<phrase name="field4_desc"><![CDATA[Кем работаете?]]></phrase>
+		</group>
+		<group name="reputationlevel">
+			<phrase name="reputation1"><![CDATA[презирают в этих краях]]></phrase>
+			<phrase name="reputation2"><![CDATA[может только надеется на улучшение]]></phrase>
+			<phrase name="reputation3"><![CDATA[имеет немного плохого в прошлом]]></phrase>
+			<phrase name="reputation4"><![CDATA[пока не определено]]></phrase>
+			<phrase name="reputation5"><![CDATA[на пути к лучшему]]></phrase>
+			<phrase name="reputation6"><![CDATA[скоро придёт к известности]]></phrase>
+			<phrase name="reputation7"><![CDATA[- весьма и весьма положительная личность]]></phrase>
+			<phrase name="reputation8"><![CDATA[как роза среди колючек]]></phrase>
+			<phrase name="reputation9"><![CDATA[- очень-очень хороший человек]]></phrase>
+			<phrase name="reputation10"><![CDATA[- луч света в тёмном царстве]]></phrase>
+			<phrase name="reputation11"><![CDATA[- это имя известно всем]]></phrase>
+			<phrase name="reputation12"><![CDATA[- просто великолепная личность]]></phrase>
+			<phrase name="reputation13"><![CDATA[за этого человека можно гордиться]]></phrase>
+			<phrase name="reputation14"><![CDATA[обеспечил(а) себе прекрасное будущее]]></phrase>
+			<phrase name="reputation15"><![CDATA[репутация неоспорима]]></phrase>
+		</group>
+		<group name="infractionlevel">
+			<phrase name="infractionlevel1_title"><![CDATA[Реклама и спам]]></phrase>
+			<phrase name="infractionlevel2_title"><![CDATA[Оскорбление других участников]]></phrase>
+			<phrase name="infractionlevel3_title"><![CDATA[Нарушение правил форума]]></phrase>
+			<phrase name="infractionlevel4_title"><![CDATA[Матерная речь]]></phrase>
+		</group>
+	</group>
+	<group name="version">
+		<group name="360b1">
+			<phrase name="please_wait_message"><![CDATA[Следующий шаг может занять много времени. Будьте терпеливы.]]></phrase>
+			<phrase name="updating_cron"><![CDATA[Обновление назначенных заданий]]></phrase>
+			<phrase name="updating_subscriptions"><![CDATA[Обновление подписок]]></phrase>
+			<phrase name="updating_holidays"><![CDATA[Обновление праздников]]></phrase>
+			<phrase name="updating_profilefields"><![CDATA[Обновление других полей профиля]]></phrase>
+			<phrase name="updating_reputationlevels"><![CDATA[Обновление уровней репутации]]></phrase>
+			<phrase name="invert_banned_flag"><![CDATA[Инвертирование отметки 'Это группа 'Заблокированных' ']]></phrase>
+			<phrase name="install_canignorequota_permission"><![CDATA[Установка разрешения 'Может игнорировать предел']]></phrase>
+			<phrase name="infractionlevel1_title"><![CDATA[Реклама и спам]]></phrase>
+			<phrase name="infractionlevel2_title"><![CDATA[Оскорбление других участников]]></phrase>
+			<phrase name="infractionlevel3_title"><![CDATA[Нарушение правил форума]]></phrase>
+			<phrase name="infractionlevel4_title"><![CDATA[Матерная речь]]></phrase>
+			<phrase name="rssposter_title"><![CDATA[Размещение RSS]]></phrase>
+			<phrase name="infractions_title"><![CDATA[Очистка нарушений]]></phrase>
+			<phrase name="ccbill_title"><![CDATA[Проверка возврата счёта по кредитной карте]]></phrase>
+			<phrase name="rename_post_parsed"><![CDATA[Переименование таблицы %1$spost_parsed в %1$spostparsed]]></phrase>
+			<phrase name="updating_thread_redirects"><![CDATA[Обновление перенаправлений тем]]></phrase>
+			<phrase name="super_moderator_x_updated"><![CDATA[Супер-модератор '%1$s' обновлён]]></phrase>
+			<phrase name="lastpostid_notice"><![CDATA[<strong>Чтобы окончательно завершить обновление, то есть обновить информацию о темах и разделах, вы <em>должны</em> самостоятельно обновить счётчики в панели администратора.</strong>]]></phrase>
+		</group>
+		<group name="361">
+			<phrase name="rename_podcasturl"><![CDATA[Переименование таблицы %1$spodcasturl в %1$spodcastitem]]></phrase>
+		</group>
+		<group name="367">
+			<phrase name="remove_calendar_xss_fix"><![CDATA[Удаление исправления XSS в календаре от версии 3.6.6]]></phrase>
+		</group>
+		<group name="370b2">
+			<phrase name="build_userlist"><![CDATA[Перестроение списка пользователей %1$s]]></phrase>
+			<phrase name="build_userlist_complete"><![CDATA[Перестроение списка пользователей завершено]]></phrase>
+		</group>
+		<group name="370b6">
+			<phrase name="inserting_vb37_faq_structure"><![CDATA[Вставка новой структуры справки vBulletin 3.7.0]]></phrase>
+		</group>
+		<group name="370rc4">
+			<phrase name="token_added_x_templates"><![CDATA[Добавление обязательного маркера безопасности в %1$s шаблонов]]></phrase>
+		</group>
+		<group name="380a2">
+			<phrase name="alter_index_on_x"><![CDATA[Изменяем index в таблице %1$s]]></phrase>
+			<phrase name="create_index_on_x"><![CDATA[Создаём index в таблице %1$s]]></phrase>
+			<phrase name="creating_default_group_category"><![CDATA[Создаём категории по умолчанию для групп]]></phrase>
+			<phrase name="fulltext_index_on_x"><![CDATA[Создаём fulltext index в таблице %1$s]]></phrase>
+			<phrase name="convert_messages_to_discussion"><![CDATA[Преобразуем сообщения групп в дискуссии]]></phrase>
+			<phrase name="set_discussion_titles"><![CDATA[Устанавливаем заголовки для дискуссий]]></phrase>
+			<phrase name="update_last_post"><![CDATA[Обновляем информацию о последнем сообщении в дискуссии]]></phrase>
+			<phrase name="update_discussion_counters"><![CDATA[Обновляем счётчики дискуссий]]></phrase>
+			<phrase name="update_group_message_counters"><![CDATA[Обновляем счётчики сообщений групп]]></phrase>
+			<phrase name="update_group_discussion_counters"><![CDATA[Обновляем счётчики дискуссий групп]]></phrase>
+			<phrase name="uncategorized"><![CDATA[Вне категорий]]></phrase>
+			<phrase name="uncategorized_description"><![CDATA[Группы вне категорий]]></phrase>
+			<phrase name="move_groups_to_default_category"><![CDATA[Перемещаем группы в одну категорию (Вне категорий)]]></phrase>
+			<phrase name="updating_profile_categories"><![CDATA[Добавляем настройки ограничения доступа к категориям полей профиля]]></phrase>
+			<phrase name="update_hv_options"><![CDATA[Обновляем настройки отделения людей от роботов]]></phrase>
+			<phrase name="update_album_update_counters"><![CDATA[Обновляем счётчики альбомов]]></phrase>
+			<phrase name="granting_permissions"><![CDATA[Предоставляем доступ к новым функциям]]></phrase>
+			<phrase name="updating_usergroup_permissions"><![CDATA[Обновление прав групп пользователей]]></phrase>
+		</group>
+		<group name="380rc1">
+			<phrase name="rebuild_event_cache"><![CDATA[Перестраиваем кэш событий]]></phrase>
+		</group>
+		<group name="380rc2">
+			<phrase name="updating_mail_ssl_setting"><![CDATA[Обновляем настройки SSL для почты]]></phrase>
+		</group>
+		<group name="400a1">
+			<phrase name="convert_attachment"><![CDATA[Преобразование вложений: с %1$d по %2$d из %3$d]]></phrase>
+			<phrase name="update_attachments_complete"><![CDATA[Преобразование вложений завершено]]></phrase>
+			<phrase name="update_groups_complete"><![CDATA[Интеграция групп в систему вложений завершено]]></phrase>
+			<phrase name="update_albums_complete"><![CDATA[Интеграция альбомов в систему вложений завершено]]></phrase>
+			<phrase name="convert_picture"><![CDATA[Перемещение изображения %1$s в систему вложений]]></phrase>
+			<phrase name="could_not_find_file"><![CDATA[Невозможно найти файл "%1$s" в файловой системе]]></phrase>
+			<phrase name="post_indexes_not_added"><![CDATA[<p><b>Новые индексы таблиц post и thread не были добавлены</b></p><p>Из-за большого размера таблицы post, добавление индексов к таблицам post и thread может занять значительное время, поэтому скрипт обновления не будет добавлять их. Вместо этого, Вам предлагается добавить с помощью отдельного скрипта /install/upgrade_400a1_indexes.php.  Инструкции к его использованию (на английском языке) находятся в самом файле.</p><p>Хотя эти индексы и не обязательны для работы vBulletin, но они могут улучшить производительность, особенно на больших форумах. Добавление индексов весьма рекомендуется.</p>]]></phrase>
+		</group>
+		<group name="400b3">
+			<phrase name="incompatible"><![CDATA[(Стиль vB3 - несовместим)]]></phrase>
+			<phrase name="default_style"><![CDATA[Стандартный стиль vB4]]></phrase>
+			<phrase name="updating_styles"><![CDATA[Обновление стилей]]></phrase>
+			<phrase name="updating_forum_styles"><![CDATA[Обновление стилей форума]]></phrase>
+			<phrase name="updating_user_styles"><![CDATA[Обновление пользовательских стилей отображения]]></phrase>
+			<phrase name="updating_blog_styles"><![CDATA[Обновление стилей дневников]]></phrase>
+			<phrase name="creating_default_style"><![CDATA[Создание стандартного стиля vB4]]></phrase>
+		</group>
+		<group name="400rc2">
+			<phrase name="updating_profile_field_category_data"><![CDATA[Изменение местоположения данных из категорий дополнительных полей профиля.]]></phrase>
+		</group>
+		<group name="402">
+			<phrase name="update_icon"><![CDATA[Обновление стандартных иконкок %1$d из %2$d]]></phrase>
+		</group>
+		<group name="403">
+			<phrase name="rebuilding_ad_criteria"><![CDATA[Перестроение критериев показа рекламных объявлений]]></phrase>
+		</group>
+		<group name="404">
+			<phrase name="update_smilie"><![CDATA[Обновление основных смайлов (%1$d из %2$d)]]></phrase>
+			<phrase name="indexes_not_removed"><![CDATA[<p><b>Не использующиеся индексы не были удалены</b></p><p>Из-за большого размера вашей таблицы сообщений, некоторые не использующиеся индексы не были удалены во время обновления форума, так как это могло занять очень много времени. Для удаления этих индексов был создан специальный скрипт /install/upgrade_404_indexes.php. Инструкции по использованию скрипта находятся в его исходном тексте.</p><p>Хотя удалять эти индексы и не обязательно, но это может существенно ускорить работу форума.</p>]]></phrase>
+			<phrase name="checking_orphaned_stylevars"><![CDATA[Переменные стиля: Поиск устаревших переменных стиля для удаления (1 из 2)]]></phrase>
+			<phrase name="removed_x_orphaned_stylevars"><![CDATA[Переменные стиля: Найдено и удалено устаревших переменных стиля: %1$d (2 из 2)]]></phrase>
+			<phrase name="no_orphaned_stylevars"><![CDATA[Переменные стиля: Не было найдено ни одной устаревшей переменной стиля (2 из 2)]]></phrase>
+		</group>
+		<group name="406">
+			<phrase name="updating_stylevars_in_styleid_x_y_of_z"><![CDATA[Обновление переменных стиля в стиле с ID: %1$d (%2$d из %3$d)]]></phrase>
+		</group>
+		<group name="408">
+			<phrase name="adding_themes"><![CDATA[Добавление тем]]></phrase>
+			<phrase name="converting_3x_customization"><![CDATA[Преобразование настроек по изменению профиля пользователя с версии 3.x (%1$d из %2$d)]]></phrase>
+			<phrase name="granting_profile_customization_permission"><![CDATA[Предоставление подходящих прав пользователям для изменения профиля.]]></phrase>
+			<phrase name="retrieving_customized_stylevar_values"><![CDATA[Получение значение изменённых переменных стиля]]></phrase>
+			<phrase name="mapping_customized_stylevars"><![CDATA[Переадресация изменённых переменных стиля на новые переменные стиля]]></phrase>
+		</group>
+		<group name="411">
+			<phrase name="delete_orphan_articles"><![CDATA[Удаление устаревших записей о статьях]]></phrase>
+			<phrase name="setting_volatile_flag"><![CDATA[Установка флага 'временный' для параметра %1$s]]></phrase>
+		</group>
+		<group name="418b1">
+			<phrase name="updating_mobile"><![CDATA[Обновление настроек по умолчанию для мобильного стиля. Шаг %1$d из %2$d]]></phrase>
+		</group>
+		<group name="4110a1">
+			<phrase name="remove_vbapi_product"><![CDATA[Удаление продукта vbapi]]></phrase>
+		</group>
+		<group name="4110a3">
+			<phrase name="processing_filenames"><![CDATA[Обновление имён файлов вложений (%1$d)]]></phrase>
+			<phrase name="updated_attachments"><![CDATA[Обработано вложений: %1$d]]></phrase>
+			<phrase name="updated_attachments_complete"><![CDATA[Обработка вложений завершена]]></phrase>
+		</group>
+		<group name="4111a1">
+			<phrase name="processing_articles"><![CDATA[Обновление статей CMS (%1$d)]]></phrase>
+			<phrase name="updated_articles"><![CDATA[Обновлено статей: %1$d из %2$d]]></phrase>
+			<phrase name="updated_articles_complete"><![CDATA[Обработка статей завершена]]></phrase>
+		</group>
+		<group name="4111a2">
+			<phrase name="updating_widget"><![CDATA[Обновление виджетов CMS (%1$d)]]></phrase>
+		</group>
+		<group name="420a1">
+			<phrase name="disabled_by_42"><![CDATA[* Отключено в vBulletin 4.2 * ]]></phrase>
+			<phrase name="disable_products"><![CDATA[Отключение или удаление старых продуктов]]></phrase>
+			<phrase name="activitystream"><![CDATA[Пожалуйста, выберите типы содержимого, которые будут включены в ленту активности. Эти настройки могут быть изменены и после обновления.]]></phrase>
+			<phrase name="select_as_time"><![CDATA[Выберите продолжительность (в днях), в течение которых будет хранится данные ленты активности. Большое значение этого параметра может повлиять на производительность сайта. От 0 до 180 дней.]]></phrase>
+		</group>
+		<group name="420a1_as">
+			<phrase name="album_album"><![CDATA[Альбомы]]></phrase>
+			<phrase name="album_photo"><![CDATA[Фотографии в альбомах]]></phrase>
+			<phrase name="album_comment"><![CDATA[Комментарии к фотографиям в альбомах]]></phrase>
+			<phrase name="forum_thread"><![CDATA[Темы на форуме]]></phrase>
+			<phrase name="forum_post"><![CDATA[Сообщения на форуме]]></phrase>
+			<phrase name="forum_visitormessage"><![CDATA[Публичные сообщения]]></phrase>
+			<phrase name="socialgroup_group"><![CDATA[Группы]]></phrase>
+			<phrase name="socialgroup_discussion"><![CDATA[Дискуссии в группах]]></phrase>
+			<phrase name="socialgroup_groupmessage"><![CDATA[Сообщения в группах]]></phrase>
+			<phrase name="socialgroup_photo"><![CDATA[Фотографии в группах]]></phrase>
+			<phrase name="socialgroup_photocomment"><![CDATA[Комментарии к фотографиям в группах]]></phrase>
+			<phrase name="calendar_event"><![CDATA[События календаря]]></phrase>
+		</group>
+		<group name="420a1_as_blog">
+			<phrase name="blog_entry"><![CDATA[Записи в дневниках]]></phrase>
+			<phrase name="blog_comment"><![CDATA[Комментарии к записям в дневниках]]></phrase>
+		</group>
+		<group name="420a1_as_cms">
+			<phrase name="cms_article"><![CDATA[Статьи в CMS]]></phrase>
+			<phrase name="cms_comment"><![CDATA[Комметарии в CMS]]></phrase>
+		</group>
+		<group name="500a1">
+			<phrase name="importing_x_records"><![CDATA[Импортирование записей: %1$s]]></phrase>
+		</group>
+		<group name="500a13">
+			<phrase name="adding_album_widget"><![CDATA[Добавление виджета альбомов]]></phrase>
+		</group>
+		<group name="500a14">
+			<phrase name="processed_nodes"><![CDATA[Обработка узлов с %1$s из %2$s - Всего %3$s]]></phrase>
+			<phrase name="processing_photos"><![CDATA[Определение фотографий]]></phrase>
+			<phrase name="update_photos_complete"><![CDATA[Определение фотографий завершено]]></phrase>
+			<phrase name="processing_videos"><![CDATA[Определение видео]]></phrase>
+			<phrase name="update_videos_complete"><![CDATA[Определение видео завершено]]></phrase>
+			<phrase name="adding_pm_scheduled_task"><![CDATA[Добавление запланированной задачи для удаления старых личных сообщений из корзины]]></phrase>
+		</group>
+		<group name="500a17">
+			<phrase name="adding_blog_navbar_link"><![CDATA[Добавление правильной ссылки на дневники в панель навигации]]></phrase>
+		</group>
+		<group name="500a18">
+			<phrase name="added_usergroup"><![CDATA[Добавление %1$s как группы пользователей %2$s]]></phrase>
+		</group>
+		<group name="500a20">
+			<phrase name="adding_blog_channel_permission"><![CDATA[Добавление прав зарегистрированным пользователям на канал дневников]]></phrase>
+		</group>
+		<group name="500a27">
+			<phrase name="products_removal"><![CDATA[Удаление устаревших продуктов]]></phrase>
+			<phrase name="products_removed"><![CDATA[Все устаревшие продукты удалены]]></phrase>
+			<phrase name="removed_product"><![CDATA[Удаление продукта: %1$s]]></phrase>
+			<phrase name="mapping_vb4_vb5_profile"><![CDATA[Перенос переменных стиля профиля из vB4 в vB5]]></phrase>
+			<phrase name="adding_socialgroup_navbar_link"><![CDATA[Добавление правильной ссылки на группы в панель навигации]]></phrase>
+		</group>
+		<group name="500a28">
+			<phrase name="creating_privatemessage_channel"><![CDATA[Создание канала личных сообщений]]></phrase>
+			<phrase name="importing_privatemessages_1"><![CDATA[Импортирование личных сообщений - шаг 1 из 4]]></phrase>
+			<phrase name="importing_privatemessages_2"><![CDATA[Импортирование личных сообщений - шаг 2 из 4]]></phrase>
+			<phrase name="importing_privatemessages_3"><![CDATA[Импортирование личных сообщений - шаг 3 из 4]]></phrase>
+			<phrase name="importing_privatemessages_4"><![CDATA[Импортирование личных сообщений - шаг 4 из 4]]></phrase>
+			<phrase name="creating_socialgroup_channel"><![CDATA[Создание канала групп]]></phrase>
+			<phrase name="importing_socialgroup_categories"><![CDATA[Импортирование категорий групп]]></phrase>
+			<phrase name="importing_socialgroups"><![CDATA[Импортирование групп]]></phrase>
+			<phrase name="assigning_group_owners"><![CDATA[Назначение управляющих групп]]></phrase>
+			<phrase name="assigning_group_members"><![CDATA[Импортирование участников групп]]></phrase>
+			<phrase name="importing_discussions"><![CDATA[Импортирование дискуссий групп]]></phrase>
+			<phrase name="importing_messages"><![CDATA[Импортирование сообщений в группах]]></phrase>
+			<phrase name="importing_photos"><![CDATA[Импортирование фотографий в группах]]></phrase>
+			<phrase name="updating_statistics"><![CDATA[Обновление статистики групп]]></phrase>
+			<phrase name="imported_photos"><![CDATA[Фотографии в группах]]></phrase>
+			<phrase name="imported_photos_desc"><![CDATA[Данные фотографии были импортированы в vBulletin 5]]></phrase>
+			<phrase name="importing_visitor_messages"><![CDATA[Импортирование публичных сообщений]]></phrase>
+			<phrase name="importing_albums"><![CDATA[Импортирование альбомов пользователей]]></phrase>
+			<phrase name="importing_photos"><![CDATA[Импортирование фотографий в альбомах]]></phrase>
+			<phrase name="updating_blog_channels"><![CDATA[Обновление каналов дневников]]></phrase>
+			<phrase name="visitor_messages"><![CDATA[Публичные сообщения]]></phrase>
+			<phrase name="albums"><![CDATA[Альбомы]]></phrase>
+			<phrase name="creating_album_channel"><![CDATA[Создание канала альбомов]]></phrase>
+		</group>
+		<group name="500a29">
+			<phrase name="imported_socialgroup_galleries"><![CDATA[Импортированные галереи групп]]></phrase>
+			<phrase name="importing_socialgroup_galleries"><![CDATA[Импортирование галерей групп]]></phrase>
+		</group>
+		<group name="500a33">
+			<phrase name="default_style"><![CDATA[Обычный стиль vB5]]></phrase>
+			<phrase name="updating_style"><![CDATA[Обновление обычного стиля]]></phrase>
+			<phrase name="updating_styles"><![CDATA[Обновление стилей]]></phrase>
+			<phrase name="updating_options"><![CDATA[Обновление параметров]]></phrase>
+			<phrase name="creating_default_style"><![CDATA[Создание обычного стиля vB5]]></phrase>
+			<phrase name="incompatible"><![CDATA[(Стиль vB4 - несовместим)]]></phrase>
+			<phrase name="fix_modcp_route"><![CDATA[Исправление пути к панели модератора]]></phrase>
+		</group>
+		<group name="500a44">
+			<phrase name="importing_forum_perms_1"><![CDATA[Импортирование прав разделов форума - шаг 1 из 2]]></phrase>
+			<phrase name="importing_forum_perms_2"><![CDATA[Импортирование прав разделов форума - шаг 2 из 2]]></phrase>
+			<phrase name="clearing_user_styles"><![CDATA[Сброс выбора стиля по умолчанию у пользователей]]></phrase>
+		</group>
+		<group name="500a45">
+			<phrase name="rebuild_search_indices"><![CDATA[Перестроение индекса поиска - весьма длительный по времени процесс, но он может быть выполнен уже после того, как сайт будет работать для пользователей. Поэтому мы не будем делать это в процессе данного обновления, но настоятельно рекомендуем перейти в Панель администратора > "Обслуживание" >  "Основные инструменты обновления" и выполнить функцию "Перестроить индекс поиска"]]></phrase>
+		</group>
+		<group name="500b9">
+			<phrase name="fixing_closure_records_step_x"><![CDATA[Проверка и исправление каких-либо ошибок в таблице closure для записей, обновлённых с vB3 и vB4 - шаг %1$d из 5]]></phrase>
+			<phrase name="fixing_blog_counts_step_x"><![CDATA[Исправление счётчиков сообщений дневников - шаг %1$d из 2]]></phrase>
+		</group>
+		<group name="500b11">
+			<phrase name="cleaning_subscribediscussion_table"><![CDATA[Очистка таблицы subscribediscussion]]></phrase>
+			<phrase name="importing_x_subscriptions"><![CDATA[Импортирование подписок: %1$s]]></phrase>
+			<phrase name="updating_blog_summary_step_x"><![CDATA[Обновление сводной информации о дневниках - шаг %1$d из 3]]></phrase>
+			<phrase name="correcting_channel_counts"><![CDATA[Обновление счётчиков канала сообщений]]></phrase>
+		</group>
+		<group name="500b12">
+			<phrase name="updating_content_routes"><![CDATA[Обновление информации о путях для записей вне каналов, начиная с %1$d]]></phrase>
+			<phrase name="deleting_blog_categories_widget"><![CDATA[Удаление виджета категорий дневников из таблицы widgetinstance]]></phrase>
+			<phrase name="fix_sghome_routeid"><![CDATA[Исправление routeid для главной страницы групп]]></phrase>
+		</group>
+		<group name="500b15">
+			<phrase name="setting_banned_ugp"><![CDATA[Установка группы по умолчанию для заблокированных пользователей]]></phrase>
+		</group>
+		<group name="500b17">
+			<phrase name="adding_album_textrecords"><![CDATA[Добавление отсутствующих текстовых записей в альбомах]]></phrase>
+			<phrase name="fixing_custom_avatars"><![CDATA[Исправление записей о названиях файлов аватаров пользователей]]></phrase>
+			<phrase name="setting_x_starters"><![CDATA[Установка авторов: %s]]></phrase>
+			<phrase name="updating_moderator_permissions"><![CDATA[Обновление прав модераторов]]></phrase>
+		</group>
+		<group name="500b18">
+			<phrase name="fixing_blog_post_url_identities"><![CDATA[Исправление ссылок на записи в дневниках]]></phrase>
+			<phrase name="fixing_group_discussion_url_identities"><![CDATA[Исправление ссылок на дискуссии групп]]></phrase>
+		</group>
+		<group name="500b19">
+			<phrase name="confirming_root_canviewforum"><![CDATA[Подтверждение права канала на просмотр родительского узла]]></phrase>
+			<phrase name="update_profile_picture_size"><![CDATA[Обновление размеров фотографии профиля]]></phrase>
+		</group>
+		<group name="500b22">
+			<phrase name="activity_update"><![CDATA[Значения ленты активности обновлены]]></phrase>
+		</group>
+		<group name="500b24">
+			<phrase name="adding_maxchannel_field"><![CDATA[Изменение таблицы usergroup. Добавление поля с данными о правах maxchannel.]]></phrase>
+			<phrase name="blog_channel_permission_update"><![CDATA[Права канала дневников обновлены]]></phrase>
+			<phrase name="removing_sg_membergroup"><![CDATA[Удаление системной группы участников социальных групп.]]></phrase>
+			<phrase name="removing_sg_modgroup"><![CDATA[Удаление системной группы модераторов социальных групп.]]></phrase>
+			<phrase name="removing_sg_ownergroup"><![CDATA[Удаление системной группы владельцев социальных групп.]]></phrase>
+			<phrase name="removing_sg_ugps"><![CDATA[Удаление системной группы социальных групп.]]></phrase>
+			<phrase name="thread_redirect_import"><![CDATA[Импортирование перенаправлений тем]]></phrase>
+		</group>
+		<group name="500b26">
+			<phrase name="fixing_category_channels"><![CDATA[Исправление категорий каналов.]]></phrase>
+		</group>
+		<group name="500b27">
+			<phrase name="fixing_pm_records"><![CDATA[Исправление записей о личных сообщениях.]]></phrase>
+			<phrase name="importing_custom_folders"><![CDATA[Импортирование нестандартных папок ЛС]]></phrase>
+			<phrase name="updating_conversation_routes"><![CDATA[Обновление маршрутов к диалогам]]></phrase>
+			<phrase name="updating_routes"><![CDATA[Обновление маршрутов к альбомам, личным сообщениям, управлению дневниками и группами]]></phrase>
+		</group>
+		<group name="500b28">
+			<phrase name="fixing_aphoto_records"><![CDATA[Исправление записей о фотографиях в альбомах.]]></phrase>
+		</group>
+		<group name="500rc1">
+			<phrase name="correcting_channelowner_permission"><![CDATA[Выдача прав владельцам каналов на управление параметрами канала.]]></phrase>
+			<phrase name="fixing_blog_data"><![CDATA[Исправление импортированной информации о дневниках.]]></phrase>
+			<phrase name="fixing_blog_options"><![CDATA[Исправление импортированных настроек дневников.]]></phrase>
+			<phrase name="fixing_pm_starters"><![CDATA[Исправление авторов личных сообщений.]]></phrase>
+			<phrase name="updating_channel_options"><![CDATA[Обновление параметров каналов.]]></phrase>
+			<phrase name="updating_text_nodes"><![CDATA[Обновление текстовых узлов.]]></phrase>
+			<phrase name="updating_text_nodes_for_blogs"><![CDATA[Обновление текстовых узлов дневников.]]></phrase>
+		</group>
+		<group name="500_preload">
+			<phrase name="executing_x_y_z"><![CDATA[Выполнение %s, шаг: %d, начиная с: %d]]></phrase>
+			<phrase name="vb_preload_script"><![CDATA[Предзагрузка vBulletin]]></phrase>
+			<phrase name="please_be_patient"><![CDATA[Создание канала личных сообщений]]></phrase>
+		</group>
+	</group>
+	<group name="final">
+		<phrase name="final_upgrade_steps"><![CDATA[Выполнение завершающих шагов обновления]]></phrase>
+		<phrase name="import_latest_options"><![CDATA[Импорт новейших настроек]]></phrase>
+		<phrase name="import_latest_adminhelp"><![CDATA[Импорт новейшей помощи администратору]]></phrase>
+		<phrase name="import_latest_language"><![CDATA[Импорт новейшего языка]]></phrase>
+		<phrase name="import_latest_widgets"><![CDATA[Импорт новейших виджетов]]></phrase>
+		<phrase name="merge_template_changes"><![CDATA[Объединение изменений в шаблонах]]></phrase>
+		<phrase name="building_permissions"><![CDATA[Формирование разрешений для каналов]]></phrase>
+		<phrase name="upgrade_start_message"><![CDATA[<p>Этот скрипт обновит ваши шаблоны, настройки, язык и помощь администратору до новейших версий.</p>\n<p>Нажмите кнопку 'Дальше' для продолжения.</p>]]></phrase>
+		<phrase name="upgrade_version_mismatch"><![CDATA[<p>Ваша текущая версия vBulletin (%1$s) не совпадает с той, которая была скачана (%2$s).</p><p>В большинстве случаев это означает, что обновление не было успешно завершено. Пожалуйста, убедитесь, что вы загрузили на сервер самые новые файлы, и <a href="upgrade.php">нажмите здесь</a>, чтобы попробовать снова.</p><p>Если вы уверены, что желаете продолжить эту часть обновления, то <a href="finalupgrade.php?step=1">нажмите здесь</a>.</p>]]></phrase>
+		<phrase name="installing_product_x"><![CDATA[Установка продукта %1$s]]></phrase>
+		<phrase name="product_installed"><![CDATA[Обновление продукта успешно завершено.]]></phrase>
+		<phrase name="product_not_found"><![CDATA[Файл продукта не найден, переходим к следующему пункту.]]></phrase>
+		<phrase name="product_not_installed"><![CDATA[Продукт не был установлен. Пожалуйста, свяжитесь с технической поддержкой vBulletin, если вам требуется помощь.]]></phrase>
+		<phrase name="user_not_found"><![CDATA[Пользователь не найден]]></phrase>
+		<phrase name="cms_data_import_success"><![CDATA[Данные CMS успешно импортированы]]></phrase>
+		<phrase name="cms_data_import_not_installed"><![CDATA[Данные по умолчанию для CMS не были установлены]]></phrase>
+		<phrase name="cms_data_import_attachment_errors"><![CDATA[При импорте данных CMS возникли проблемы вложений]]></phrase>
+		<phrase name="cms_default_data_install"><![CDATA[Установка данных по умолчанию для CMS]]></phrase>
+		<phrase name="cms_default_data_overwrite"><![CDATA[Это перезапишет все данные, которые вы могли создать или изменить в вашей CMS]]></phrase>
+		<phrase name="user_must_exist"><![CDATA[Пользователь должен существовать]]></phrase>
+		<phrase name="user_must_exist_cli"><![CDATA[Желаете ли вы установить данные по умолчанию для CMS?\r\n\r\nЭто перезапишет все данные, которые вы могли создать или изменить в вашей CMS.]]></phrase>
+		<phrase name="user_must_exist_cli_not_found"><![CDATA[Ошибка: пользователь "%1$s" не найден.\r\n\r\nЖелаете ли вы установить данные по умолчанию для CMS?\r\n\r\nЭто перезапишет все данные, которые вы могли создать или изменить в вашей CMS.]]></phrase>
+		<phrase name="enter_username"><![CDATA[Введите имя пользователя, от имени которого будет размещено содержимое CMS (нажмите [Enter] для пропуска):]]></phrase>
+		<phrase name="user_must_exist_ajax"><![CDATA[<p>Желаете ли вы установить данные по умолчанию для CMS?</p><p>Это перезапишет все данные, которые вы могли создать или изменить в вашей CMS.</p><div id="enter_response">Введите имя пользователя, от имени которого будет размещено содержимое:</div>]]></phrase>
+		<phrase name="user_must_exist_ajax_not_found"><![CDATA[<p><strong>Ошибка: пользователь "%1$s" не найден</strong></p><p>Желаете ли вы установить данные по умолчанию для CMS?</p><p>Это перезапишет все данные, которые вы могли создать или изменить в вашей CMS.</p><div id="enter_response">Введите имя пользователя, от имени которого будет размещено содержимое:</div>]]></phrase>
+		<phrase name="user_must_exist_ajax_install"><![CDATA[<p>Желаете ли вы установить данные по умолчанию для CMS?</p>]]></phrase>
+		<phrase name="install"><![CDATA[Установить]]></phrase>
+		<phrase name="upgrade_complete"><![CDATA[<p>Обновление завершено</p><p>Вы можете посмотреть шаги обновления, нажав '<strong>Назад к обновлению</strong>', а затем '<strong>Показать детали</strong>'.</p>]]></phrase>
+		<phrase name="install_complete"><![CDATA[<p>Установка завершена</p><p>Вы можете посмотреть шаги установки, нажав '<strong>Назад к установке</strong>' а затем '<strong>Показать детали</strong>'.</p>]]></phrase>
+		<phrase name="goto_admincp"><![CDATA[Перейти к управлению]]></phrase>
+		<phrase name="back_to_upgrade"><![CDATA[Назад к обновлению]]></phrase>
+		<phrase name="back_to_install"><![CDATA[Назад к установке]]></phrase>
+		<phrase name="skip"><![CDATA[Пропустить]]></phrase>
+		<phrase name="mismatch_product_version"><![CDATA[Версия продукта <strong>%1$s</strong> и версия vBulletin <strong>%2$s</strong> не совпадают.<br /><br />Убедитесь, что все файлы были загружены на сервер с перезаписью старых.]]></phrase>
+		<phrase name="verifying_product_dependencies"><![CDATA[Проверка зависимостей продукта]]></phrase>
+		<phrase name="verifying_product_x"><![CDATA[Проверка продукта: %1$s]]></phrase>
+		<phrase name="product_x_disabled"><![CDATA[Продукт %1$s был отключён]]></phrase>
+		<phrase name="step_timed_out"><![CDATA[Шаг пропущен, так как было превышено максимально допустимое время выполнения PHP скрипта]]></phrase>
+		<phrase name="reseting_cache"><![CDATA[Очистка кэша]]></phrase>
+	</group>
+</phrases>

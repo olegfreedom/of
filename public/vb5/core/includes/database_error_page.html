@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Ошибка базы данных $vboptions[bbtitle]</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="ROBOTS" content="NOINDEX,NOFOLLOW,NOARCHIVE" />
+	<style type="text/css">
+	<!--	
+	body { background-color: white; color: black; }
+	#container { width: 400px; }
+	#message   { width: 400px; color: black; background-color: #FFFFCC; }
+	#bodytitle { font: 13pt/15pt verdana, arial, sans-serif; height: 35px; vertical-align: top; }
+	.bodytext  { font: 8pt/11pt verdana, arial, sans-serif; }
+	a:link     { font: 8pt/11pt verdana, arial, sans-serif; color: red; }
+	a:visited  { font: 8pt/11pt verdana, arial, sans-serif; color: #4e4e4e; }
+	-->
+	</style>
+</head>
+<body>
+<table cellpadding="3" cellspacing="5" id="container">
+<tr>
+	<td><img src="$imagepath/image.php?type=dberror" alt="Ошибка базы данных" width="48" height="48" /></td>
+	<td id="bodytitle" width="100%">Ошибка базы данных</td>
+</tr>
+<tr>
+	<td class="bodytext" colspan="2">В базе данных $vboptions[bbtitle] произошла ошибка.</td>
+</tr>
+<tr>
+	<td colspan="2"><hr /></td>
+</tr>
+<tr>
+	<td class="bodytext" colspan="2">
+		Попробуйте сделать следующее:
+		<ul>
+			<li>Перезагрузить страницу, нажав кнопку <a href="#" onclick="window.location = window.location;">Обновить</a>.</li>
+			<li>Открыть главную страницу <a href="/">$_SERVER[HTTP_HOST]</a> и попробовать перейти на другую страницу.</li>
+			<li>Нажать на кнопку <a href="javascript:history.back(1)">Назад</a> и попробовать перейти по другой ссылке.</li>
+		</ul>
+	</td>
+</tr>
+<tr>
+	<td class="bodytext" colspan="2">Техническая поддержка форума $_SERVER[HTTP_HOST] была уведомлена об этой ошибке. Если проблема долгое время не решается, Вы можете <a href="mailto:$technicalemail">написать им письмо</a>.</td>
+</tr>
+<tr>
+	<td class="bodytext" colspan="2">&nbsp;<br />Простите за причинённые неудобства.</td>
+</tr>
+</table>
+
+$message
+
+</body>
+</html>

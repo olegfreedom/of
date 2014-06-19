@@ -1,0 +1,53 @@
+<input type="hidden" class="phone-item-data" data-phone-mask="<?php echo(isset($phoneMask) ? $phoneMask : ''); ?>"
+       data-phone-placeholder="<?php echo(isset($phonePlaceholder) ? $phonePlaceholder : ''); ?>">
+<div class="wrap">
+    <label for="telef">Номер телефона<span>*</span></label>
+
+    <div class="input-holder phone telef phone-container helper-item">
+        <?php
+        $phoneCount = 0;
+        if (isset($getPhone) && is_array($getPhone)) {
+            $phoneCount = sizeof($getPhone);
+            ?>
+            <div class="phone-1">
+                <?php foreach ($getPhone as $item) { ?>
+                    <div class="phone-item">
+                        <?php echo($item['phone']); ?> <a class="phone-remove-item"
+                                                          href="<?php echo($this->easyUrl(array('action' => 'remove-phone', 'id' => $item['id']))); ?>">удалить</a>
+                    </div>
+                <?php } ?>
+            </div>
+        <?php } ?>
+        <div class="phone-box">
+            <?php if($phoneCount < 5){ ?>
+                <?php if(isset($userPhone) && is_array($userPhone)){ ?>
+                    <?php foreach($userPhone as $phoneItem){ ?>
+                        <div class="control-group">
+                            <input type="text" class="phone-items bfh-phone small" data-format="<?php echo($phoneItem['mask']); ?>" name="phone[]" placeholder="<?php echo($phoneItem['placeholder']); ?>" maxlength="20" data-number="" value="">
+                            <?php if(isset($phoneMaskArray) && is_array($phoneMaskArray)){ ?>
+                                <select class="phone-change-mask small" name="mask[]">
+                                    <?php foreach($phoneMaskArray as $item){ ?>
+                                        <option value="<?php echo($item['id']); ?>"<?php echo(($item['id'] == $phoneItem['mask_id']) ? ' selected="selected"' : ''); ?> data-mask="<?php echo($item['mask']); ?>"><?php echo($item['placeholder']); ?></option>
+                                    <?php } ?>
+                                </select>
+                            <?php } ?>
+                        </div>
+                    <?php } ?>
+                <?php }else{ ?>
+                    <div class="control-group">
+                        <input type="text" class="phone-items bfh-phone small" data-format="<?php echo(isset($phoneMask) ? $phoneMask : ''); ?>" name="phone[]" placeholder="<?php echo(isset($phonePlaceholder) ? $phonePlaceholder : ''); ?>" maxlength="20" value="">
+                        <?php if(isset($phoneMaskArray) && is_array($phoneMaskArray)){ ?>
+                            <select class="phone-change-mask small" name="mask[]">
+                                <?php foreach($phoneMaskArray as $item){ ?>
+                                    <option value="<?php echo($item['id']); ?>" data-mask="<?php echo($item['mask']); ?>"><?php echo($item['placeholder']); ?></option>
+                                <?php } ?>
+                            </select>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+        </div>
+        <span >* Заполните обязательное поле</span>
+        <a class="add-number phone-add-item">Добавить номер</a>
+    </div>
+</div>

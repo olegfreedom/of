@@ -1,0 +1,143 @@
+<div class="">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="pull-left pad5">
+                <?php if ( !isset($_SESSION['profile']->auth['id']) ): ?>
+                    <a href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'registration'))); ?>" class="btn btn-default btn-success">Новое объявление</a>
+                <?php else: ?>
+                    <a href="<?php echo($this->easyUrl(array('module' => 'profile', 'controller' => 'adverts', 'action' => 'add'))); ?>" class="btn btn-default btn-success">Новое объявление</a>
+                <?php endif; ?>
+            </div>
+            <div class="row clearfix center-block centered">
+                <h1 class="page-header">
+                    Каталог
+                </h1>
+            </div>
+            <?php // echo($this->easyUrl(array('action' => 'edit', 'id' => $item['id']))) ?>
+            <div class="row clearfix">
+                <div class="col-sm-12">
+                    <?php if ( !empty($categoriesList) ): ?>
+                        <ul class="list-unstyled">
+                            <?php foreach ($categoriesList as $key => $row): ?>
+                                <li id="accordion<?php echo $key;?>" class="accordion">
+                                    <?php // href="#collapse<?php echo $key; data-parent="#accordion<?php echo $key;" data-toggle="collapse" class="accordion-toggle" ?>
+                                    <a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $row ['id']));?>"><?php echo $row ['name'];?></a>
+                                    <?php if ( !empty($row ['subcategory']) ): ?>
+                                        <ul class="accordion-body" id="collapse<?php echo $key;?>">
+                                            <?php foreach ( $row ['subcategory'] as $keySub1 => $rowSub1 ): ?>
+                                                <li id="accordion<?php echo $keySub1;?>" class="accordion">
+                                                    <a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $rowSub1 ['id']));?>"><?php echo $rowSub1 ['name'];?></a>
+                                                    <?php if ( !empty($rowSub1 ['subcategory']) ): ?>
+                                                        <ul class="accordion-body" id="collapse<?php echo $key;?>">
+                                                            <?php foreach ( $rowSub1 ['subcategory'] as $keySub2 => $rowSub2 ): ?>
+                                                                <li>
+                                                                    <a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $rowSub2 ['id']));?>"><?php echo $rowSub2 ['name'];?></a>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                    <?php endif; ?>
+                                                </li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    <?php endif; ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <?php if (!empty($currentCategory) ): ?>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <ul class="breadcrumb">
+                            <?php $cnt = sizeof($currentCategory) - 1; ?>
+                            <?php foreach ($currentCategory as $key => $row): ?>
+                                <?php if ($key != $cnt): ?>
+                                    <li><a href="<?php echo $this->easyUrl(array('controller' => 'catalog', 'category' => $row ['id']));?>"><?php echo $row ['name'];?></a></li>
+                                <?php else: ?>
+                                    <li class="active"><?php echo $row ['name'];?></li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="controlls">
+                    <ul id="tabs2" class="nav nav-tabs">
+                        <li class="active"><a href="#products" data-toggle="tab">Товары</a></li>
+                        <li><a href="#services" data-toggle="tab">Услуги</a></li>
+                        <li><a href="#technologies" data-toggle="tab">Технологии</a></li>
+                        <li><a href="#investments" data-toggle="tab">Инвестиции</a></li>
+                    </ul>
+                    <div class="tab-content pad">
+                        <div class="tab-pane fade active in" id="products">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#products-buy" data-toggle="tab">Продам</a></li>
+                                <li><a href="#products-sell" data-toggle="tab">Куплю</a></li>
+                            </ul>
+                            <div class="tab-content pad">
+                                <div class="tab-pane fade active in" id="products-buy">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_PRODUCT_BUY)); ?>
+                                </div>
+                                <div class="tab-pane fade" id="products-sell">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_PRODUCT_SELL)); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="services">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#services-buy" data-toggle="tab">Продам</a></li>
+                                <li><a href="#services-sell" data-toggle="tab">Куплю</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="services-buy">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_SERVICE_BUY)); ?>
+                                </div>
+                                <div class="tab-pane fade" id="services-sell">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_SERVICE_SELL)); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="technologies">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#technologies-out" data-toggle="tab">Вложения</a></li>
+                                <li><a href="#technologies-in" data-toggle="tab">Запросы</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade" id="technologies-out">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_TECHNOLOGIES_OUT)); ?>
+                                </div>
+                                <div class="tab-pane fade active in" id="technologies-in">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_TECHNOLOGIES_IN)); ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="investments">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#investments-out" data-toggle="tab">Вложения</a></li>
+                                <li><a href="#investments-in" data-toggle="tab">Запросы</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade" id="investments-out">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_INVESTMENTS_OUT)); ?>
+                                </div>
+                                <div class="tab-pane fade active in" id="investments-in">
+                                    <?php echo $this->partial('partials/adverts-list.phtml', array('advertsList' => $advertsList, 'type' => $Model::TYPE_INVESTMENTS_IN)); ?>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

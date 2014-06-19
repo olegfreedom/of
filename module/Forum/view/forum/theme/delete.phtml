@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <?php if ($this->groupData): ?>
+            <div class="row">
+                <?php \Zend\Debug\Debug::dump($this->groupData);?>
+            </div>
+        <?php endif; ?>
+        <div class="row">
+            <form action="" method="POST">
+                <div>Чи ви дійсно бажаєте групу </div>
+                <label> Так
+                    <input type="radio" value ="1" name="answer">
+                </label>
+                <label> Ні
+                    <input type="radio" value ="0" name="answer" checked="true">
+                </label>
+                <input type="submit" value ="Відправити" class="btn btn-block">
+            </form>
+        </div>
+    </div>
+</div>
